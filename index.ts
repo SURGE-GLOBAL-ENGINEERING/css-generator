@@ -8,7 +8,7 @@ import { ThemeStyleProps } from "./types";
  * @param themeId Id of the theme
  * @returns {string} Css string to format the book according to provided theme properties
  */
-export const convertThemeStylePropsToCss = (
+export const themePropsToCss = (
   themeProps: ThemeStyleProps,
   themeId: string
 ): string => {
