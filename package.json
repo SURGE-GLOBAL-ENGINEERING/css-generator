@@ -1,0 +1,23 @@
+{
+  "name": "@paladin-analytics/css-generator",
+  "version": "1.0.1",
+  "description": "Generate css styles based on theme properties for Atticus themes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version && git push --follow-tags && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paladin-Analytics/css-generator.git"
+  },
+  "author": "Janith Gamage (janith@surge.global)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paladin-Analytics/css-generator/issues"
+  },
+  "homepage": "https://github.com/Paladin-Analytics/css-generator#readme",
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
+}
