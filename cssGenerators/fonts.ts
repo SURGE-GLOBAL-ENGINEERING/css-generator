@@ -1,11 +1,11 @@
 import { find } from "lodash";
 
-import { getAtticusFonts, commonFontCss } from "../helpers";
+import { getAtticusFonts } from "../helpers";
 
 /**
  * Generates css for rendering fonts
  * @param fonts An array containing chapter title, subtitle and chapter number fonts
- * @returns css for the fonts passed as inputs and common fonts
+ * @returns css for the fonts passed as inputs
  */
 export const fontNamesToCss = (fonts: string[]): string => {
   const atticusFonts = getAtticusFonts();
@@ -14,5 +14,5 @@ export const fontNamesToCss = (fonts: string[]): string => {
     return acc = acc + (f && f.css ? "\n" + f.css : "");
   }, "");
 
-  return `${fontCss} ${commonFontCss}`;
+  return `${fontCss}`;
 };
