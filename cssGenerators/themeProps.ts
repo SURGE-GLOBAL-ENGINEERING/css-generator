@@ -1,4 +1,4 @@
-import { fontNamesToCss } from './.';
+import { fontNamesToCss } from "./.";
 
 import {
   getImagePlacementOrder,
@@ -6,41 +6,49 @@ import {
   getNormalizedOpacity,
 } from "../helpers";
 
-import { ThemeStyleProps } from "../types";
+import { ThemeProps } from "../types";
 
 /**
  * Returns a css string to style the book according to provided theme properties
  * @param themeProps Atticus theme properties
- * @param themeId Id of the theme
+ * @param fontBaseUrl The base url for the location where the actual font files reside
  * @returns {string} Css string to format the book according to provided theme properties
  */
 export const themePropsToCss = (
-  themeProps: ThemeStyleProps,
-  themeId: string
+  themeProps: ThemeProps,
+  fontBaseUrl: string
 ): string => {
-  const fontCss = fontNamesToCss([themeProps.chapterTitle.font, themeProps.chapterSubtitle.font, themeProps.chapterNo.font]);
+  const { properties: styleProps } = themeProps; 
+  const fontCss = fontNamesToCss(
+    [
+      styleProps.chapterTitle.font,
+      styleProps.chapterSubtitle.font,
+      styleProps.chapterNo.font,
+    ],
+    fontBaseUrl
+  );
   const styleCss = `
     .chp_bg{
       background-color: rgba(255,255,255, ${getNormalizedOpacity(
-        themeProps.image.opacity
+        styleProps.image.opacity
       )});
       background-blend-mode: lighten;
-      opacity: ${getNormalizedOpacity(themeProps.image.opacity)};
+      opacity: ${getNormalizedOpacity(styleProps.image.opacity)};
     }
-    .${themeId} .chapter-title-card .chapter-title h2{
-      color: ${themeProps.textLight === "light" ? "white" : "black"};
+    .${themeProps._id} .chapter-title-card .chapter-title h2{
+      color: ${styleProps.textLight === "light" ? "white" : "black"};
     }
-    .${themeId} .chapter-title-card .chapter-number{
-      color: ${themeProps.textLight === "light" ? "white" : "black"};
+    .${themeProps._id} .chapter-title-card .chapter-number{
+      color: ${styleProps.textLight === "light" ? "white" : "black"};
     }
-    .${themeId} .chapter-title-card .chapter-subtitle h3{
-      color: ${themeProps.textLight === "light" ? "white" : "black"};
+    .${themeProps._id} .chapter-title-card .chapter-subtitle h3{
+      color: ${styleProps.textLight === "light" ? "white" : "black"};
     }
-    .${themeId} .chapter-title-card, .${themeId} .title-card, .epub-toc-title-card{
+    .${themeProps._id} .chapter-title-card, .${themeProps._id} .title-card, .epub-toc-title-card{
       display: flex;
       flex-direction: column;
     }
-    .${themeId} .chapter-title-card, .epub-toc-title-card{
+    .${themeProps._id} .chapter-title-card, .epub-toc-title-card{
       position: relative;
       min-height: 13em;
       padding-top: 1em;
@@ -61,90 +69,90 @@ export const themePropsToCss = (
       -ms-filter: grayscale(0%);
       -o-filter: grayscale(0%);
     }
-    .${themeId} .chapter-title-card .chp_img{
-      order: ${getImagePlacementOrder(themeProps.image.placement)};
-      text-align: ${themeProps.image.alignment};
+    .${themeProps._id} .chapter-title-card .chp_img{
+      order: ${getImagePlacementOrder(styleProps.image.placement)};
+      text-align: ${styleProps.image.alignment};
       padding-top: 0.3em;
     }
-    .${themeId} .chapter-title-card .chp_img img{
-      width: ${themeProps.image.width}%;
+    .${themeProps._id} .chapter-title-card .chp_img img{
+      width: ${styleProps.image.width}%;
     }
-    .${themeId} .chapter-title-card .chapter-number, .${themeId} .chapter-title-card .chapter-title, .${themeId} .chapter-title-card .chapter-subtitle, .epub-toc-title-card h2{
+    .${themeProps._id} .chapter-title-card .chapter-number, .${themeProps._id} .chapter-title-card .chapter-title, .${themeProps._id} .chapter-title-card .chapter-subtitle, .epub-toc-title-card h2{
       padding-left: 3%;
       width: 94%;
       z-index: 10;
       display: block;
     }
-    .${themeId} .chapter-number{
-      text-align: ${themeProps.chapterNo.align}!important;
+    .${themeProps._id} .chapter-number{
+      text-align: ${styleProps.chapterNo.align}!important;
       order: 2;
       text-transform: capitalize;
     }
-    .${themeId} .chapter-title{
-      text-align: ${themeProps.chapterTitle.align}!important;
+    .${themeProps._id} .chapter-title{
+      text-align: ${styleProps.chapterTitle.align}!important;
       order: 3;
     }
-    .${themeId} .chapter-subtitle{
-      text-align: ${themeProps.chapterSubtitle.align}!important;
+    .${themeProps._id} .chapter-subtitle{
+      text-align: ${styleProps.chapterSubtitle.align}!important;
       order: 4;
     }
-    .${themeId} .chapter-number span, .${themeId} .chapter-title h2, .epub-toc-title-card h2, .${themeId} .chapter-subtitle h3 {
+    .${themeProps._id} .chapter-number span, .${themeProps._id} .chapter-title h2, .epub-toc-title-card h2, .${themeProps._id} .chapter-subtitle h3 {
         font-weight: 400;
     }
-    .${themeId} .chapter-number span{
-      font-family: '${themeProps.chapterNo.font}';
-      font-size: ${(2 + themeProps.chapterNo.size) / 3}em;
-      text-align: ${themeProps.chapterNo.align};
-      line-height: 1.${themeProps.chapterNo.size};
-      width: ${themeProps.chapterNo.width}%;
-      ${fontStyleToCssProp(themeProps.chapterNo.style)}
+    .${themeProps._id} .chapter-number span{
+      font-family: '${styleProps.chapterNo.font}';
+      font-size: ${(2 + styleProps.chapterNo.size) / 3}em;
+      text-align: ${styleProps.chapterNo.align};
+      line-height: 1.${styleProps.chapterNo.size};
+      width: ${styleProps.chapterNo.width}%;
+      ${fontStyleToCssProp(styleProps.chapterNo.style)}
       display: inline-block;
     }
-    .${themeId} .chapter-title h2, .epub-toc-title-card h2{
-      font-family: '${themeProps.chapterTitle.font}';
-      font-size: ${(4 + themeProps.chapterTitle.size) / 3}em;
-      text-align: ${themeProps.chapterTitle.align}!important;
-      line-height: 1.${themeProps.chapterTitle.size};
-      width: ${themeProps.chapterTitle.width}%;
-      ${fontStyleToCssProp(themeProps.chapterTitle.style)}
+    .${themeProps._id} .chapter-title h2, .epub-toc-title-card h2{
+      font-family: '${styleProps.chapterTitle.font}';
+      font-size: ${(4 + styleProps.chapterTitle.size) / 3}em;
+      text-align: ${styleProps.chapterTitle.align}!important;
+      line-height: 1.${styleProps.chapterTitle.size};
+      width: ${styleProps.chapterTitle.width}%;
+      ${fontStyleToCssProp(styleProps.chapterTitle.style)}
       display: inline-block;
     }
-    .${themeId} .chapter-subtitle h3{
-      font-family: '${themeProps.chapterSubtitle.font}';
-      font-size: ${(3 + themeProps.chapterSubtitle.size) / 3}em;
-      text-align: ${themeProps.chapterSubtitle.align};
-      line-height: 1.${themeProps.chapterSubtitle.size};
-      width: ${themeProps.chapterSubtitle.width}%;
-      ${fontStyleToCssProp(themeProps.chapterSubtitle.style)}
+    .${themeProps._id} .chapter-subtitle h3{
+      font-family: '${styleProps.chapterSubtitle.font}';
+      font-size: ${(3 + styleProps.chapterSubtitle.size) / 3}em;
+      text-align: ${styleProps.chapterSubtitle.align};
+      line-height: 1.${styleProps.chapterSubtitle.size};
+      width: ${styleProps.chapterSubtitle.width}%;
+      ${fontStyleToCssProp(styleProps.chapterSubtitle.style)}
       display: inline-block;
     }
-    .${themeId} header .meta{
-      font-size: ${4 + 2 * themeProps.header.size}pt;
-      font-family: ${themeProps.header.font};
+    .${themeProps._id} header .meta{
+      font-size: ${4 + 2 * styleProps.header.size}pt;
+      font-family: ${styleProps.header.font};
     }
-    .${themeId} footer .meta{
-      font-size: ${4 + 2 * themeProps.footer.size}pt;
-      font-family: ${themeProps.footer.font};
+    .${themeProps._id} footer .meta{
+      font-size: ${4 + 2 * styleProps.footer.size}pt;
+      font-family: ${styleProps.footer.font};
     }
-    .${themeId} .title-card {
-      font-family: '${themeProps.chapterTitle.font}';
+    .${themeProps._id} .title-card {
+      font-family: '${styleProps.chapterTitle.font}';
     }
-    .${themeId} .title-card h1{
+    .${themeProps._id} .title-card h1{
       font-size: 44px;
       padding: 0.6em 0em;
       font-weight: 600;
     }
-    .${themeId} .title-card h2{
+    .${themeProps._id} .title-card h2{
       font-size: 22px;
       padding: 1em 0em;
     }
-    .${themeId} .title-card h3{
+    .${themeProps._id} .title-card h3{
       font-size: 20px;
       color:#666;
       padding: 1em 0em;
     }
-    .${themeId} .publisher-details{
-      font-family: '${themeProps.chapterNo.font}';
+    .${themeProps._id} .publisher-details{
+      font-family: '${styleProps.chapterNo.font}';
     }
 
     /*      **********      */
@@ -327,9 +335,9 @@ export const themePropsToCss = (
     .wrapper{
       /* https://css-tricks.com/almanac/properties/o/overflow-wrap/ */
       overflow-wrap: break-word;
-      ${themeProps.paragraph.hyphens ? `hyphens: auto;` : ``}
+      ${styleProps.paragraph.hyphens ? `hyphens: auto;` : ``}
 
-      ${themeProps.paragraph.justify ? `text-align: justify;` : ``}
+      ${styleProps.paragraph.justify ? `text-align: justify;` : ``}
     }
 
     p:empty:not(:first-of-type){
@@ -344,10 +352,10 @@ export const themePropsToCss = (
       padding-top: 0em;
       line-height: 1.6em;
       text-indent: ${
-        themeProps.paragraph.indent ? themeProps.paragraph.indent : 0
+        styleProps.paragraph.indent ? styleProps.paragraph.indent : 0
       }em;
       margin-block-end: ${
-        !themeProps.paragraph.indent ? themeProps.paragraph.paragraphSpacing : 0
+        !styleProps.paragraph.indent ? styleProps.paragraph.paragraphSpacing : 0
       }em;
     }
 
@@ -384,7 +392,7 @@ export const themePropsToCss = (
     }
     
     .ornamental-break img{
-      width: ${themeProps.ornamentalBreakWidth || 50}%;
+      width: ${styleProps.ornamentalBreakWidth || 50}%;
     }
     
     .image{
@@ -545,7 +553,7 @@ export const themePropsToCss = (
 
     /* EPUB TOC */
     .epub-toc-title-card h2 {
-      text-align: ${themeProps.titleAlignment}
+      text-align: ${styleProps.titleAlignment}
     }
 
     .publisher-details{
@@ -698,7 +706,7 @@ export const themePropsToCss = (
       text-indent: 0!important;
     }
     ${
-      themeProps.firstParagraph.dropcap
+      styleProps.firstParagraph.dropcap
         ? `
       .withDropcap .dropcap {
         float: left;
@@ -748,7 +756,7 @@ export const themePropsToCss = (
         : ""
     }
     ${
-      themeProps.firstParagraph.uppercaseFourWords
+      styleProps.firstParagraph.uppercaseFourWords
         ? `
       .withDropcap .dropcap,
       .withDropcap .lead_word{

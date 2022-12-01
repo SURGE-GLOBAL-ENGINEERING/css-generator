@@ -133,3 +133,9 @@ export type ThemeStyleProps = {
   notesMode: NotesMode;
   ePubNotesMode: EpubNotesMode;
 };
+
+export type ThemeProps = {
+  _id: string;
+  css: string;
+  properties: ThemeStyleProps;
+}
