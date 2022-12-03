@@ -13,16 +13,12 @@ export type ImagePlacement =
   | "below-subtitle"
   | "background-image";
 
-export type ImageLayout = "no-image" | "background-image" | "image-element";
-
 export type Alignment = "left" | "center" | "right";
 
 export type PrintExtent = "margins" | "full-bleed";
 
-export type ImageProps = {
-  chapterId: string;
-  url: string;
-  background: boolean;
+export type HeaderImage = {
+  url?: string;
   width?: number;
   placement?: ImagePlacement;
   alignment?: Alignment;
@@ -57,7 +53,7 @@ export type LayoutPriority = "WIDOWS_AND_ORPHANS" | "BALANCED_PAGE_SPREAD" | "BE
 
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
-  image: ImageProps;
+  image: HeaderImage;
   textLight?: string;
   chapterNo: {
     font: string;
@@ -130,6 +126,7 @@ export type ThemeStyleProps = {
   layoutPriority?: LayoutPriority
   ornamentalBreakImage: string;
   ornamentalBreakWidth: number;
+  hideOrnamentalBreakImage?: boolean;
   notesMode: NotesMode;
   ePubNotesMode: EpubNotesMode;
 };
