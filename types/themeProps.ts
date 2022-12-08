@@ -50,6 +50,12 @@ export type EpubNotesMode = "END_OF_CHAPTER" | "END_OF_BOOK";
 
 export type LayoutPriority = "WIDOWS_AND_ORPHANS" | "BALANCED_PAGE_SPREAD" | "BEST_OF_BOTH";
 
+export type FirstParagraph = {
+  indent: 0 | 1;
+  uppercaseFourWords: boolean;
+  dropcap: boolean;
+}
+
 
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
@@ -100,11 +106,7 @@ export type ThemeStyleProps = {
     isLargeTrim?: boolean;
   };
   layout: PrintLayout;
-  firstParagraph: {
-    indent: 0 | 1;
-    uppercaseFourWords: boolean;
-    dropcap: boolean;
-  };
+  firstParagraph: FirstParagraph;
   beginFirstSentence: BeginFirstSentence;
   paragraph: {
     indent: 0 | 1;
