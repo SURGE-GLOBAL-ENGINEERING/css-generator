@@ -24,6 +24,16 @@ export type HeaderImage = {
   alignment?: Alignment;
   printExtent?: PrintExtent;
   opacity?: number;
+  extras?: any;
+};
+
+export type HeaderElement = {
+  font: string;
+  size: number;
+  style: FontStyle;
+  align: Alignment;
+  width: number;
+  extras?: any;
 };
 
 export type ChapterNumbering =
@@ -48,40 +58,25 @@ export type NotesMode = "FOOTNOTE" | "END_OF_CHAPTER" | "END_OF_BOOK";
 
 export type EpubNotesMode = "END_OF_CHAPTER" | "END_OF_BOOK";
 
-export type LayoutPriority = "WIDOWS_AND_ORPHANS" | "BALANCED_PAGE_SPREAD" | "BEST_OF_BOTH";
+export type LayoutPriority =
+  | "WIDOWS_AND_ORPHANS"
+  | "BALANCED_PAGE_SPREAD"
+  | "BEST_OF_BOTH";
 
 export type FirstParagraph = {
   indent: 0 | 1;
   uppercaseFourWords: boolean;
   dropcap: boolean;
-}
-
+};
 
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
   image: HeaderImage;
   textLight?: string;
-  chapterNo: {
-    font: string;
-    size: number;
-    style: FontStyle;
-    align: Alignment;
-    width: number;
-  };
-  chapterTitle: {
-    font: string;
-    style: FontStyle;
-    size: number;
-    align: Alignment;
-    width: number;
-  };
-  chapterSubtitle: {
-    font: string;
-    style: FontStyle;
-    size: number;
-    align: Alignment;
-    width: number;
-  };
+  chapterNo: HeaderElement;
+  chapterTitle: HeaderElement;
+  chapterSubtitle: HeaderElement;
+  titleCardExtra?: any;
   header: {
     font: string;
     size: number;
@@ -125,7 +120,7 @@ export type ThemeStyleProps = {
     breakSubheadings: boolean;
     breakOrnamentalBreaks: boolean;
   };
-  layoutPriority?: LayoutPriority
+  layoutPriority?: LayoutPriority;
   ornamentalBreakImage: string;
   ornamentalBreakWidth: number;
   hideOrnamentalBreakImage?: boolean;
@@ -133,8 +128,13 @@ export type ThemeStyleProps = {
   ePubNotesMode: EpubNotesMode;
 };
 
-export type ThemeProps = {
+export type ThemeMeta = {
   _id: string;
+  name: string;
   css: string;
-  properties: ThemeStyleProps;
-}
+  isPredefinedTheme: boolean;
+  fonts: string[];
+  isFavourite: boolean;
+};
+
+export type Theme = ThemeMeta & { properties: ThemeStyleProps };

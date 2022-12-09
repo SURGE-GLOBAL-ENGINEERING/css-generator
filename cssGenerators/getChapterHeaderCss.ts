@@ -4,9 +4,9 @@ import {
   getNormalizedOpacity,
 } from "../helpers";
 
-import { ThemeProps } from "types"
+import { Theme } from "types"
 
-export const getChapterHeaderCss = (themeProps: ThemeProps,prefix: string) => {
+export const getChapterHeaderCss = (themeProps: Theme) => {
   const { properties: styleProps } = themeProps;
 
   return `

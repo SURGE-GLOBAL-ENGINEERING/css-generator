@@ -22,7 +22,7 @@ import {
   getListPluginCss
 } from "./.";
 
-import { ThemeProps } from "../types";
+import { Theme } from "../types";
 
 /**
  * Returns a css string to style the book according to provided theme properties
@@ -32,7 +32,7 @@ import { ThemeProps } from "../types";
  * @returns {string} Css string to format the book according to provided theme properties
  */
 export const themePropsToCss = (
-  themeProps: ThemeProps,
+  themeProps: Theme,
   fontBaseUrl: string,
   isPreviewer: boolean = false
 ): string => {
@@ -49,7 +49,7 @@ export const themePropsToCss = (
   const prefix = isPreviewer ? ".previewer " : "";
 
   const styleCss = `
-    ${getChapterHeaderCss(themeProps, prefix)}
+    ${getChapterHeaderCss(themeProps)}
 
     ${getDefaultCss(prefix)}
 
