@@ -1,6 +1,6 @@
 import {
   getImagePlacementOrder,
-  fontStyleToCssProp,
+  fontStylesToCssProp,
   getNormalizedOpacity,
 } from "../helpers";
 
@@ -102,7 +102,7 @@ export const getChapterHeaderCss = (themeProps: Theme) => {
       text-align: ${styleProps.chapterNo.align};
       line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
-      ${fontStyleToCssProp(styleProps.chapterNo.style)}
+      ${fontStylesToCssProp(styleProps.chapterNo.style)}
       display: inline-block;
     }
 
@@ -112,7 +112,7 @@ export const getChapterHeaderCss = (themeProps: Theme) => {
       text-align: ${styleProps.chapterTitle.align}!important;
       line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
-      ${fontStyleToCssProp(styleProps.chapterTitle.style)}
+      ${fontStylesToCssProp(styleProps.chapterTitle.style)}
       display: inline-block;
     }
 
@@ -122,7 +122,7 @@ export const getChapterHeaderCss = (themeProps: Theme) => {
       text-align: ${styleProps.chapterSubtitle.align};
       line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
-      ${fontStyleToCssProp(styleProps.chapterSubtitle.style)}
+      ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
       display: inline-block;
     }
 

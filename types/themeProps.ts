@@ -2,7 +2,6 @@ export type FontStyle =
   | "normal"
   | "bold"
   | "italic"
-  | "bold-italic"
   | "underlined"
   | "small-caps";
 
@@ -18,19 +17,19 @@ export type Alignment = "left" | "center" | "right";
 export type PrintExtent = "margins" | "full-bleed";
 
 export type HeaderImage = {
-  url?: string;
-  width?: number;
-  placement?: ImagePlacement;
-  alignment?: Alignment;
-  printExtent?: PrintExtent;
-  opacity?: number;
-  extras?: any;
+  url: string;
+  width: number;
+  placement: ImagePlacement;
+  alignment: Alignment;
+  printExtent: PrintExtent;
+  opacity: number;
+  extras: any;
 };
 
 export type HeaderElement = {
   font: string;
   size: number;
-  style: FontStyle;
+  style: FontStyle[];
   align: Alignment;
   width: number;
   extras?: any;
@@ -72,7 +71,7 @@ export type FirstParagraph = {
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
   image: HeaderImage;
-  textLight?: string;
+  textLight: string;
   chapterNo: HeaderElement;
   chapterTitle: HeaderElement;
   chapterSubtitle: HeaderElement;
@@ -120,10 +119,10 @@ export type ThemeStyleProps = {
     breakSubheadings: boolean;
     breakOrnamentalBreaks: boolean;
   };
-  layoutPriority?: LayoutPriority;
+  layoutPriority: LayoutPriority;
   ornamentalBreakImage: string;
   ornamentalBreakWidth: number;
-  hideOrnamentalBreakImage?: boolean;
+  hideOrnamentalBreakImage: boolean;
   notesMode: NotesMode;
   ePubNotesMode: EpubNotesMode;
 };
