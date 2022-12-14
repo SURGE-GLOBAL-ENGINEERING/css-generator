@@ -75,7 +75,7 @@ export type ThemeStyleProps = {
   chapterNo: HeaderElement;
   chapterTitle: HeaderElement;
   chapterSubtitle: HeaderElement;
-  titleCardExtra?: any;
+  titleCardExtras?: any;
   header: {
     font: string;
     size: number;
