@@ -16,6 +16,10 @@ export type Alignment = "left" | "center" | "right";
 
 export type PrintExtent = "margins" | "full-bleed";
 
+export type Colored = "all" | "print" | "ebook" | "none";
+
+export type HeaderTextColor = "default" | "light";
+
 export type HeaderImage = {
   url: string;
   width: number;
@@ -23,7 +27,8 @@ export type HeaderImage = {
   alignment: Alignment;
   printExtent: PrintExtent;
   opacity: number;
-  extras: any;
+  colored: Colored;
+  headerTextColor: HeaderTextColor;
 };
 
 export type HeaderElement = {
@@ -71,11 +76,19 @@ export type FirstParagraph = {
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
   image: HeaderImage;
-  textLight: string;
   chapterNo: HeaderElement;
   chapterTitle: HeaderElement;
   chapterSubtitle: HeaderElement;
+  titleCard: {
+    chapterNumber: boolean;
+    title: boolean;
+    subtitle: boolean;
+    image: boolean;
+  };
+  titleAlignment: Alignment;
+  chapterNumbering: ChapterNumbering;
   titleCardExtras?: any;
+
   header: {
     font: string;
     size: number;
@@ -84,16 +97,10 @@ export type ThemeStyleProps = {
     font: string;
     size: number;
   };
-  /** ------------------------------------- */
-  titleCard: {
-    chapterNumber: boolean;
-    title: boolean;
-    subtitle: boolean;
-    image: boolean;
-  };
-  chapterNumbering: ChapterNumbering;
-  titleAlignment: Alignment;
+
   printBaseFont: string;
+  baseFontSize: number;
+
   trim: {
     height: number;
     width: number;
@@ -114,15 +121,16 @@ export type ThemeStyleProps = {
     outer: number;
     inner: number;
   };
-  baseFontSize: number;
   dynamicPageBreaks: {
     breakSubheadings: boolean;
     breakOrnamentalBreaks: boolean;
   };
   layoutPriority: LayoutPriority;
+
   ornamentalBreakImage: string;
   ornamentalBreakWidth: number;
   hideOrnamentalBreakImage: boolean;
+
   notesMode: NotesMode;
   ePubNotesMode: EpubNotesMode;
 };

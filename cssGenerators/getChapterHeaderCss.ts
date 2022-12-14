@@ -19,15 +19,15 @@ export const getChapterHeaderCss = (themeProps: Theme) => {
     }
 
     .${themeProps._id} .chapter-title-card .chapter-title h2{
-      color: ${styleProps.textLight === "light" ? "white" : "black"};
+      color: ${styleProps.image?.headerTextColor === "light" ? "white" : "black"};
     }
 
     .${themeProps._id} .chapter-title-card .chapter-number{
-      color: ${styleProps.textLight === "light" ? "white" : "black"};
+      color: ${styleProps.image?.headerTextColor === "light" ? "white" : "black"};
     }
 
     .${themeProps._id} .chapter-title-card .chapter-subtitle h3{
-      color: ${styleProps.textLight === "light" ? "white" : "black"};
+      color: ${styleProps.image?.headerTextColor === "light" ? "white" : "black"};
     }
 
     .${themeProps._id} .chapter-title-card, .${themeProps._id} .title-card, .epub-toc-title-card{
