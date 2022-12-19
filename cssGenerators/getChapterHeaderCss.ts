@@ -4,9 +4,12 @@ import {
   getNormalizedOpacity,
 } from "../helpers";
 
-import { Theme } from "types"
+import { EpubPreviewerPrefix, Theme } from "types"
 
-export const getChapterHeaderCss = (themeProps: Theme) => {
+/**
+ * Can contain previewer only styles
+ */
+export const getChapterHeaderCss = (themeProps: Theme, prefix: string) => {
   const { properties: styleProps } = themeProps;
 
   return `
@@ -182,5 +185,17 @@ export const getChapterHeaderCss = (themeProps: Theme) => {
       width: 100%;
       text-align: inherit;
     }
+
+    ${prefix === EpubPreviewerPrefix ? `
+    .chapter-title-card .chp_bg{
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }`: ""}
   `
 }

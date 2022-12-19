@@ -22,7 +22,7 @@ import {
   getListPluginCss
 } from "./.";
 
-import { Theme } from "../types";
+import { Theme, EpubPreviewerPrefix } from "../types";
 
 /**
  * Returns a css string to style the book according to provided theme properties
@@ -46,10 +46,10 @@ export const themePropsToCss = (
     fontBaseUrl
   );
 
-  const prefix = isPreviewer ? ".previewer " : "";
+  const prefix = isPreviewer ? EpubPreviewerPrefix : "";
 
   const styleCss = `
-    ${getChapterHeaderCss(themeProps)}
+    ${getChapterHeaderCss(themeProps, prefix)}
 
     ${getDefaultCss(prefix)}
 
@@ -93,7 +93,7 @@ export const themePropsToCss = (
       max-height:100%;
     }
     
-    ${getFirstParagraphCss(styleProps.firstParagraph, prefix)}
+    ${getFirstParagraphCss(styleProps.firstParagraph,styleProps.paragraph, prefix)}
 
     ${getFullBleedImageCss(prefix)}
 

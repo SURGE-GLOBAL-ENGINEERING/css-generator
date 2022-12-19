@@ -1,3 +1,5 @@
+export const EpubPreviewerPrefix = ".previewer ";
+
 export type FontStyle =
   | "normal"
   | "bold"
@@ -73,6 +75,13 @@ export type FirstParagraph = {
   dropcap: boolean;
 };
 
+export type Paragraph = {
+  indent: 0 | 1;
+  paragraphSpacing: number;
+  hyphens: boolean;
+  justify: boolean;
+}
+
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
   image: HeaderImage;
@@ -109,12 +118,7 @@ export type ThemeStyleProps = {
   layout: PrintLayout;
   firstParagraph: FirstParagraph;
   beginFirstSentence: BeginFirstSentence;
-  paragraph: {
-    indent: 0 | 1;
-    paragraphSpacing: number;
-    hyphens: boolean;
-    justify: boolean;
-  };
+  paragraph:Paragraph;
   margin: {
     bottom: number;
     top: number;

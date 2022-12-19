@@ -42,7 +42,7 @@ export const getBookTitleCss = (publisherDetailFont: string, prefix: string, ) =
       align-items: center;
     }
 
-    .${prefix} .publisher-details{
+    ${prefix} .publisher-details{
       font-family: '${publisherDetailFont}';
     }
     

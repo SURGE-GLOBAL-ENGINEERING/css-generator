@@ -1,6 +1,9 @@
-import { FirstParagraph } from "types"
+import { EpubPreviewerPrefix, FirstParagraph, Paragraph } from "types"
 
-export const getFirstParagraphCss = (firstParagraph: FirstParagraph, prefix: string) => {
+/**
+ * Can contain previewer only styles
+ */
+export const getFirstParagraphCss = (firstParagraph: FirstParagraph, paragraph: Paragraph, prefix: string) => {
   return `
     ${prefix}.withDropcap .dropcap, ${prefix}.ornamental-break + p{
       text-indent: 0!important;
@@ -37,6 +40,14 @@ export const getFirstParagraphCss = (firstParagraph: FirstParagraph, prefix: str
       }
       `
         : ""
+    }
+    ${
+      prefix === EpubPreviewerPrefix ? `
+        .previewer p:not(p.lead_word, p.dropcap){
+          text-indent: ${firstParagraph.indent ? firstParagraph.indent : 0}em;
+          margin-block-end: ${!firstParagraph.indent ? paragraph.paragraphSpacing : 0}em;
+        }
+      `: ""
     }
   `
 }
