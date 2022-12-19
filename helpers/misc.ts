@@ -1,1 +1,1 @@
-export const EpubPreviewerPrefix = ".previewer ";
+export const EpubPreviewerPrefix = ".previewer " as const;
