@@ -23,7 +23,7 @@ import {
 } from "./.";
 
 import { Theme } from "../types";
-import { EpubPreviewerPrefix } from "helpers";
+import { EpubPreviewerPrefix } from "../helpers";
 
 /**
  * Returns a css string to style the book according to provided theme properties

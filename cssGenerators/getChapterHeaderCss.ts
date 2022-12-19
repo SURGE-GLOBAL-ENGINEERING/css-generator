@@ -5,7 +5,7 @@ import {
   EpubPreviewerPrefix,
 } from "../helpers";
 
-import { Theme } from "types"
+import { Theme } from "../types";
 
 /**
  * Can contain previewer only styles

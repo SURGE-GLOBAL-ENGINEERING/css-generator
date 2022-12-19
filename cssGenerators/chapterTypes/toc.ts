@@ -1,4 +1,4 @@
-import { Alignment } from "types";
+import { Alignment } from "../../types";
 
 export const getTocCss = (titleAlignment: Alignment, prefix: string) => {
   return `

@@ -1,5 +1,5 @@
-import { EpubPreviewerPrefix } from "helpers"
-import { FirstParagraph, Paragraph } from "types"
+import { EpubPreviewerPrefix } from "../helpers"
+import { FirstParagraph, Paragraph } from "../types"
 
 /**
  * Can contain previewer only styles
