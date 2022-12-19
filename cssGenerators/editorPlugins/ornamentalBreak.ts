@@ -1,4 +1,4 @@
-import { EpubPreviewerPrefix } from "helpers"
+import { EpubPreviewerPrefix } from "../../helpers"
 
 /**
  * Can contain previewer only styles

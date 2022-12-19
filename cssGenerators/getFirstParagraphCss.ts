@@ -24,6 +24,11 @@ export const getFirstParagraphCss = (firstParagraph: FirstParagraph, paragraph: 
         initial-letter: 2;
         transform: scale(1.1);
       }
+      .withDropcap .dropcap:before,
+      .withDropcap .dropcap:after {
+        content: "";
+        display: block;
+      }
       ${prefix}.withDropcap .dropcap:before {
         margin-bottom: 0.275rem;  
       }
