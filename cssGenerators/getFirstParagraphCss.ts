@@ -53,6 +53,10 @@ export const getFirstParagraphCss = (firstParagraph: FirstParagraph, paragraph: 
           text-indent: ${firstParagraph.indent ? firstParagraph.indent : 0}em;
           margin-block-end: ${!firstParagraph.indent ? paragraph.paragraphSpacing : 0}em;
         }
+
+        .withDropcap .dropcap{
+          max-height: ${15 * 2}px;
+        }
       `: ""
     }
   `
