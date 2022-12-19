@@ -1,5 +1,3 @@
-export const EpubPreviewerPrefix = ".previewer ";
-
 export type FontStyle =
   | "normal"
   | "bold"

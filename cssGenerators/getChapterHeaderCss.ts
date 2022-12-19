@@ -2,9 +2,10 @@ import {
   getImagePlacementOrder,
   fontStylesToCssProp,
   getNormalizedOpacity,
+  EpubPreviewerPrefix,
 } from "../helpers";
 
-import { EpubPreviewerPrefix, Theme } from "types"
+import { Theme } from "types"
 
 /**
  * Can contain previewer only styles
