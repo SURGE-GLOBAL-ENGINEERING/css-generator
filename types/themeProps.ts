@@ -3,7 +3,8 @@ export type FontStyle =
   | "bold"
   | "italic"
   | "underlined"
-  | "small-caps";
+  | "small-caps"
+  | "bold-italic";
 
 export type ImagePlacement =
   | "above-chapter-no"
@@ -34,7 +35,7 @@ export type HeaderImage = {
 export type HeaderElement = {
   font: string;
   size: number;
-  style: FontStyle[];
+  style: FontStyle;
   align: Alignment;
   width: number;
   extras?: any;
