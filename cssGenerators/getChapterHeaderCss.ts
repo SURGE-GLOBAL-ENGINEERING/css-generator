@@ -1,3 +1,4 @@
+import styleToCss from "style-object-to-css-string";
 import {
   getImagePlacementOrder,
   fontStylesToCssProp,
@@ -40,11 +41,10 @@ export const getChapterHeaderCss = (themeProps: Theme, prefix: string) => {
     }
 
     .${themeProps._id} .chapter-title-card, .epub-toc-title-card{
+      display: flex;
       position: relative;
       min-height: 13em;
-      padding-top: 1em;
-      padding-bottom: 1em;
-      display: flex;
+      ${styleToCss(styleProps.titleCardExtras)}
     }
 
     .chp_clr_none img, .chp_clr_none{
@@ -101,33 +101,35 @@ export const getChapterHeaderCss = (themeProps: Theme, prefix: string) => {
     }
 
     .${themeProps._id} .chapter-number span{
+      display: inline-block;
       font-family: '${styleProps.chapterNo.font}';
-      font-size: ${(2 + styleProps.chapterNo.size) / 3}em;
+      font-size: ${((2 + styleProps.chapterNo.size) / 3) * 15}px;
       text-align: ${styleProps.chapterNo.align};
       line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
       ${fontStylesToCssProp(styleProps.chapterNo.style)}
-      display: inline-block;
+      ${styleToCss(styleProps.chapterNo.extras)}
     }
 
     .${themeProps._id} .chapter-title h2, .epub-toc-title-card h2{
+      display: inline-block;
       font-family: '${styleProps.chapterTitle.font}';
-      font-size: ${(4 + styleProps.chapterTitle.size) / 3}em;
+      font-size: ${((4 + styleProps.chapterTitle.size) / 3) * 15}px;
       text-align: ${styleProps.chapterTitle.align}!important;
       line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
       ${fontStylesToCssProp(styleProps.chapterTitle.style)}
-      display: inline-block;
     }
 
     .${themeProps._id} .chapter-subtitle h3{
+      display: inline-block;
       font-family: '${styleProps.chapterSubtitle.font}';
-      font-size: ${(3 + styleProps.chapterSubtitle.size) / 3}em;
+      font-size: ${((3 + styleProps.chapterSubtitle.size) / 3) * 15}px;
       text-align: ${styleProps.chapterSubtitle.align};
       line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
       ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
-      display: inline-block;
+      ${styleToCss(styleProps.chapterSubtitle.extras)}
     }
 
     .${themeProps._id} header .meta{
@@ -142,18 +144,13 @@ export const getChapterHeaderCss = (themeProps: Theme, prefix: string) => {
       font-family: '${styleProps.chapterTitle.font}';
     }
     .${themeProps._id} .title-card h1{
-      font-size: 44px;
-      padding: 0.6em 0em;
-      font-weight: 600;
+      padding: 9px 0;
     }
     .${themeProps._id} .title-card h2{
-      font-size: 22px;
-      padding: 1em 0em;
+      padding: 15px 0;
     }
     .${themeProps._id} .title-card h3{
-      font-size: 20px;
-      color:#666;
-      padding: 1em 0em;
+      padding: 15px 0;
     }
 
     ${themeProps._id} .chapter-title-card.left{
