@@ -1,12 +1,12 @@
-export const getFullPageImageCss = (prefix: string) => {
+export const getFullPageImageCss = (themeId: string) => {
   return `
-    ${prefix}.image-full{
+    .${themeId} .image-full{
       width: 100%;
       height:auto;
       vertical-align: middle;
     }
 
-    ${prefix}.image-full img{
+    .${themeId} .image-full img{
       width: 100%;
       height: auto;
       max-height:100%;
@@ -14,7 +14,7 @@ export const getFullPageImageCss = (prefix: string) => {
       vertical-align: middle;
     }
 
-    ${prefix}.fullpage-image{
+    .${themeId} .fullpage-image{
       height: 100%;
       max-height:100%;
       position:relative;

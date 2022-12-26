@@ -1,11 +1,11 @@
-export const getEndNoteCss = (prefix: string) => {
+export const getEndNoteCss = (themeId: string) => {
   return `
-    ${prefix}.endnote-link{
+    .${themeId} .endnote-link{
       color: inherit;
       text-decoration: none;
       padding-left: 0.2rem;
     }
-    ${prefix}.endnotes{
+    .${themeId} .endnotes{
       font-size: 0.9rem !important;
       padding-top: 1rem !important;
       margin-top: 1rem !important;
@@ -13,16 +13,16 @@ export const getEndNoteCss = (prefix: string) => {
       page-break-inside: avoid;
       break-inside: avoid;
     }
-    ${prefix}.endnotes-separator{
+    .${themeId} .endnotes-separator{
       height:0.175rem;
       background-color:#000000;
       margin-bottom: 2rem !important;
     }
-    ${prefix}.endnote-backlink{
+    .${themeId} .endnote-backlink{
       color: inherit;
       text-decoration: none;
     }
-    ${prefix}a{
+    .${themeId} a{
       text-decoration: none;
       color: inherit;
     }

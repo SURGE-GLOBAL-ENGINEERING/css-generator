@@ -3,16 +3,16 @@ import { EpubPreviewerPrefix } from "../../helpers"
 /**
  * Can contain previewer only styles
  */
-export const getOrnamentalBreakCss = (ornamentalBreakWidth: number, prefix: string) => {
+export const getOrnamentalBreakCss = (ornamentalBreakWidth: number, themeId: string, isPreviewer: boolean) => {
   return `
-    ${prefix}.ornamental-break{
+    .${themeId} .ornamental-break{
       text-align: center;
       display: block;
       width: 100%;
-      padding: ${prefix === EpubPreviewerPrefix ? '1.2rem' : '0.8rem'} 0rem;
+      padding: ${isPreviewer ? '1.2rem' : '0.8rem'} 0rem;
     }
     
-    ${prefix}.ornamental-break img{
+    .${themeId} .ornamental-break img{
       width: ${ornamentalBreakWidth || 50}%;
     }
   `

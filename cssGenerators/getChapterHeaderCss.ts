@@ -11,11 +11,11 @@ import { Theme } from "../types";
 /**
  * Can contain previewer only styles
  */
-export const getChapterHeaderCss = (themeProps: Theme, prefix: string) => {
+export const getChapterHeaderCss = (themeProps: Theme, isPreviewer: boolean) => {
   const { properties: styleProps } = themeProps;
 
   return `
-    .chp_bg{
+    .${themeProps._id} .chp_bg{
       background-color: rgba(255,255,255, ${getNormalizedOpacity(
         styleProps.image.opacity
       )});
@@ -47,7 +47,7 @@ export const getChapterHeaderCss = (themeProps: Theme, prefix: string) => {
       ${styleToCss(styleProps.titleCardExtras)}
     }
 
-    .chp_clr_none img, .chp_clr_none{
+    .${themeProps._id} .chp_clr_none img, .chp_clr_none{
       filter: grayscale(100%);
       -webkit-filter: grayscale(100%);
       -moz-filter: grayscale(100%);
@@ -55,7 +55,7 @@ export const getChapterHeaderCss = (themeProps: Theme, prefix: string) => {
       -o-filter: grayscale(100%);
     }
 
-    .chp_clr_all img, .chp_clr_all{
+    .${themeProps._id} .chp_clr_all img, .chp_clr_all{
       filter: grayscale(0%);
       -webkit-filter: grayscale(0%);
       -moz-filter: grayscale(0%);
@@ -153,38 +153,38 @@ export const getChapterHeaderCss = (themeProps: Theme, prefix: string) => {
       padding: 15px 0;
     }
 
-    ${themeProps._id} .chapter-title-card.left{
+    .${themeProps._id} .chapter-title-card.left{
       text-align: left;
     }
 
-    ${themeProps._id} .chapter-title-card.center{
+    .${themeProps._id} .chapter-title-card.center{
       text-align: center;
     }
 
-    ${themeProps._id} .chapter-title-card.right{
+    .${themeProps._id} .chapter-title-card.right{
       text-align: right;
     }
-    ${themeProps._id} .chapter-title-card{
+    .${themeProps._id} .chapter-title-card{
       width: 100%;
       justify-content:center;
     }
 
-    ${themeProps._id} .chapter-title-card .chapter-number{
+    .${themeProps._id} .chapter-title-card .chapter-number{
       width: 100%;
       text-align: inherit;
     }
 
-    ${themeProps._id} .chapter-title-card h2{
+    .${themeProps._id} .chapter-title-card h2{
       width: 100%;
       text-align: inherit;
     }
 
-    ${themeProps._id} .chapter-title-card h3{
+    .${themeProps._id} .chapter-title-card h3{
       width: 100%;
       text-align: inherit;
     }
 
-    ${prefix === EpubPreviewerPrefix ? `
+    ${isPreviewer ? `
     .chapter-title-card .chp_bg{
       position: absolute;
       top: 0;

@@ -1,10 +1,10 @@
-export const getEpigraphCss = (prefix: string) => {
+export const getEpigraphCss = (themeId: string) => {
   return `
-    ${prefix}.epigraph .chapter-title-card{
+    .${themeId} .epigraph .chapter-title-card{
       display: none !important;
     }
 
-    ${prefix}.epigraph{
+    .${themeId} .epigraph{
       padding-top: 33.33%;
     }
   `;

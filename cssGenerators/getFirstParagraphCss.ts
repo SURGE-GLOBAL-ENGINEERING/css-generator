@@ -1,21 +1,26 @@
-import { EpubPreviewerPrefix } from "../helpers"
-import { FirstParagraph, Paragraph } from "../types"
+import { EpubPreviewerPrefix } from "../helpers";
+import { FirstParagraph, Paragraph } from "../types";
 
 /**
  * Can contain previewer only styles
  */
-export const getFirstParagraphCss = (firstParagraph: FirstParagraph, paragraph: Paragraph, prefix: string) => {
+export const getFirstParagraphCss = (
+  firstParagraph: FirstParagraph,
+  paragraph: Paragraph,
+  themeId: string,
+  isPreviewer: boolean
+) => {
   return `
-    ${prefix}.withDropcap .dropcap, ${prefix}.ornamental-break + p{
+    .${themeId} .withDropcap .dropcap, .${themeId} .ornamental-break + p{
       text-indent: 0!important;
     }
     ${
       firstParagraph.dropcap
         ? `
-      ${prefix}.withDropcap .dropcap {
+      .${themeId} .withDropcap .dropcap {
         float: left;
       }
-      ${prefix}.withDropcap .dropcap{
+      .${themeId} .withDropcap .dropcap{
         font-size: 3rem;
         line-height: 1;
         padding: 0 0.25rem;
@@ -29,10 +34,10 @@ export const getFirstParagraphCss = (firstParagraph: FirstParagraph, paragraph: 
         content: "";
         display: block;
       }
-      ${prefix}.withDropcap .dropcap:before {
+      .${themeId} .withDropcap .dropcap:before {
         margin-bottom: 0.275rem;  
       }
-      ${prefix}.withDropcap .dropcap:after {
+      .${themeId} .withDropcap .dropcap:after {
         margin-top: -0.175rem;  
       }`
         : ""
@@ -40,24 +45,28 @@ export const getFirstParagraphCss = (firstParagraph: FirstParagraph, paragraph: 
     ${
       firstParagraph.uppercaseFourWords
         ? `
-      ${prefix}.withDropcap .dropcap,
-      ${prefix}.withDropcap .lead_word{
+      .${themeId} .withDropcap .dropcap,
+      .${themeId} .withDropcap .lead_word{
         text-transform: uppercase;
       }
       `
         : ""
     }
     ${
-      prefix === EpubPreviewerPrefix ? `
-        .previewer p:not(p.lead_word, p.dropcap){
+      isPreviewer
+        ? `
+        .${themeId} p:not(p.lead_word, p.dropcap){
           text-indent: ${firstParagraph.indent ? firstParagraph.indent : 0}em;
-          margin-block-end: ${!firstParagraph.indent ? paragraph.paragraphSpacing : 0}em;
+          margin-block-end: ${
+            !firstParagraph.indent ? paragraph.paragraphSpacing : 0
+          }em;
         }
 
-        .withDropcap .dropcap{
+        .${themeId} .withDropcap .dropcap{
           max-height: ${15 * 2}px;
         }
-      `: ""
+      `
+        : ""
     }
-  `
-}
+  `;
+};
