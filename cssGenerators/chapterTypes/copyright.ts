@@ -1,23 +1,23 @@
-export const getCopyrightCss = (prefix: string) => {
+export const getCopyrightCss = (themeId: string) => {
   return `
-    ${prefix}.copyrights {
+    .${themeId} .copyrights {
       font-size: 0.75rem;
     }
 
-    ${prefix}.copyrights p{
+    .${themeId} .copyrights p{
       text-indent: 0em !important;
       margin-bottom: 0.8em;
     }
 
-    ${prefix}.copyrights .chapter-title-card{
+    .${themeId} .copyrights .chapter-title-card{
       display: none;
     }
 
-    ${prefix}.copyrights p:first-of-type .word:nth-child(-n+4){
+    .${themeId} .copyrights p:first-of-type .word:nth-child(-n+4){
       text-transform: none;
     }
 
-    ${prefix}.copyrights p:first-of-type .first-letter{
+    .${themeId} .copyrights p:first-of-type .first-letter{
       font-size: 1em;
       line-height: inherit;
       margin: inherit;
@@ -25,7 +25,7 @@ export const getCopyrightCss = (prefix: string) => {
       margin-right: 0 !important;
     }
 
-    ${prefix}.copyrights .chapter-title-card{
+    .${themeId} .copyrights .chapter-title-card{
       display: none !important;
     }
   `;

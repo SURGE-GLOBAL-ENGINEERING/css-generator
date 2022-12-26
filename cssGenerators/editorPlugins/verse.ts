@@ -1,6 +1,6 @@
-export const getVerseCss = (prefix: string) => {
+export const getVerseCss = (themeId: string) => {
   return `
-    ${prefix}.verse{
+    .${themeId} .verse{
       padding: 2rem 20%;
       line-height: 1.6em;
       orphans: 3; 

@@ -1,12 +1,12 @@
-export const getFullBleedImageCss = (prefix: string) => {
+export const getFullBleedImageCss = (themeId: string) => {
   return `
-    ${prefix}.image-full-bleed{
+    .${themeId} .image-full-bleed{
       width: 100%;
       height:100%;
       vertical-align: middle;
     }
 
-    ${prefix}.image-full-bleed img{
+    .${themeId} .image-full-bleed img{
       width: 100%;
       height: auto;
       max-height:100%;
@@ -14,7 +14,7 @@ export const getFullBleedImageCss = (prefix: string) => {
       vertical-align: middle;
     }
 
-    ${prefix}.full-bleed{
+    .${themeId} .full-bleed{
       height: 100%;
       max-height:100%;
       position:relative;

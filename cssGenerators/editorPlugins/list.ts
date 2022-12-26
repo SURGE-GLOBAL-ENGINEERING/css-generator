@@ -1,7 +1,7 @@
 /** li ol css in getDefaultCss.ts */
-export const getListPluginCss = (prefix: string) => {
+export const getListPluginCss = (themeId: string) => {
   return `
-    ${prefix}.list-parent{
+    .${themeId} .list-parent{
       padding: 1rem;
     }
   `;
