@@ -34,7 +34,7 @@ export type HeaderImage = {
 export type HeaderElement = {
   font: string;
   size: number;
-  style: [FontStyle];
+  style: FontStyle[];
   align: Alignment;
   width: number;
   extras?: any;
