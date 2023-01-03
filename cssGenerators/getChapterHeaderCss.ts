@@ -16,7 +16,7 @@ export const getChapterHeaderCss = (themeProps: Theme, isPreviewer: boolean) => 
 
   return `
     .${themeProps._id} .chp_bg{
-      background-color: rgba(255,255,255, ${getNormalizedOpacity(
+      background-color: rgba(255,255,255, ${1 - getNormalizedOpacity(
         styleProps.image.opacity
       )});
       background-blend-mode: lighten;
