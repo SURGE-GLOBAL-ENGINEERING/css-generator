@@ -29,8 +29,8 @@ export const getFirstParagraphCss = (
         initial-letter: 2;
         transform: scale(1.1);
       }
-      .withDropcap .dropcap:before,
-      .withDropcap .dropcap:after {
+      .${themeId} .withDropcap .dropcap:before,
+      .${themeId} .withDropcap .dropcap:after {
         content: "";
         display: block;
       }
