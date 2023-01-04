@@ -1,9 +1,8 @@
-import styleToCss from "style-object-to-css-string";
 import {
   getImagePlacementOrder,
   fontStylesToCssProp,
   getNormalizedOpacity,
-  EpubPreviewerPrefix,
+  styleObjectToCssString
 } from "../helpers";
 
 import { Theme } from "../types";
@@ -55,7 +54,7 @@ export const getChapterHeaderCss = (
       display: flex;
       position: relative;
       min-height: 13em;
-      ${styleToCss(styleProps.titleCardExtras)}
+      ${styleObjectToCssString(styleProps.titleCardExtras)}
     }
 
     .${themeProps._id} .chp_clr_none img, .chp_clr_none{
@@ -118,8 +117,8 @@ export const getChapterHeaderCss = (
       text-align: ${styleProps.chapterNo.align};
       line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
-      ${fontStylesToCssProp(styleProps.chapterNo.style)}
-      ${styleToCss(styleProps.chapterNo.extras)}
+      ${fontStylesToCssProp(styleProps.chapterNo.style)};
+      ${styleObjectToCssString(styleProps.chapterNo.extras)};
     }
 
     .${themeProps._id} .chapter-title h2, .epub-toc-title-card h2{
@@ -129,7 +128,8 @@ export const getChapterHeaderCss = (
       text-align: ${styleProps.chapterTitle.align}!important;
       line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
-      ${fontStylesToCssProp(styleProps.chapterTitle.style)}
+      ${fontStylesToCssProp(styleProps.chapterTitle.style)};
+      ${styleObjectToCssString(styleProps.chapterTitle.extras)};
     }
 
     .${themeProps._id} .chapter-subtitle h3{
@@ -139,8 +139,8 @@ export const getChapterHeaderCss = (
       text-align: ${styleProps.chapterSubtitle.align};
       line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
-      ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
-      ${styleToCss(styleProps.chapterSubtitle.extras)}
+      ${fontStylesToCssProp(styleProps.chapterSubtitle.style)};
+      ${styleObjectToCssString(styleProps.chapterSubtitle.extras)};
     }
 
     .${themeProps._id} header .meta{

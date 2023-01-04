@@ -3,3 +3,4 @@ export * from "./getImagePlacementOrder";
 export * from "./getNormalizedOpacity";
 export * from "./fontList";
 export * from "./misc";
+export * from "./styleObjectToCssString"
