@@ -11,9 +11,14 @@ import { Theme } from "../types";
 /**
  * Can contain previewer only styles
  */
-export const getChapterHeaderCss = (themeProps: Theme, isPreviewer: boolean) => {
+export const getChapterHeaderCss = (
+  themeProps: Theme,
+  isPreviewer: boolean
+) => {
   const { properties: styleProps } = themeProps;
-
+  const renderLightHeaderText =
+    styleProps.image?.placement === "background-image" &&
+    styleProps.image?.headerTextColor === "light";
   return `
     .${themeProps._id} .chp_bg{
       background-color: rgba(255,255,255, ${1 - getNormalizedOpacity(
@@ -24,15 +29,21 @@ export const getChapterHeaderCss = (themeProps: Theme, isPreviewer: boolean) => 
     }
 
     .${themeProps._id} .chapter-title-card .chapter-title h2{
-      color: ${styleProps.image?.headerTextColor === "light" ? "white" : "black"};
+      color: ${
+        renderLightHeaderText ? "white" : "black"
+      };
     }
 
     .${themeProps._id} .chapter-title-card .chapter-number{
-      color: ${styleProps.image?.headerTextColor === "light" ? "white" : "black"};
+      color: ${
+        renderLightHeaderText ? "white" : "black"
+      };
     }
 
     .${themeProps._id} .chapter-title-card .chapter-subtitle h3{
-      color: ${styleProps.image?.headerTextColor === "light" ? "white" : "black"};
+      color: ${
+        renderLightHeaderText ? "white" : "black"
+      };
     }
 
     .${themeProps._id} .chapter-title-card, .${themeProps._id} .title-card, .epub-toc-title-card{
