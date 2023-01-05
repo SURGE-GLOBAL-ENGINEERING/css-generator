@@ -2,7 +2,10 @@ import {
   getImagePlacementOrder,
   fontStylesToCssProp,
   getNormalizedOpacity,
-  styleObjectToCssString
+  styleObjectToCssString,
+  getTitleFontSize,
+  getSubTitleFontSize,
+  getChapNumberFontSize
 } from "../helpers";
 
 import { Theme } from "../types";
@@ -113,7 +116,7 @@ export const getChapterHeaderCss = (
     .${themeProps._id} .chapter-number span{
       display: inline-block;
       font-family: '${styleProps.chapterNo.font}';
-      font-size: ${((2 + styleProps.chapterNo.size) / 3) * 15}px;
+      font-size: ${getChapNumberFontSize(styleProps.chapterNo)}em;
       text-align: ${styleProps.chapterNo.align};
       line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
@@ -124,7 +127,7 @@ export const getChapterHeaderCss = (
     .${themeProps._id} .chapter-title h2, .epub-toc-title-card h2{
       display: inline-block;
       font-family: '${styleProps.chapterTitle.font}';
-      font-size: ${((4 + styleProps.chapterTitle.size) / 3) * 15}px;
+      font-size: ${getTitleFontSize(styleProps.chapterTitle)}em;
       text-align: ${styleProps.chapterTitle.align}!important;
       line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
@@ -135,7 +138,7 @@ export const getChapterHeaderCss = (
     .${themeProps._id} .chapter-subtitle h3{
       display: inline-block;
       font-family: '${styleProps.chapterSubtitle.font}';
-      font-size: ${((3 + styleProps.chapterSubtitle.size) / 3) * 15}px;
+      font-size: ${getSubTitleFontSize(styleProps.chapterSubtitle)}em;
       text-align: ${styleProps.chapterSubtitle.align};
       line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
