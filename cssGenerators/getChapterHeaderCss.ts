@@ -1,8 +1,9 @@
+import styleObjectToCss from "react-style-object-to-css";
+
 import {
   getImagePlacementOrder,
   fontStylesToCssProp,
   getNormalizedOpacity,
-  styleObjectToCssString,
   getTitleFontSize,
   getSubTitleFontSize,
   getChapNumberFontSize
@@ -57,7 +58,7 @@ export const getChapterHeaderCss = (
       display: flex;
       position: relative;
       min-height: 13em;
-      ${styleObjectToCssString(styleProps.titleCardExtras)}
+      ${styleObjectToCss(styleProps.titleCardExtras)}
     }
 
     .${themeProps._id} .chp_clr_none img, .chp_clr_none{
@@ -121,7 +122,7 @@ export const getChapterHeaderCss = (
       line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
       ${fontStylesToCssProp(styleProps.chapterNo.style)};
-      ${styleObjectToCssString(styleProps.chapterNo.extras)};
+      ${styleObjectToCss(styleProps.chapterNo.extras)};
     }
 
     .${themeProps._id} .chapter-title h2, .epub-toc-title-card h2{
@@ -132,7 +133,7 @@ export const getChapterHeaderCss = (
       line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
       ${fontStylesToCssProp(styleProps.chapterTitle.style)};
-      ${styleObjectToCssString(styleProps.chapterTitle.extras)};
+      ${styleObjectToCss(styleProps.chapterTitle.extras)};
     }
 
     .${themeProps._id} .chapter-subtitle h3{
@@ -143,7 +144,7 @@ export const getChapterHeaderCss = (
       line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
       ${fontStylesToCssProp(styleProps.chapterSubtitle.style)};
-      ${styleObjectToCssString(styleProps.chapterSubtitle.extras)};
+      ${styleObjectToCss(styleProps.chapterSubtitle.extras)};
     }
 
     .${themeProps._id} header .meta{
