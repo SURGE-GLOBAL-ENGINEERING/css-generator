@@ -5,3 +5,4 @@ export * from "./epigraph";
 export * from "./alsoBy";
 export * from "./title";
 export * from "./getFullPageImageCss";
+export * from "./part";

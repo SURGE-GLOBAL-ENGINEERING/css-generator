@@ -1,6 +1,7 @@
-import { Alignment } from "../../types";
+import { Alignment, Theme } from "../../types";
 
-export const getTocCss = (titleAlignment: Alignment, themeId: string) => {
+export const getTocCss = (themeProps: Theme, themeId: string ,) => {
+  const { properties: styleProps } = themeProps;
   return `
     .${themeId} .toc-list{
       padding: 0px;
@@ -30,7 +31,16 @@ export const getTocCss = (titleAlignment: Alignment, themeId: string) => {
     }
     /* EPUB TOC */
     .${themeId} .epub-toc-title-card h2 {
-      text-align: ${titleAlignment}
+      text-align: ${styleProps.titleAlignment};
+      font-family: '${styleProps.chapterTitle.font}';
+    }
+
+    .${themeId} .toc-entry {
+      line-height: 1.6rem;
+    }
+
+    .${themeId} .toc-block {
+      list-style: none;
     }
   `
 };

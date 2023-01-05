@@ -20,6 +20,7 @@ import {
   getEpigraphCss,
   getAlsobyCss,
   getListPluginCss,
+  getPartCss,
 } from "./.";
 
 import { Theme } from "../types";
@@ -124,7 +125,7 @@ export const themePropsToCss = (
 
     ${getBookTitleCss(styleProps.chapterNo.font, themeProps._id)}
 
-    ${getTocCss(styleProps.titleAlignment, themeProps._id)}
+    ${getTocCss(themeProps, themeProps._id)}
 
     ${getCopyrightCss(themeProps._id)}
 
@@ -135,6 +136,8 @@ export const themePropsToCss = (
     ${getAlsobyCss(themeProps._id)}
     
     ${getFullPageImageCss(themeProps._id)}
+
+    ${getPartCss(themeProps._id)}
   `;
 
   return `${styleCss} ${fontCss}`;
