@@ -4,6 +4,7 @@ import {
   fontStylesToCssProp,
   getNormalizedOpacity,
   EpubPreviewerPrefix,
+  getTitleDirection,
 } from "../helpers";
 
 import { Theme } from "../types";
@@ -107,6 +108,7 @@ export const getChapterHeaderCss = (themeProps: Theme, isPreviewer: boolean) => 
       text-align: ${styleProps.chapterNo.align};
       line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
+      direction: ${getTitleDirection(styleProps.chapterNo.align)};
       ${fontStylesToCssProp(styleProps.chapterNo.style)}
       ${styleToCss(styleProps.chapterNo.extras)}
     }
@@ -118,7 +120,9 @@ export const getChapterHeaderCss = (themeProps: Theme, isPreviewer: boolean) => 
       text-align: ${styleProps.chapterTitle.align}!important;
       line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
+      direction: ${getTitleDirection(styleProps.chapterTitle.align)};
       ${fontStylesToCssProp(styleProps.chapterTitle.style)}
+      ${styleToCss(styleProps.chapterTitle.extras)}
     }
 
     .${themeProps._id} .chapter-subtitle h3{
@@ -128,6 +132,7 @@ export const getChapterHeaderCss = (themeProps: Theme, isPreviewer: boolean) => 
       text-align: ${styleProps.chapterSubtitle.align};
       line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
+      direction: ${getTitleDirection(styleProps.chapterSubtitle.align)};
       ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
       ${styleToCss(styleProps.chapterSubtitle.extras)}
     }
