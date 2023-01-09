@@ -87,13 +87,6 @@ export const getChapterHeaderCss = (
       width: ${styleProps.image.width}%;
     }
 
-    .${themeProps._id} .chapter-title-card .chapter-number, .${themeProps._id} .chapter-title-card .chapter-title, .${themeProps._id} .chapter-title-card .chapter-subtitle, .epub-toc-title-card h2{
-      padding-left: 3%;
-      width: 94%;
-      z-index: 10;
-      display: block;
-    }
-
     .${themeProps._id} .chapter-number{
       text-align: ${styleProps.chapterNo.align}!important;
       order: 2;
