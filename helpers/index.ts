@@ -5,3 +5,4 @@ export * from "./fontList";
 export * from "./misc";
 export * from "./styleObjectToCssString";
 export * from "./headerElementFontSize";
+export * from "./getTitleDirection";
