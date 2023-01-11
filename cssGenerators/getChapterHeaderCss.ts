@@ -59,6 +59,7 @@ export const getChapterHeaderCss = (
       display: flex;
       position: relative;
       min-height: 13em;
+      padding-bottom: 0;
       ${styleObjectToCss(styleProps.titleCardExtras)}
     }
 
