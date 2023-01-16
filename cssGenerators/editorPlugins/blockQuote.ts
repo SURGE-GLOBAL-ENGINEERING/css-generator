@@ -9,5 +9,9 @@ export const getBlockQuoteCss = (themeId: string) => {
       orphans: 3; 
       widows: 3;
     }
+
+    .${themeId} blockquote .quotee{
+      text-align: right;
+    }
   `
 }
