@@ -11,8 +11,8 @@ export const getFontFileName = (font: Font, variant: FontVariant): string => {
   return `${font.id}-${capitalizeFirstLetter(variant)}.${extension}`
 }
 
-export const getFontFamilyName = (font: Font, variant: FontVariant): string => {
-  return `${font.id}${capitalizeFirstLetter(variant)}`;
+export const getFontFamilyName = (fontId: string, variant: FontVariant): string => {
+  return `${fontId}${capitalizeFirstLetter(variant)}`;
 }
 
 export const getFontFileNameForEpubGen = (fontId: string, style: HeaderFontStyle[]): string => {

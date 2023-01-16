@@ -22,7 +22,7 @@ export const getFontFaceCss = (fontId: string, fontVariant: FontVariant,  baseUr
   
   let cssString = "\n";
 
-  const fontFamilyName = getFontFamilyName(font, fontVariant);
+  const fontFamilyName = getFontFamilyName(font.id, fontVariant);
   const fontFileName = getFontFileName(font, fontVariant);
 
   cssString += `@font-face{\n  font-family: ${fontFamilyName};\n  src: url("${baseUrl}/${fontFileName}");\n  `;

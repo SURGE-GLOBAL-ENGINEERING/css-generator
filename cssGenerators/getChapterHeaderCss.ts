@@ -7,7 +7,9 @@ import {
   getTitleFontSize,
   getSubTitleFontSize,
   getChapNumberFontSize,
-  getTitleDirection
+  getTitleDirection,
+  getFontFamilyName,
+  headerStyleToFontVariant
 } from "../helpers";
 
 import { Theme } from "../types";
@@ -111,38 +113,47 @@ export const getChapterHeaderCss = (
 
     .${themeProps._id} .chapter-number span{
       display: inline-block;
-      font-family: '${styleProps.chapterNo.font}';
+      font-family: ${getFontFamilyName(
+        styleProps.chapterNo.font,
+        headerStyleToFontVariant(styleProps.chapterNo.style)
+      )};
       font-size: ${getChapNumberFontSize(styleProps.chapterNo)}em;
       text-align: ${styleProps.chapterNo.align};
       line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
       direction: ${getTitleDirection(styleProps.chapterNo.align)};
-      ${fontStylesToCssProp(styleProps.chapterNo.style)};
-      ${styleObjectToCss(styleProps.chapterNo.extras)};
+      ${fontStylesToCssProp(styleProps.chapterNo.style)}
+      ${styleObjectToCss(styleProps.chapterNo.extras)}
     }
 
     .${themeProps._id} .chapter-title h2, .epub-toc-title-card h2{
       display: inline-block;
-      font-family: '${styleProps.chapterTitle.font}';
+      font-family: ${getFontFamilyName(
+        styleProps.chapterTitle.font,
+        headerStyleToFontVariant(styleProps.chapterTitle.style)
+      )};
       font-size: ${getTitleFontSize(styleProps.chapterTitle)}em;
       text-align: ${styleProps.chapterTitle.align}!important;
       line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
       direction: ${getTitleDirection(styleProps.chapterTitle.align)};
-      ${fontStylesToCssProp(styleProps.chapterTitle.style)};
-      ${styleObjectToCss(styleProps.chapterTitle.extras)};
+      ${fontStylesToCssProp(styleProps.chapterTitle.style)}
+      ${styleObjectToCss(styleProps.chapterTitle.extras)}
     }
 
     .${themeProps._id} .chapter-subtitle h3{
       display: inline-block;
-      font-family: '${styleProps.chapterSubtitle.font}';
+      font-family: ${getFontFamilyName(
+        styleProps.chapterSubtitle.font,
+        headerStyleToFontVariant(styleProps.chapterSubtitle.style)
+      )};
       font-size: ${getSubTitleFontSize(styleProps.chapterSubtitle)}em;
       text-align: ${styleProps.chapterSubtitle.align};
       line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
       direction: ${getTitleDirection(styleProps.chapterSubtitle.align)};
-      ${fontStylesToCssProp(styleProps.chapterSubtitle.style)};
-      ${styleObjectToCss(styleProps.chapterSubtitle.extras)};
+      ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
+      ${styleObjectToCss(styleProps.chapterSubtitle.extras)}
     }
 
     .${themeProps._id} header .meta{
@@ -197,7 +208,9 @@ export const getChapterHeaderCss = (
       text-align: inherit;
     }
 
-    ${isPreviewer ? `
+    ${
+      isPreviewer
+        ? `
     .chapter-title-card .chp_bg{
       position: absolute;
       top: 0;
@@ -207,6 +220,8 @@ export const getChapterHeaderCss = (
       background-size: cover;
       background-repeat: no-repeat;
       z-index: -1;
-    }`: ""}
-  `
+    }`
+        : ""
+    }
+  `;
 }
