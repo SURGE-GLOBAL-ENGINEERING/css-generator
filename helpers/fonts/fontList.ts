@@ -72,6 +72,11 @@ export const fonts: Font[] = [
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
   },
   {
+    id: "ComicRelief",
+    name: "Comic Relief",
+    variants: [FontVariant.regular]
+  },
+  {
     id: "CrimsonPro",
     name: "Crimson Pro",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
@@ -89,6 +94,11 @@ export const fonts: Font[] = [
   {
     id: "Delius",
     name: "Delius",
+    variants: [FontVariant.regular]
+  },
+  {
+    id: "DPSansMono",
+    name: "DP Sans Mono",
     variants: [FontVariant.regular]
   },
   {
