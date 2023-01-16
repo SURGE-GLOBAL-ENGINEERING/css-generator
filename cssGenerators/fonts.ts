@@ -1,19 +1,36 @@
-import { find } from "lodash";
-
-import { getAtticusFonts } from "../helpers";
+import { headerStyleToFontVariant, getFontFaceCss } from "../helpers";
+import { ThemeStyleProps } from "../types";
 
 /**
- * Generates css for rendering fonts
- * @param fonts An array containing chapter title, subtitle and chapter number fonts
- * @param fontBaseUrl The base url for the location where the actual font files reside 
+ * Generates @font-face css for rendering selected fonts and font varients of header elements
+ * @param styleProps Theme properties
+ * @param fontBaseUrl The base url for the location where the actual font files reside
  * @returns css for the fonts passed as inputs
  */
-export const fontNamesToCss = (fonts: string[], fontBaseUrl: string): string => {
-  const atticusFonts = getAtticusFonts(fontBaseUrl);
-  const fontCss = Array.from(new Set(fonts)).reduce((acc, fontName) => {
-    const f = find(atticusFonts, { _id: fontName });
-    return acc = acc + (f?.css ? "\n" + f.css : "");
-  }, "");
+export const getHeaderElementFontFaceCss = (
+  styleProps: ThemeStyleProps,
+  fontBaseUrl: string,
+): string => {
+  let fontCss = "";
 
-  return `${fontCss}`;
+  const headerFonts = [
+    {
+      fontId: styleProps.chapterNo.font,
+      variant: headerStyleToFontVariant(styleProps.chapterNo.style)
+    },
+    {
+      fontId: styleProps.chapterTitle.font,
+      variant: headerStyleToFontVariant(styleProps.chapterTitle.style)
+    },
+    {
+      fontId: styleProps.chapterSubtitle.font,
+      variant: headerStyleToFontVariant(styleProps.chapterSubtitle.style)
+    }
+  ];
+
+  headerFonts.map(font => {
+    fontCss += getFontFaceCss(font.fontId, font.variant, fontBaseUrl);
+  })
+  
+  return fontCss;
 };

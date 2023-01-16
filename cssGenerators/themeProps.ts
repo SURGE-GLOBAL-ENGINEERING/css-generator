@@ -1,5 +1,5 @@
 import {
-  fontNamesToCss,
+  getHeaderElementFontFaceCss,
   getDefaultCss,
   getTocCss,
   getBookTitleCss,
@@ -24,6 +24,7 @@ import {
 } from "./.";
 
 import { Theme } from "../types";
+import { epubFontBaseUrl } from "../helpers";
 
 /**
  * Returns a css string to style the book according to provided theme properties
@@ -34,18 +35,18 @@ import { Theme } from "../types";
  */
 export const themePropsToCss = (
   themeProps: Theme,
-  fontBaseUrl: string,
-  isPreviewer: boolean = false
+  isPreviewer: boolean = false,
+  fontBaseUrl?: string,
 ): string => {
   const { properties: styleProps } = themeProps;
-  const fontCss = fontNamesToCss(
-    [
-      styleProps.chapterTitle.font,
-      styleProps.chapterSubtitle.font,
-      styleProps.chapterNo.font,
-    ],
-    fontBaseUrl
-  );
+  /** "fonts/fontName.extension" is the default fonts folder location for bundled epubs */
+  const fontLocation = isPreviewer ? fontBaseUrl : epubFontBaseUrl;
+
+  if(!fontLocation){
+    throw new Error("Missing font base Url for previewer");
+  }
+
+  const fontFaceCss = getHeaderElementFontFaceCss(styleProps, fontLocation);
 
   const styleCss = `
     ${getChapterHeaderCss(themeProps, isPreviewer)}
@@ -140,5 +141,5 @@ export const themePropsToCss = (
     ${getPartCss(themeProps._id)}
   `;
 
-  return `${styleCss} ${fontCss}`;
+  return `${styleCss} ${fontFaceCss}`;
 };

@@ -1,10 +1,10 @@
-export type FontStyle =
-  | "normal"
-  | "bold"
-  | "italic"
-  | "underlined"
-  | "small-caps"
-
+export enum HeaderFontStyle {
+  regular = "regular",
+  bold = "bold",
+  italic = "italic",
+  underlined = "underlined",
+  smallcaps = "small-caps",
+}
 export type ImagePlacement =
   | "above-chapter-no"
   | "above-chapter-title"
@@ -35,7 +35,7 @@ export type HeaderElement = {
   font: string;
   size: number;
   fontSizeOffset?: number;
-  style: FontStyle[];
+  style: HeaderFontStyle[];
   align: Alignment;
   width: number;
   extras?: any;
@@ -79,7 +79,7 @@ export type Paragraph = {
   paragraphSpacing: number;
   hyphens: boolean;
   justify: boolean;
-}
+};
 
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
@@ -117,7 +117,7 @@ export type ThemeStyleProps = {
   layout: PrintLayout;
   firstParagraph: FirstParagraph;
   beginFirstSentence: BeginFirstSentence;
-  paragraph:Paragraph;
+  paragraph: Paragraph;
   margin: {
     bottom: number;
     top: number;
