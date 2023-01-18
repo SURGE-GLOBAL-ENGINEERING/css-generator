@@ -29,8 +29,8 @@ import { epubFontBaseUrl } from "../helpers";
 /**
  * Returns a css string to style the book according to provided theme properties
  * @param themeProps Atticus theme properties
- * @param fontBaseUrl The base url for the location where the actual font files reside
  * @param isPreviewer If css is generated for editor previewer, default false
+ * @param fontBaseUrl The base url for the location where the actual font files reside
  * @returns {string} Css string to format the book according to provided theme properties
  */
 export const themePropsToCss = (
