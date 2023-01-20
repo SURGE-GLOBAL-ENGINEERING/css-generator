@@ -129,8 +129,11 @@ export const getChapterHeaderCss = (
       width: ${styleProps.chapterNo.width}%;
       direction: ${getTitleDirection(styleProps.chapterNo.align)};
       ${fontStylesToCssProp(styleProps.chapterNo.style)}
-      ${styleObjectToCss(styleProps.chapterNo.extras)}
       ${isThumbnail? slingleLineEllipsis(): ""}
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)}{
+      ${styleObjectToCss(styleProps.chapterNo.extras)}
     }
 
     .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${addPrefix("epub-toc-title-card", prefix)} h2{
@@ -145,8 +148,11 @@ export const getChapterHeaderCss = (
       width: ${styleProps.chapterTitle.width}%;
       direction: ${getTitleDirection(styleProps.chapterTitle.align)};
       ${fontStylesToCssProp(styleProps.chapterTitle.style)}
-      ${styleObjectToCss(styleProps.chapterTitle.extras)}
       ${isThumbnail? slingleLineEllipsis(): ""}
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-title", prefix)}{
+      ${styleObjectToCss(styleProps.chapterTitle.extras)}
     }
 
     .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3{
@@ -161,8 +167,11 @@ export const getChapterHeaderCss = (
       width: ${styleProps.chapterSubtitle.width}%;
       direction: ${getTitleDirection(styleProps.chapterSubtitle.align)};
       ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
-      ${styleObjectToCss(styleProps.chapterSubtitle.extras)}
       ${isThumbnail? slingleLineEllipsis(): ""}
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)}{
+      ${styleObjectToCss(styleProps.chapterSubtitle.extras)}
     }
 
     .${themeProps._id} header .${addPrefix("meta", prefix)}{
@@ -206,11 +215,6 @@ export const getChapterHeaderCss = (
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}{
       width: 100%;
       justify-content:center;
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)}{
-      width: 100%;
-      text-align: inherit;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} h2{
