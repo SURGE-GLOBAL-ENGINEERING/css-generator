@@ -29,16 +29,16 @@ import { epubFontBaseUrl } from "../helpers";
 /**
  * Returns a css string to style the book according to provided theme properties
  * @param themeProps Atticus theme properties
- * @param isPreviewer If css is generated for editor previewer, default false
  * @param fontBaseUrl The base url for the location where the actual font files reside
+ * @param isPreviewer If css is generated for editor previewer, default false
  * @param containerClassName Class name for the immediate parent element to avoid css conflicts
  * when generated css is used in multiple places
  * @returns {string} Css string to format the book according to provided theme properties
  */
 export const themePropsToCss = (
   themeProps: Theme,
-  isPreviewer: boolean = false,
   fontBaseUrl?: string,
+  isPreviewer: boolean = false,
   containerClassName?: string
 ): string => {
   const { properties: styleProps } = themeProps;
