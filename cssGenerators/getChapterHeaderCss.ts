@@ -63,7 +63,7 @@ export const getChapterHeaderCss = (
       flex-direction: column;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${addPrefix("epub-toc-title-card", prefix)}.{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${addPrefix("epub-toc-title-card", prefix)}{
       display: flex;
       position: relative;
       min-height: 13em;
