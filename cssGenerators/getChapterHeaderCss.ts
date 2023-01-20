@@ -7,10 +7,11 @@ import {
   getTitleFontSize,
   getSubTitleFontSize,
   getChapNumberFontSize,
-  getThemeThumbnailFontSize,
+  // getThemeThumbnailFontSize,
   getTitleDirection,
   getFontFamilyName,
-  headerStyleToFontVariant
+  headerStyleToFontVariant,
+  slingleLineEllipsis
 } from "../helpers";
 
 import { Theme } from "../types";
@@ -126,11 +127,12 @@ export const getChapterHeaderCss = (
       )};
       font-size: ${getChapNumberFontSize(styleProps.chapterNo)}em;
       text-align: ${styleProps.chapterNo.align};
-      line-height: 1.${styleProps.chapterNo.size};
+      line-height: ${prefix ? 1 : `1.${styleProps.chapterNo.size}`}
       width: ${styleProps.chapterNo.width}%;
       direction: ${getTitleDirection(styleProps.chapterNo.align)};
       ${fontStylesToCssProp(styleProps.chapterNo.style)}
       ${styleObjectToCss(styleProps.chapterNo.extras)}
+      ${prefix? slingleLineEllipsis(): ""}
     }
 
     ${prefix}.${themeProps._id} .chapter-title h2, .epub-toc-title-card h2{
@@ -141,11 +143,12 @@ export const getChapterHeaderCss = (
       )};
       font-size: ${getTitleFontSize(styleProps.chapterTitle)}em;
       text-align: ${styleProps.chapterTitle.align}!important;
-      line-height: 1.${styleProps.chapterTitle.size};
+      line-height: ${prefix ? 1 : `1.${styleProps.chapterTitle.size}`}
       width: ${styleProps.chapterTitle.width}%;
       direction: ${getTitleDirection(styleProps.chapterTitle.align)};
       ${fontStylesToCssProp(styleProps.chapterTitle.style)}
       ${styleObjectToCss(styleProps.chapterTitle.extras)}
+      ${prefix? slingleLineEllipsis(): ""}
     }
 
     ${prefix}.${themeProps._id} .chapter-subtitle h3{
@@ -156,11 +159,12 @@ export const getChapterHeaderCss = (
       )};
       font-size: ${getSubTitleFontSize(styleProps.chapterSubtitle)}em;
       text-align: ${styleProps.chapterSubtitle.align};
-      line-height: 1.${styleProps.chapterSubtitle.size};
+      line-height: ${prefix ? 1 : `1.${styleProps.chapterSubtitle.size}`}
       width: ${styleProps.chapterSubtitle.width}%;
       direction: ${getTitleDirection(styleProps.chapterSubtitle.align)};
       ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
       ${styleObjectToCss(styleProps.chapterSubtitle.extras)}
+      ${prefix? slingleLineEllipsis(): ""}
     }
 
     ${prefix}.${themeProps._id} header .meta{
