@@ -31,12 +31,15 @@ import { epubFontBaseUrl } from "../helpers";
  * @param themeProps Atticus theme properties
  * @param isPreviewer If css is generated for editor previewer, default false
  * @param fontBaseUrl The base url for the location where the actual font files reside
+ * @param containerClassName Class name for the immediate parent element to avoid css clashes
+ * when generated css is used in multiple places
  * @returns {string} Css string to format the book according to provided theme properties
  */
 export const themePropsToCss = (
   themeProps: Theme,
   isPreviewer: boolean = false,
   fontBaseUrl?: string,
+  containerClassName?: string
 ): string => {
   const { properties: styleProps } = themeProps;
   /** "fonts/fontName.extension" is the default fonts folder location for bundled epubs */
@@ -49,7 +52,7 @@ export const themePropsToCss = (
   const fontFaceCss = getHeaderElementFontFaceCss(styleProps, fontLocation);
 
   const styleCss = `
-    ${getChapterHeaderCss(themeProps, isPreviewer)}
+    ${getChapterHeaderCss(themeProps, isPreviewer, containerClassName)}
 
     ${getDefaultCss(themeProps._id)}
 
