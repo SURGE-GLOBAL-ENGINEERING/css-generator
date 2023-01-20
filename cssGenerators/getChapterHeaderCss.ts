@@ -30,7 +30,7 @@ export const getChapterHeaderCss = (
     styleProps.image?.headerTextColor === "light";
 
   const prefix = themeThumbnailParentClassName
-    ? `.${themeThumbnailParentClassName} `
+    ? `.${themeThumbnailParentClassName}>`
     : "";
 
   return `
