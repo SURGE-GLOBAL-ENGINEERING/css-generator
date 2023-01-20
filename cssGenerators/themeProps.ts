@@ -52,7 +52,7 @@ export const themePropsToCss = (
   const fontFaceCss = getHeaderElementFontFaceCss(styleProps, fontLocation);
 
   const styleCss = `
-    ${getChapterHeaderCss(themeProps, isPreviewer, containerClassName)}
+    ${getChapterHeaderCss(themeProps, isPreviewer, false, containerClassName)}
 
     ${getDefaultCss(themeProps._id)}
 
