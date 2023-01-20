@@ -12,7 +12,8 @@ import {
   getFontFamilyName,
   headerStyleToFontVariant,
   slingleLineEllipsis,
-  addPrefix
+  addPrefix,
+  thumbnailCssOverwrites
 } from "../helpers";
 
 import { Theme } from "../types";
@@ -69,6 +70,7 @@ export const getChapterHeaderCss = (
       min-height: 13em;
       padding-bottom: 0;
       ${styleObjectToCss(styleProps.titleCardExtras)}
+      ${isThumbnail? thumbnailCssOverwrites.titleCard(): ""}
     }
 
     .${themeProps._id} .${addPrefix("chp_clr_none", prefix)} img, .${addPrefix("chp_clr_none", prefix)}{
@@ -130,7 +132,7 @@ export const getChapterHeaderCss = (
       direction: ${getTitleDirection(styleProps.chapterNo.align)};
       ${fontStylesToCssProp(styleProps.chapterNo.style)}
       ${styleObjectToCss(styleProps.chapterNo.extras)}
-      ${isThumbnail? slingleLineEllipsis(): ""}
+      ${isThumbnail? thumbnailCssOverwrites.number(): ""}
     }
 
     .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${addPrefix("epub-toc-title-card", prefix)} h2{
@@ -141,12 +143,12 @@ export const getChapterHeaderCss = (
       )};
       font-size: ${getTitleFontSize(styleProps.chapterTitle)}em;
       text-align: ${styleProps.chapterTitle.align}!important;
-      line-height: ${isThumbnail ? 1 : `1.${styleProps.chapterTitle.size}`}
+      line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
       direction: ${getTitleDirection(styleProps.chapterTitle.align)};
       ${fontStylesToCssProp(styleProps.chapterTitle.style)}
       ${styleObjectToCss(styleProps.chapterTitle.extras)}
-      ${isThumbnail? slingleLineEllipsis(): ""}
+      ${isThumbnail? thumbnailCssOverwrites.title(): ""}
     }
 
     .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3{
@@ -162,7 +164,7 @@ export const getChapterHeaderCss = (
       direction: ${getTitleDirection(styleProps.chapterSubtitle.align)};
       ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
       ${styleObjectToCss(styleProps.chapterSubtitle.extras)}
-      ${isThumbnail? slingleLineEllipsis(): ""}
+      ${isThumbnail? thumbnailCssOverwrites.subtitle(): ""}
     }
 
     .${themeProps._id} header .${addPrefix("meta", prefix)}{
@@ -224,7 +226,7 @@ export const getChapterHeaderCss = (
     }
 
     ${
-      isPreviewer
+      isPreviewer || isThumbnail
         ? `
     .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_bg", prefix)}{
       position: absolute;
