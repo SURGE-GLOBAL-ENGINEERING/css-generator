@@ -31,7 +31,7 @@ import { epubFontBaseUrl } from "../helpers";
  * @param themeProps Atticus theme properties
  * @param isPreviewer If css is generated for editor previewer, default false
  * @param fontBaseUrl The base url for the location where the actual font files reside
- * @param containerClassName Class name for the immediate parent element to avoid css clashes
+ * @param containerClassName Class name for the immediate parent element to avoid css conflicts
  * when generated css is used in multiple places
  * @returns {string} Css string to format the book according to provided theme properties
  */
