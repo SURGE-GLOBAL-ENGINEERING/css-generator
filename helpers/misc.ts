@@ -17,8 +17,9 @@ export const slingleLineEllipsis = () => {
  * Add at the last line of css in order to overwrite any previously configured css
  */
 export const thumbnailCssOverwrites = {
-  title: () => `\npadding: 0px;\n line-height: 1;\n width: 100%;\n font-seize: 1em;\n ${slingleLineEllipsis()}`,
-  subtitle: () => `\npadding: 0px;\n line-height: 1;\n width: 100%;\n font-seize: 0.8em;\n ${slingleLineEllipsis()}`,
-  number: () => `\npadding: 0px;\n line-height: 1;\n width: 100%;\n font-seize: 0.8em;\n ${slingleLineEllipsis()}`,
+  title: () => `\npadding: 0px;\n line-height: 1;\n width: 100%;\n font-size: 1em;\n ${slingleLineEllipsis()}`,
+  subtitle: () => `\npadding: 0px;\n line-height: 1;\n width: 100%;\n font-size: 0.8em;\n ${slingleLineEllipsis()}`,
+  number: () => `\npadding: 0px;\n line-height: 1;\n width: 100%;\n font-size: 0.8em;\n ${slingleLineEllipsis()}`,
   titleCard: () => "\npadding: 0px;\n min-height: unset;\n",
+  imageContainer: () => "\n padding-top: 3px;\n padding-bottom: 2px;\n line-height: 0px;\n",
 }

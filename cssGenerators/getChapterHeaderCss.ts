@@ -93,6 +93,7 @@ export const getChapterHeaderCss = (
       order: ${getImagePlacementOrder(styleProps.image.placement)};
       text-align: ${styleProps.image.alignment};
       padding-top: 0.3em;
+      ${isThumbnail? thumbnailCssOverwrites.imageContainer(): ""}
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_img", prefix)} img{
@@ -127,7 +128,7 @@ export const getChapterHeaderCss = (
       )};
       font-size: ${getChapNumberFontSize(styleProps.chapterNo)}em;
       text-align: ${styleProps.chapterNo.align};
-      line-height: ${isThumbnail ? 1 : `1.${styleProps.chapterNo.size}`}
+      line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
       direction: ${getTitleDirection(styleProps.chapterNo.align)};
       ${fontStylesToCssProp(styleProps.chapterNo.style)}
@@ -159,7 +160,7 @@ export const getChapterHeaderCss = (
       )};
       font-size: ${getSubTitleFontSize(styleProps.chapterSubtitle)}em;
       text-align: ${styleProps.chapterSubtitle.align};
-      line-height: ${isThumbnail ? 1 : `1.${styleProps.chapterSubtitle.size}`}
+      line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
       direction: ${getTitleDirection(styleProps.chapterSubtitle.align)};
       ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
@@ -208,21 +209,6 @@ export const getChapterHeaderCss = (
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}{
       width: 100%;
       justify-content:center;
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} span{
-      width: 100%;
-      text-align: inherit;
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} h2{
-      width: 100%;
-      text-align: inherit;
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} h3{
-      width: 100%;
-      text-align: inherit;
     }
 
     ${
