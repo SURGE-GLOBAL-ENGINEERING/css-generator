@@ -21,5 +21,5 @@ export const thumbnailCssOverwrites = {
   subtitle: () => `\npadding-top: 2px;\n padding-bottom: 2px;\n line-height: 1;\n width: 100%;\n font-size: 0.8em;\n ${slingleLineEllipsis()}`,
   number: () => `\npadding-top: 2px;\n padding-bottom: 2px;\n line-height: 1;\n width: 100%;\n font-size: 0.8em;\n ${slingleLineEllipsis()}`,
   titleCard: () => "\npadding-top: 2px;\n padding-bottom: 2px;\n min-height: unset;\n",
-  imageContainer: () => "\npadding-top: 3px;\n padding-bottom: 2px;\n line-height: 0px;\n min-height: 5px;\n",
+  imageContainer: () => "\npadding-top: 3px;\n padding-bottom: 2px;\n line-height: 0px;\n",
 }

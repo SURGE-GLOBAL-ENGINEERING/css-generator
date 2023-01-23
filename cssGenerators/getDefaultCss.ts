@@ -19,7 +19,6 @@ export const getDefaultCss = (themeId: string): string => {
         border: 0;
         font-size: 100%;
         font: inherit;
-        vertical-align: baseline;
       }
       /* HTML5 display-role reset for older browsers */
       .${themeId} article, .${themeId} aside, .${themeId} details, .${themeId} figcaption, .${themeId} figure, 
