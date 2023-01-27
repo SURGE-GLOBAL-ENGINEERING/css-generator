@@ -1,4 +1,14 @@
-export const getBookTitleCss = (publisherDetailFont: string, themeId: string, ) => {
+import { getFontFamilyName, headerStyleToFontVariant } from "helpers";
+import { FontVariant, HeaderFontStyle } from "types";
+
+interface bookTitlteCssProps {
+  themeId: string;
+  chapTitleFont: string;
+  chapTitleFontStyle: HeaderFontStyle[];
+  chapNumberFont: string;
+}
+export const getBookTitleCss = (props: bookTitlteCssProps) => {
+  const { themeId, chapTitleFont, chapTitleFontStyle, chapNumberFont } = props;
   return `
     .${themeId} .title{
       display: flex;
@@ -13,12 +23,17 @@ export const getBookTitleCss = (publisherDetailFont: string, themeId: string, ) 
       width: 100%;
       text-align: center;
       padding: 2rem 0.4rem;
+      font-family: ${getFontFamilyName(chapTitleFont, FontVariant.regular)}
     }
 
     .${themeId} .title-card h1{
       font-size: 2.5rem;
       text-align: inherit;
       padding: 0.4rem 0rem;
+      font-family: ${getFontFamilyName(
+        chapTitleFont,
+        headerStyleToFontVariant(chapTitleFontStyle)
+      )}
     }
     
     .${themeId} .title-card h2{
@@ -40,10 +55,7 @@ export const getBookTitleCss = (publisherDetailFont: string, themeId: string, ) 
       flex-direction: column;
       justify-content: center;
       align-items: center;
-    }
-
-    .${themeId} .publisher-details{
-      font-family: '${publisherDetailFont}';
+      font-family: ${getFontFamilyName(chapNumberFont, FontVariant.regular)};
     }
     
     .${themeId} .publisher-logo{
@@ -56,5 +68,5 @@ export const getBookTitleCss = (publisherDetailFont: string, themeId: string, ) 
       width: 80px;
       height: auto;
     }
-  `
+  `;
 };

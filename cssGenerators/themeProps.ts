@@ -111,7 +111,11 @@ export const themePropsToCss = (
 
     ${getBlockQuoteCss(themeProps._id)}
 
-    ${getOrnamentalBreakCss(styleProps.ornamentalBreakWidth, themeProps._id, isPreviewer)}
+    ${getOrnamentalBreakCss(
+      styleProps.ornamentalBreakWidth,
+      themeProps._id,
+      isPreviewer
+    )}
 
     ${getImageCss(themeProps._id)}
 
@@ -127,7 +131,12 @@ export const themePropsToCss = (
 
     /* Chapter Types */
 
-    ${getBookTitleCss(styleProps.chapterNo.font, themeProps._id)}
+    ${getBookTitleCss({
+      themeId: themeProps._id,
+      chapTitleFont: styleProps.chapterTitle.font,
+      chapTitleFontStyle: styleProps.chapterTitle.style,
+      chapNumberFont: styleProps.chapterNo.font,
+    })}
 
     ${getTocCss(themeProps, themeProps._id)}
 

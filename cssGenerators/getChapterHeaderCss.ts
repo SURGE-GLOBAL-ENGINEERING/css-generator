@@ -7,11 +7,9 @@ import {
   getTitleFontSize,
   getSubTitleFontSize,
   getChapNumberFontSize,
-  // getThemeThumbnailFontSize,
   getTitleDirection,
   getFontFamilyName,
   headerStyleToFontVariant,
-  slingleLineEllipsis,
   addPrefix,
   thumbnailCssOverwrites
 } from "../helpers";
