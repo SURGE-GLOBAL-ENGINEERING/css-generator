@@ -1,5 +1,5 @@
-import { getFontFamilyName, headerStyleToFontVariant } from "helpers";
-import { FontVariant, HeaderFontStyle } from "types";
+import { getFontFamilyName } from "../../helpers";
+import { FontVariant } from "../../types";
 
 interface bookTitlteCssProps {
   themeId: string;
