@@ -135,6 +135,7 @@ export const themePropsToCss = (
       themeId: themeProps._id,
       chapTitleFont: styleProps.chapterTitle.font,
       chapNumberFont: styleProps.chapterNo.font,
+      isPreviewer
     })}
 
     ${getTocCss(themeProps, themeProps._id)}

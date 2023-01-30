@@ -5,9 +5,10 @@ interface bookTitlteCssProps {
   themeId: string;
   chapTitleFont: string;
   chapNumberFont: string;
+  isPreviewer: boolean;
 }
 export const getBookTitleCss = (props: bookTitlteCssProps) => {
-  const { themeId, chapTitleFont, chapNumberFont } = props;
+  const { themeId, chapTitleFont, chapNumberFont, isPreviewer } = props;
   return `
     .${themeId} .title{
       display: flex;
@@ -15,7 +16,7 @@ export const getBookTitleCss = (props: bookTitlteCssProps) => {
       justify-content: space-between;
       align-items: center;
       text-align: center;
-      height: 100vh;
+      height: ${isPreviewer ? "100%" : "100vh"};
     }
     
     .${themeId} .title-card{
