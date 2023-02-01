@@ -5,12 +5,12 @@ export const fonts: Font[] = [
     id: "Aldrich",
     name: "Aldrich",
     variants: [FontVariant.regular]
-  },
+    },
   {
     id: "Alegreya",
     name: "Alegreya",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
-  },
+    },
   {
     id: "AlegreyaSansSC",
     name: "Alegreya Sans SC",
@@ -135,7 +135,8 @@ export const fonts: Font[] = [
     id: "LibreBaskerville",
     name: "Libre Baskerville",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    fontType: "otf"
+    fontType: "otf",
+    additionalInfo: "may not be compatible with IngramSpark"
   },
   {
     id: "LibreCaslon",
@@ -185,8 +186,9 @@ export const fonts: Font[] = [
   },
   {
     id: "OpenSansLT",
-    name: "Large Print Open Sans (no italics)",
+    name: "Large Print Open Sans",
     variants: [FontVariant.regular, FontVariant.bold],
+    additionalInfo: "no italics"
   },
   {
     id: "Oswald",

@@ -2,7 +2,8 @@ export type Font = {
   id: string,
   name: string,
   variants: FontVariant[],
-  fontType?: string
+  fontType?: string,
+  additionalInfo?: string
 }
 
 export enum FontVariant {
