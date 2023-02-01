@@ -1,4 +1,4 @@
-export const getDefaultCss = (themeId: string): string => {
+export const getDefaultCss = (themeId: string, paragraphSpacing: number): string => {
   return `
       .${themeId} html, .${themeId} body, .${themeId} div, .${themeId} span, .${themeId} applet, .${themeId} object, .${themeId} iframe,
       .${themeId} h1, .${themeId} h2, .${themeId} h3, .${themeId} h4, .${themeId} h5, .${themeId} h6, .${themeId} p, .${themeId} blockquote, .${themeId} pre,
@@ -87,6 +87,7 @@ export const getDefaultCss = (themeId: string): string => {
   
       .${themeId} ul, .${themeId} ol{
         padding: 0rem 1rem;
+        line-height: ${paragraphSpacing};
       }
 
       .${themeId} li{
