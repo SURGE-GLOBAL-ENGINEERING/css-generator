@@ -3,5 +3,5 @@ export * from "./getNormalizedOpacity";
 export * from "./misc";
 export * from "./styleObjectToCssString";
 export * from "./headerElementFontSize";
-export * from "./getTitleDirection";
+
 export * from "./fonts";
