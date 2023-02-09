@@ -20,6 +20,8 @@ export type Colored = "all" | "print" | "ebook" | "none";
 
 export type HeaderTextColor = "default" | "light";
 
+export type BookTitleFontMap = "chapterTitle" | "chapterSubtitle" | "chapterNumber";
+
 export type HeaderImage = {
   url: string;
   width: number;
@@ -38,8 +40,20 @@ export type HeaderElement = {
   style: HeaderFontStyle[];
   align: Alignment;
   width: number;
-  extras?: any;
+  extras?: Record<string, string | number>;
 };
+
+export type BookTitleMeta = {
+  fontMap : BookTitleFontMap;
+  extras: Record<string, string | number>;
+}
+
+export type BookTitlePage = {
+  title?: BookTitleMeta;
+  subtitle?: BookTitleMeta;
+  author?: BookTitleMeta;
+  publisher?: BookTitleMeta;
+}
 
 export type ChapterNumbering =
   | "number"
@@ -95,7 +109,7 @@ export type ThemeStyleProps = {
   };
   titleAlignment: Alignment;
   chapterNumbering: ChapterNumbering;
-  titleCardExtras?: any;
+  titleCardExtras?: Record<string, string | number>;
 
   header: {
     font: string;
@@ -136,6 +150,7 @@ export type ThemeStyleProps = {
 
   notesMode: NotesMode;
   ePubNotesMode: EpubNotesMode;
+  bookTitlePage?: BookTitlePage;
 };
 
 export type ThemeMeta = {
@@ -148,3 +163,9 @@ export type ThemeMeta = {
 };
 
 export type Theme = ThemeMeta & { properties: ThemeStyleProps };
+
+export interface HeaderFonts {
+  chapterNumberFont: string;
+  chapterSubtitleFont: string;
+  chapterTitleFont: string;
+}

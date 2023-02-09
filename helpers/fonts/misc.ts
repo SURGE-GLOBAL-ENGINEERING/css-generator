@@ -1,6 +1,6 @@
 import { find } from "lodash";
 import { capitalizeFirstLetter } from "../misc";
-import { Font, FontVariant, HeaderFontStyle } from "../../types";
+import { BookTitleFontMap, Font, FontVariant, HeaderFonts, HeaderFontStyle } from "../../types";
 import { fonts } from "./fontList";
 import { headerStyleToFontVariant } from "./getFontVariant";
 
@@ -25,4 +25,12 @@ export const getFontFileNameForEpubGen = (fontId: string, style: HeaderFontStyle
     fontVariant = FontVariant.regular;
   }
   return getFontFileName(font, fontVariant);
+}
+
+export const getFontFamilyFromFontMap = (fonts: HeaderFonts, fontMap: BookTitleFontMap): string => {
+  switch(fontMap){
+    case "chapterTitle": return getFontFamilyName(fonts.chapterTitleFont, FontVariant.regular);
+    case "chapterSubtitle": return getFontFamilyName(fonts.chapterSubtitleFont, FontVariant.regular);
+    default: return getFontFamilyName(fonts.chapterNumberFont, FontVariant.regular)
+  }
 }
