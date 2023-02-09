@@ -7,7 +7,6 @@ import {
   getTitleFontSize,
   getSubTitleFontSize,
   getChapNumberFontSize,
-  getTitleDirection,
   getFontFamilyName,
   headerStyleToFontVariant,
   addPrefix,
@@ -128,7 +127,6 @@ export const getChapterHeaderCss = (
       text-align: ${styleProps.chapterNo.align};
       line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
-      direction: ${getTitleDirection(styleProps.chapterNo.align)};
       ${fontStylesToCssProp(styleProps.chapterNo.style)}
       ${styleObjectToCss(styleProps.chapterNo.extras)}
       ${isThumbnail? thumbnailCssOverwrites.number(): ""}
@@ -144,7 +142,6 @@ export const getChapterHeaderCss = (
       text-align: ${styleProps.chapterTitle.align}!important;
       line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
-      direction: ${getTitleDirection(styleProps.chapterTitle.align)};
       ${fontStylesToCssProp(styleProps.chapterTitle.style)}
       ${styleObjectToCss(styleProps.chapterTitle.extras)}
       ${isThumbnail? thumbnailCssOverwrites.title(): ""}
@@ -160,7 +157,6 @@ export const getChapterHeaderCss = (
       text-align: ${styleProps.chapterSubtitle.align};
       line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
-      direction: ${getTitleDirection(styleProps.chapterSubtitle.align)};
       ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
       ${styleObjectToCss(styleProps.chapterSubtitle.extras)}
       ${isThumbnail? thumbnailCssOverwrites.subtitle(): ""}

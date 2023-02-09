@@ -21,6 +21,7 @@ export type Colored = "all" | "print" | "ebook" | "none";
 export type HeaderTextColor = "default" | "light";
 
 export type BookTitleFontMap = "chapterTitle" | "chapterSubtitle" | "chapterNumber";
+export type SceneBreakShowSetting = "break-with-image" | "break-without-image" | "no-break";
 
 export type HeaderImage = {
   url: string;
@@ -146,7 +147,7 @@ export type ThemeStyleProps = {
 
   ornamentalBreakImage: string;
   ornamentalBreakWidth: number;
-  hideOrnamentalBreakImage: boolean;
+  sceneBreakShowSetting: SceneBreakShowSetting;
 
   notesMode: NotesMode;
   ePubNotesMode: EpubNotesMode;
