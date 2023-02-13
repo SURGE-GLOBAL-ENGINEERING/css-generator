@@ -1,6 +1,6 @@
 export const getEpigraphCss = (themeId: string) => {
   return `
-    .${themeId} .epigraph .chapter-title-card{
+    .epigraph .chapter-title-card{
       display: none !important;
     }
 

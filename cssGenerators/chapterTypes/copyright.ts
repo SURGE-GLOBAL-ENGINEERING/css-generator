@@ -9,10 +9,6 @@ export const getCopyrightCss = (themeId: string) => {
       margin-bottom: 0.8em;
     }
 
-    .${themeId} .copyrights .chapter-title-card{
-      display: none;
-    }
-
     .${themeId} .copyrights p:first-of-type .word:nth-child(-n+4){
       text-transform: none;
     }
@@ -25,7 +21,7 @@ export const getCopyrightCss = (themeId: string) => {
       margin-right: 0 !important;
     }
 
-    .${themeId} .copyrights .chapter-title-card{
+    .copyrights .chapter-title-card{
       display: none !important;
     }
   `;

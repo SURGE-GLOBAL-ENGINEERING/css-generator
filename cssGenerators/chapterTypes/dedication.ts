@@ -1,6 +1,6 @@
 export const getDedicationCss = (themeId: string) => {
   return `
-    .${themeId} .dedication .chapter-title-card{
+    .dedication .chapter-title-card{
       display: none !important;
     }
 
