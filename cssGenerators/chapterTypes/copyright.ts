@@ -20,9 +20,5 @@ export const getCopyrightCss = (themeId: string) => {
       margin-left: 0 !important;
       margin-right: 0 !important;
     }
-
-    .copyrights .chapter-title-card{
-      display: none !important;
-    }
   `;
 }
