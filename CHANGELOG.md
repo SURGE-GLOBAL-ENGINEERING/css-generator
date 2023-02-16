@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.32](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.31...v1.1.32) (2023-02-16)
+
+
+### Bug Fixes
+
+* **AT-1065:** removed display none props ([3400787](https://github.com/Paladin-Analytics/css-generator/commit/3400787e39e979bd9ae65a674dd76a8c4f5c65bc))
+* **AT-1065:** removed themeIds causing css issues ([7284fac](https://github.com/Paladin-Analytics/css-generator/commit/7284facef30ef88ddc0cff0fcc66ba052445549f))
+
 ### [1.1.31](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.30...v1.1.31) (2023-02-13)
 
 ### [1.1.30](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.28...v1.1.30) (2023-02-08)
