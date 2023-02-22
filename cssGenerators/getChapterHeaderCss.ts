@@ -30,7 +30,7 @@ export const getChapterHeaderCss = (
     styleProps.image?.headerTextColor === "light";
 
   return `
-    .${themeProps._id} .${addPrefix("chp_bg")}{
+    .${themeProps._id} .${addPrefix("chp_bg", prefix)}{
       background-color: rgba(255,255,255, ${1 - getNormalizedOpacity(
         styleProps.image.opacity
       )});
