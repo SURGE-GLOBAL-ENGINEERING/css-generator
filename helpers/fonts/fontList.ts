@@ -34,7 +34,8 @@ export const fonts: Font[] = [
   {
     id: "Benne",
     name: "Benne",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
+    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
   {
     id: "BigShouldersDisplay",
@@ -54,7 +55,8 @@ export const fonts: Font[] = [
   {
     id: "Cardo",
     name: "Cardo",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
+    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
   {
     id: "Cinzel",
@@ -79,7 +81,8 @@ export const fonts: Font[] = [
   {
     id: "CrimsonPro",
     name: "Crimson Pro",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
+    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
   {
     id: "Crushed",
@@ -104,7 +107,8 @@ export const fonts: Font[] = [
   {
     id: "EBGaramond",
     name: "EB Garamond",
-    variants: [FontVariant.regular, FontVariant.italic]
+    variants: [FontVariant.regular, FontVariant.italic],
+    availableForPrint: true
   },
   {
     id: "EmilysCandy",
@@ -136,13 +140,15 @@ export const fonts: Font[] = [
     name: "Libre Baskerville",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
     fontType: "otf",
-    additionalInfo: "may not be compatible with IngramSpark"
+    additionalInfo: "may not be compatible with IngramSpark",
+    availableForPrint: true
   },
   {
     id: "LibreCaslon",
     name: "Libre Caslon",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    fontType: "otf"
+    fontType: "otf",
+    availableForPrint: true
   },
   {
     id: "LifeSavers",
@@ -152,7 +158,8 @@ export const fonts: Font[] = [
   {
     id: "Lora",
     name: "Lora",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
+    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
   {
     id: "Marcellus",
@@ -178,17 +185,20 @@ export const fonts: Font[] = [
     id: "OpenDyslexic",
     name: "OpenDyslexic",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
   {
     id: "OpenSans",
     name: "Open Sans",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
   {
     id: "OpenSansLT",
     name: "Large Print Open Sans",
     variants: [FontVariant.regular, FontVariant.bold],
-    additionalInfo: "no italics"
+    additionalInfo: "no italics",
+    availableForPrint: true
   },
   {
     id: "Oswald",
@@ -209,6 +219,7 @@ export const fonts: Font[] = [
     id: "PTSans",
     name: "PT Sans",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
   {
     id: "Quantico",
@@ -244,6 +255,7 @@ export const fonts: Font[] = [
     id: "Rosario",
     name: "Rosario",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
   {
     id: "Selima",
@@ -259,7 +271,8 @@ export const fonts: Font[] = [
     id: "SourceSansPro",
     name: "Source Sans Pro",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    fontType: "otf"
+    fontType: "otf",
+    availableForPrint: true
   },
   {
     id: "Spartan",
@@ -275,6 +288,7 @@ export const fonts: Font[] = [
     id: "Spectral",
     name: "Spectral",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
   {
     id: "Syncopate",
@@ -285,6 +299,7 @@ export const fonts: Font[] = [
     id: "TheanoDidot",
     name: "TheanoDidot",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
   {
     id: "VollkornSC",
@@ -300,5 +315,6 @@ export const fonts: Font[] = [
     id: "YoungSerif",
     name: "Young Serif",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForPrint: true
   },
 ]

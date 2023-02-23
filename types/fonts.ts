@@ -3,7 +3,8 @@ export type Font = {
   name: string,
   variants: FontVariant[],
   fontType?: string,
-  additionalInfo?: string
+  additionalInfo?: string,
+  availableForPrint?: boolean
 }
 
 export enum FontVariant {
