@@ -108,7 +108,6 @@ export type ThemeStyleProps = {
     subtitle: boolean;
     image: boolean;
   };
-  titleAlignment: Alignment;
   chapterNumbering: ChapterNumbering;
   titleCardExtras?: Record<string, string | number>;
 
