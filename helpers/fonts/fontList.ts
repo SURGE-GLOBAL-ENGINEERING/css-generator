@@ -136,6 +136,13 @@ export const fonts: Font[] = [
     variants: [FontVariant.regular]
   },
   {
+    id: "OpenSansLT",
+    name: "Large Print Open Sans",
+    variants: [FontVariant.regular, FontVariant.bold],
+    additionalInfo: "no italics",
+    availableForPrint: true
+  },
+  {
     id: "LibreBaskerville",
     name: "Libre Baskerville",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
@@ -191,13 +198,6 @@ export const fonts: Font[] = [
     id: "OpenSans",
     name: "Open Sans",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
-  },
-  {
-    id: "OpenSansLT",
-    name: "Large Print Open Sans",
-    variants: [FontVariant.regular, FontVariant.bold],
-    additionalInfo: "no italics",
     availableForPrint: true
   },
   {
