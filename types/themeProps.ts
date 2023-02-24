@@ -23,6 +23,26 @@ export type HeaderTextColor = "default" | "light";
 export type BookTitleFontMap = "chapterTitle" | "chapterSubtitle" | "chapterNumber";
 export type SceneBreakShowSetting = "break-with-image" | "break-without-image" | "no-break";
 
+export interface PrintExtraProps {
+  textTransform: "capitalize" | "uppercase" | "lowercase";
+  fontVariant: "superscript" | "subscript" | "small-caps" | "normal"
+  fontWeight: number;
+  borderTop: number | string;
+  borderBottom: number | string;
+  borderColor: string;
+  borderStyle: "dashed" | "dotted" | "solid"
+  color: string;
+
+  paddingTop: number | string; // ! provide with the em value
+  paddingBottom: number | string;
+
+  fontSize: number | string;
+  fontFamily: string;
+  lineHeight: number | string;
+  imageSrc: string;
+  width: number | string;
+}
+
 export type HeaderImage = {
   url: string;
   width: number;
@@ -42,10 +62,11 @@ export type HeaderElement = {
   align: Alignment;
   width: number;
   extras?: Record<string, string | number>;
+  printExtras?: Partial<PrintExtraProps>;
 };
 
 export type BookTitleMeta = {
-  fontMap : BookTitleFontMap;
+  fontMap: BookTitleFontMap;
   extras: Record<string, string | number>;
 }
 
