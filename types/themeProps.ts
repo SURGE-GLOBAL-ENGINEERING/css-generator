@@ -43,6 +43,11 @@ export interface PrintExtraProps {
   width: number | string;
 }
 
+export interface HeaderExtras {
+  print: Partial<PrintExtraProps>,
+  digital: Record<string, string | number>
+}
+
 export type HeaderImage = {
   url: string;
   width: number;
@@ -130,7 +135,7 @@ export type ThemeStyleProps = {
     image: boolean;
   };
   chapterNumbering: ChapterNumbering;
-  titleCardExtras?: Record<string, string | number>;
+  titleCardExtras?: HeaderExtras;
 
   header: {
     font: string;
