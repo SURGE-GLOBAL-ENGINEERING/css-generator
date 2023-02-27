@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.37](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.36...v1.1.37) (2023-02-27)
+
+
+### Bug Fixes
+
+* **AT-1099:** Changed large print font order ([d3c64b6](https://github.com/Paladin-Analytics/css-generator/commit/d3c64b61a2ee4c0a6f97714db36d5d5ca7f92d68))
+
 ### [1.1.36](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.34...v1.1.36) (2023-02-24)
 
 
