@@ -35,10 +35,10 @@ export const getFirstParagraphCss = (
         display: block;
       }
       .${themeId} .withDropcap .dropcap:before {
-        margin-bottom: 0.275rem;  
+        margin-bottom: 0.275rem;
       }
       .${themeId} .withDropcap .dropcap:after {
-        margin-top: -0.175rem;  
+        margin-top: -0.175rem;
       }`
         : ""
     }
@@ -55,13 +55,6 @@ export const getFirstParagraphCss = (
     ${
       isPreviewer
         ? `
-        .${themeId} p:not(p.lead_word, p.dropcap){
-          text-indent: ${firstParagraph.indent ? firstParagraph.indent : 0}em;
-          margin-block-end: ${
-            !firstParagraph.indent ? paragraph.paragraphSpacing : 0
-          }em;
-        }
-
         .${themeId} .withDropcap .dropcap{
           max-height: ${15 * 2}px;
         }
