@@ -21,13 +21,3 @@ export const getChapNumberFontSize = (element: HeaderElement) => {
   return (2 + element.size + (element.fontSizeOffset || 0)) / 3;
 };
 
-// /**
-//  * Get the font size for theme thumbnail header elements in px
-//  */
-// export const getThemeThumbnailFontSize = (
-//   element: HeaderElement,
-// ) => {
-//   const fontSize = 10 + element.size / 2;
-
-//   return fontSize;
-// };
