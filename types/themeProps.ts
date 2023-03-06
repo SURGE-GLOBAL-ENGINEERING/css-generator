@@ -1,3 +1,7 @@
+export type ChapterType = 'uncategorized' | 'chapter' | 'custom' | 'half-title' | 'title' | 'toc' | 'endnotes'
+| 'image'|  'about-author' | 'copyrights' | 'epigraph' | 'foreword' | 'introduction' | 'preface' | 'prologue'
+ | 'epilogue' | 'afterword' | 'acknowledgments' | 'also-by' | 'dedication' | 'blurbs' | 'volume' | 'part';
+
 export enum HeaderFontStyle {
   regular = "regular",
   bold = "bold",
@@ -73,6 +77,7 @@ export type HeaderElement = {
 export type BookTitleMeta = {
   fontMap: BookTitleFontMap;
   extras: Record<string, string | number>;
+  printExtras?: Partial<PrintExtraProps>;
 }
 
 export type BookTitlePage = {
@@ -121,6 +126,8 @@ export type Paragraph = {
   hyphens: boolean;
   justify: boolean;
 };
+
+export type ThemeHeaderPropsType = "chapterNo" | "chapterTitle" | "chapterSubtitle" | "image" | "header" | "footer";
 
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
@@ -177,6 +184,7 @@ export type ThemeStyleProps = {
   notesMode: NotesMode;
   ePubNotesMode: EpubNotesMode;
   bookTitlePage?: BookTitlePage;
+  chapterOverrides?: Record<ChapterType, Record<ThemeHeaderPropsType, any>>
 };
 
 export type ThemeMeta = {
