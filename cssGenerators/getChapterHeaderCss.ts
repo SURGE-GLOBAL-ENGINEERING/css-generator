@@ -30,12 +30,19 @@ export const getChapterHeaderCss = (
     styleProps.image?.headerTextColor === "light";
 
   return `
-    .${themeProps._id} .${addPrefix("chp_bg", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_bg", prefix)}{
       background-color: rgba(255,255,255, ${1 - getNormalizedOpacity(
         styleProps.image.opacity
       )});
       background-blend-mode: lighten;
       opacity: ${getNormalizedOpacity(styleProps.image.opacity)};
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-title", prefix)} h2{
@@ -90,6 +97,7 @@ export const getChapterHeaderCss = (
       order: ${getImagePlacementOrder(styleProps.image.placement)};
       text-align: ${styleProps.image.alignment};
       padding-top: 0.3em;
+      z-index: 10;
       ${isThumbnail? thumbnailCssOverwrites.imageContainer(): ""}
     }
 
@@ -101,16 +109,19 @@ export const getChapterHeaderCss = (
       text-align: ${styleProps.chapterNo.align}!important;
       order: 2;
       text-transform: capitalize;
+      z-index: 10;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title", prefix)}{
       text-align: ${styleProps.chapterTitle.align}!important;
       order: 3;
+      z-index: 10;
     }
 
     .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)}{
       text-align: ${styleProps.chapterSubtitle.align}!important;
       order: 4;
+      z-index: 10;
     }
 
     .${themeProps._id} .${addPrefix("chapter-number", prefix)} span, .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${addPrefix("epub-toc-title-card", prefix)} h2, .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3 {
@@ -172,22 +183,6 @@ export const getChapterHeaderCss = (
       font-family: ${styleProps.footer.font};
     }
 
-    .${themeProps._id} .${addPrefix("title-card", prefix)} {
-      font-family: '${styleProps.chapterTitle.font}';
-    }
-
-    .${themeProps._id} .${addPrefix("title-card", prefix)} h1{
-      padding: 9px 0;
-    }
-
-    .${themeProps._id} .${addPrefix("title-card", prefix)} h2{
-      padding: 15px 0;
-    }
-
-    .${themeProps._id} .${addPrefix("title-card", prefix)} h3{
-      padding: 15px 0;
-    }
-
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .left{
       text-align: left;
     }
@@ -204,21 +199,6 @@ export const getChapterHeaderCss = (
       width: 100%;
       justify-content:center;
     }
-
-    ${
-      isPreviewer || isThumbnail
-        ? `
-    .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_bg", prefix)}{
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      background-size: cover;
-      background-repeat: no-repeat;
-      z-index: -1;
-    }`
-        : ""
-    }
-  `;
-}
+    
+    `;
+};
