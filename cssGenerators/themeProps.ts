@@ -127,7 +127,7 @@ export const themePropsToCss = (
 
     ${getMarkCss(themeProps._id)}
 
-    ${getListPluginCss(themeProps._id)}
+    ${getListPluginCss(themeProps._id, isPreviewer)}
 
     /* Chapter Types */
 
