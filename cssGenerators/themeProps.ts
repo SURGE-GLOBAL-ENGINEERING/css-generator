@@ -63,9 +63,9 @@ export const themePropsToCss = (
 
       ${styleProps.paragraph.justify ? `text-align: justify;` : ``}
     }
-    
+
     .${themeProps._id} p{
-      orphans: 2; 
+      orphans: 2;
       widows: 2;
       padding-bottom: 0em;
       margin-top: 0em;
@@ -95,12 +95,10 @@ export const themePropsToCss = (
       height: 100%;
       max-height:100%;
     }
-    
+
     ${getFirstParagraphCss(
       styleProps.firstParagraph,
-      styleProps.paragraph,
       themeProps._id,
-      isPreviewer
     )}
 
     ${getFullBleedImageCss(themeProps._id)}
@@ -151,7 +149,7 @@ export const themePropsToCss = (
     ${getEpigraphCss(themeProps._id)}
 
     ${getAlsobyCss(themeProps._id)}
-    
+
     ${getFullPageImageCss(themeProps._id)}
 
     ${getPartCss(themeProps._id)}
