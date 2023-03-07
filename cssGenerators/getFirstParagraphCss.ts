@@ -33,12 +33,6 @@ export const getFirstParagraphCss = (
       .${themeId} .withDropcap .dropcap:after {
         content: "";
         display: block;
-      }
-      .${themeId} .withDropcap .dropcap:before {
-        margin-bottom: 0.275rem;
-      }
-      .${themeId} .withDropcap .dropcap:after {
-        margin-top: -0.175rem;
       }`
         : ""
     }
