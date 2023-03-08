@@ -34,7 +34,6 @@ export const getChapterHeaderCss = (
       background-color: rgba(255,255,255, ${1 - getNormalizedOpacity(
         styleProps.image.opacity
       )});
-      background-blend-mode: lighten;
       opacity: ${getNormalizedOpacity(styleProps.image.opacity)};
       position: absolute;
       top: 0;
