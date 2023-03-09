@@ -31,7 +31,7 @@ export const getTocCss = (themeProps: Theme, themeId: string ,) => {
     }
     /* EPUB TOC */
     .${themeId} .epub-toc-title-card h2 {
-      text-align: ${styleProps.titleAlignment};
+      text-align: ${styleProps.chapterTitle.align};
       font-family: '${styleProps.chapterTitle.font}';
     }
 

@@ -70,9 +70,9 @@ export const getChapterHeaderCss = (
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${addPrefix("epub-toc-title-card", prefix)}{
       display: flex;
       position: relative;
-      min-height: 13em;
+      min-height: 15em;
       padding-bottom: 0;
-      ${styleObjectToCss(styleProps.titleCardExtras)}
+      ${styleObjectToCss(styleProps.titleCardExtras?.digital)}
       ${isThumbnail? thumbnailCssOverwrites.titleCard(): ""}
     }
 
