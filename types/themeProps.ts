@@ -75,8 +75,8 @@ export type HeaderElement = {
 };
 
 export type BookTitleMeta = {
-  fontMap: BookTitleFontMap;
-  extras: Record<string, string | number>;
+  fontMap?: BookTitleFontMap;
+  extras?: Record<string, string | number>;
   printExtras?: Partial<PrintExtraProps>;
 }
 
