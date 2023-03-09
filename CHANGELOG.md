@@ -2,7 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.1.39](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.37...v1.1.39) (2023-02-27)
+### [1.1.44](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.41...v1.1.44) (2023-03-07)
+
+### [1.1.43](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.42...v1.1.43) (2023-03-07)
+
+### [1.1.42](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.41...v1.1.42) (2023-03-07)
+
+### [1.1.41](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.40...v1.1.41) (2023-03-07)
+
+### [1.1.40](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.39...v1.1.40) (2023-03-01)
+
+### [1.1.39](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.34...v1.1.39) (2023-03-01)
+
+
+### Bug Fixes
+
+* **AT-1099:** added availableForPrint ([376a5e8](https://github.com/Paladin-Analytics/css-generator/commit/376a5e8c6a0bbc34288acf4ceeb6ded5a44e7743))
+* **AT-1099:** Changed large print font order ([d3c64b6](https://github.com/Paladin-Analytics/css-generator/commit/d3c64b61a2ee4c0a6f97714db36d5d5ca7f92d68))
+
+### [1.1.38](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.36...v1.1.38) (2023-02-27)
 
 ### [1.1.38](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.37...v1.1.38) (2023-02-27)
 

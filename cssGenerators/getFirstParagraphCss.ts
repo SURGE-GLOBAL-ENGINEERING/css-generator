@@ -1,4 +1,3 @@
-import { EpubPreviewerPrefix } from "../helpers";
 import { FirstParagraph, Paragraph } from "../types";
 
 /**
@@ -6,9 +5,7 @@ import { FirstParagraph, Paragraph } from "../types";
  */
 export const getFirstParagraphCss = (
   firstParagraph: FirstParagraph,
-  paragraph: Paragraph,
   themeId: string,
-  isPreviewer: boolean
 ) => {
   return `
     .${themeId} .withDropcap .dropcap, .${themeId} .ornamental-break + p{
@@ -35,10 +32,10 @@ export const getFirstParagraphCss = (
         display: block;
       }
       .${themeId} .withDropcap .dropcap:before {
-        margin-bottom: 0.275rem;  
+        margin-bottom: 0.275rem;
       }
       .${themeId} .withDropcap .dropcap:after {
-        margin-top: -0.175rem;  
+        margin-top: -0.175rem;
       }`
         : ""
     }
@@ -49,22 +46,6 @@ export const getFirstParagraphCss = (
       .${themeId} .withDropcap .lead_word{
         text-transform: uppercase;
       }
-      `
-        : ""
-    }
-    ${
-      isPreviewer
-        ? `
-        .${themeId} p:not(p.lead_word, p.dropcap){
-          text-indent: ${firstParagraph.indent ? firstParagraph.indent : 0}em;
-          margin-block-end: ${
-            !firstParagraph.indent ? paragraph.paragraphSpacing : 0
-          }em;
-        }
-
-        .${themeId} .withDropcap .dropcap{
-          max-height: ${15 * 2}px;
-        }
       `
         : ""
     }
