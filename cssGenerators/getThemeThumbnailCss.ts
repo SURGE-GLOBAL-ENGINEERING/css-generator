@@ -2,7 +2,7 @@ import { Theme } from "../types";
 import { getChapterHeaderCss } from "./getChapterHeaderCss";
 
 /**
- * Can contain previewer only styles
+ * Styles for the theme thumbnails
  */
 export const getThemeThumbnailCss = (
   theme: Theme,
