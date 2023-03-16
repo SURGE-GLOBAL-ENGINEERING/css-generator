@@ -18,14 +18,7 @@ export const getBookTitleCss = (props: bookTitlteCssProps) => {
   } = props;
 
   return `
-    .${themeId} .title{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-      height: ${isPreviewer ? "100%" : "100vh"};
-    }
+    
     
     .${themeId} .title-card{
       position: absolute;
@@ -33,6 +26,15 @@ export const getBookTitleCss = (props: bookTitlteCssProps) => {
       width: 100%;
       text-align: center;
       padding: 2rem 0.4rem;
+    }
+
+    .${themeId} .title-parent{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      height: ${isPreviewer ? "100%" : "100vh"};
     }
 
     .${themeId} .title-card h1{
