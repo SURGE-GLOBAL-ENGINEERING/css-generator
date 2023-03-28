@@ -62,12 +62,12 @@ export const getChapterHeaderCss = (
       };
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${themeProps._id} .${addPrefix("title-card", prefix)}, .${addPrefix("epub-toc-title-card", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${themeProps._id} .${addPrefix("title-card", prefix)}, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)}{
       display: flex;
       flex-direction: column;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${addPrefix("epub-toc-title-card", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)}{
       display: flex;
       position: relative;
       min-height: 15em;
@@ -123,7 +123,7 @@ export const getChapterHeaderCss = (
       z-index: 10;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-number", prefix)} span, .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${addPrefix("epub-toc-title-card", prefix)} h2, .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3 {
+    .${themeProps._id} .${addPrefix("chapter-number", prefix)} span, .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2, .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3 {
         font-weight: 400;
     }
 
@@ -142,12 +142,12 @@ export const getChapterHeaderCss = (
       ${isThumbnail? thumbnailCssOverwrites.number(): ""}
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${addPrefix("epub-toc-title-card", prefix)} h2{
+    .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2{
       display: inline-block;
       font-family: ${getFontFamilyName(
         styleProps.chapterTitle.font,
         headerStyleToFontVariant(styleProps.chapterTitle.style)
-      )};
+      )} !important;
       font-size: ${getTitleFontSize(styleProps.chapterTitle)}em;
       text-align: ${styleProps.chapterTitle.align}!important;
       line-height: 1.${styleProps.chapterTitle.size};
