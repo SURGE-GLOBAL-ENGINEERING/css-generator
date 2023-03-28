@@ -48,18 +48,21 @@ export const getChapterHeaderCss = (
       color: ${
         renderLightHeaderText ? "white" : "black"
       };
+      opacity: 1 !important;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)}{
       color: ${
         renderLightHeaderText ? "white" : "black"
       };
+      opacity: 1 !important;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
       color: ${
         renderLightHeaderText ? "white" : "black"
       };
+      opacity: 1 !important;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${themeProps._id} .${addPrefix("title-card", prefix)}, .${addPrefix("epub-toc-title-card", prefix)}{
