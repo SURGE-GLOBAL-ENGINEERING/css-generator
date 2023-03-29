@@ -4,9 +4,6 @@ import {
   getImagePlacementOrder,
   fontStylesToCssProp,
   getNormalizedOpacity,
-  getTitleFontSize,
-  getSubTitleFontSize,
-  getChapNumberFontSize,
   getFontFamilyName,
   headerStyleToFontVariant,
   addPrefix,
@@ -133,7 +130,7 @@ export const getChapterHeaderCss = (
         styleProps.chapterNo.font,
         headerStyleToFontVariant(styleProps.chapterNo.style)
       )};
-      font-size: ${getChapNumberFontSize(styleProps.chapterNo)}em;
+      font-size: ${styleProps.chapterNo.size}px;
       text-align: ${styleProps.chapterNo.align};
       line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
@@ -148,7 +145,7 @@ export const getChapterHeaderCss = (
         styleProps.chapterTitle.font,
         headerStyleToFontVariant(styleProps.chapterTitle.style)
       )};
-      font-size: ${getTitleFontSize(styleProps.chapterTitle)}em;
+      font-size: ${styleProps.chapterTitle.size}px;
       text-align: ${styleProps.chapterTitle.align}!important;
       line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
@@ -163,7 +160,7 @@ export const getChapterHeaderCss = (
         styleProps.chapterSubtitle.font,
         headerStyleToFontVariant(styleProps.chapterSubtitle.style)
       )};
-      font-size: ${getSubTitleFontSize(styleProps.chapterSubtitle)}em;
+      font-size: ${styleProps.chapterSubtitle.size}px;
       text-align: ${styleProps.chapterSubtitle.align};
       line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
