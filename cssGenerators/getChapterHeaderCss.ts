@@ -135,7 +135,6 @@ export const getChapterHeaderCss = (
       )};
       font-size: ${getChapNumberFontSize(styleProps.chapterNo)}em;
       text-align: ${styleProps.chapterNo.align};
-      line-height: 1.${styleProps.chapterNo.size};
       width: ${styleProps.chapterNo.width}%;
       ${fontStylesToCssProp(styleProps.chapterNo.style)}
       ${styleObjectToCss(styleProps.chapterNo.extras)}
@@ -150,7 +149,6 @@ export const getChapterHeaderCss = (
       )} !important;
       font-size: ${getTitleFontSize(styleProps.chapterTitle)}em;
       text-align: ${styleProps.chapterTitle.align}!important;
-      line-height: 1.${styleProps.chapterTitle.size};
       width: ${styleProps.chapterTitle.width}%;
       ${fontStylesToCssProp(styleProps.chapterTitle.style)}
       ${styleObjectToCss(styleProps.chapterTitle.extras)}
@@ -165,7 +163,6 @@ export const getChapterHeaderCss = (
       )};
       font-size: ${getSubTitleFontSize(styleProps.chapterSubtitle)}em;
       text-align: ${styleProps.chapterSubtitle.align};
-      line-height: 1.${styleProps.chapterSubtitle.size};
       width: ${styleProps.chapterSubtitle.width}%;
       ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
       ${styleObjectToCss(styleProps.chapterSubtitle.extras)}
