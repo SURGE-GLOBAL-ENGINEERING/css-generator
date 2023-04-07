@@ -5,4 +5,5 @@ export const getListPluginCss = (themeId: string, isPreviewer: boolean) => {
       padding: 1rem;
     }`;
   }
+  return "";
 };
