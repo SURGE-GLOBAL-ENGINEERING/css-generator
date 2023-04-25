@@ -28,7 +28,7 @@ export const getBookTitleCss = (props: bookTitlteCssProps) => {
     }
     
     .${themeId} .title-card{
-      position: absolute;
+      position: relative;
       top:0px;
       width: 100%;
       text-align: center;
