@@ -129,6 +129,8 @@ export type Paragraph = {
 
 export type ThemeHeaderPropsType = "chapterNo" | "chapterTitle" | "chapterSubtitle" | "image" | "header" | "footer";
 
+export type MarginUnits = "in" | "mm";
+
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
   image: HeaderImage;
@@ -166,6 +168,7 @@ export type ThemeStyleProps = {
   beginFirstSentence: BeginFirstSentence;
   paragraph: Paragraph;
   margin: {
+    unit?: MarginUnits;
     bottom: number;
     top: number;
     outer: number;
