@@ -131,6 +131,8 @@ export type ThemeHeaderPropsType = "chapterNo" | "chapterTitle" | "chapterSubtit
 
 export type MarginUnits = "in" | "mm";
 
+export type TrimUnits = "in" | "mm"
+
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
   image: HeaderImage;
@@ -159,6 +161,7 @@ export type ThemeStyleProps = {
   baseFontSize: number;
 
   trim: {
+    unit?: TrimUnits;
     height: number;
     width: number;
     isLargeTrim?: boolean;
