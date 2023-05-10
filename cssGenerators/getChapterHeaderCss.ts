@@ -46,6 +46,7 @@ export const getChapterHeaderCss = (
         renderLightHeaderText ? "white" : "black"
       };
       opacity: 1 !important;
+      word-break: break-word;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)}{
@@ -53,6 +54,7 @@ export const getChapterHeaderCss = (
         renderLightHeaderText ? "white" : "black"
       };
       opacity: 1 !important;
+      word-break: break-word;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
@@ -60,6 +62,7 @@ export const getChapterHeaderCss = (
         renderLightHeaderText ? "white" : "black"
       };
       opacity: 1 !important;
+      word-break: break-word;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${themeProps._id} .${addPrefix("title-card", prefix)}, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)}{
