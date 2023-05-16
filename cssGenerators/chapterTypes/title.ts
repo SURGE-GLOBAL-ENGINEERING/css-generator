@@ -64,7 +64,6 @@ export const getBookTitleCss = (props: bookTitlteCssProps) => {
       font-size: 20px;
       text-align: inherit;
       padding: 1em 0em;
-      color:#666;
       font-family: ${
         titlePageConfigs?.subtitle?.fontMap
           ? getFontFamilyFromFontMap(chapterHeaderFonts, titlePageConfigs.subtitle.fontMap)
