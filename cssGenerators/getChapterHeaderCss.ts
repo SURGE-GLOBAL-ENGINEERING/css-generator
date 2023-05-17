@@ -27,6 +27,77 @@ export const getChapterHeaderCss = (
     styleProps.image?.headerTextColor === "light";
 
   return `
+    
+
+    .${themeProps._id} .${addPrefix("chapter-number", prefix)} span{
+      display: inline-block;
+      font-family: ${getFontFamilyName(
+        styleProps.chapterNo.font,
+        headerStyleToFontVariant(styleProps.chapterNo.style)
+      )};
+      font-size: ${styleProps.chapterNo.size}px;
+      text-align: ${styleProps.chapterNo.align};
+      width: ${styleProps.chapterNo.width}%;
+      ${fontStylesToCssProp(styleProps.chapterNo.style)}
+      ${styleObjectToCss(styleProps.chapterNo.extras)}
+      ${isThumbnail? thumbnailCssOverwrites.number(): ""}
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2{
+      display: inline-block;
+      font-family: ${getFontFamilyName(
+        styleProps.chapterTitle.font,
+        headerStyleToFontVariant(styleProps.chapterTitle.style)
+      )} !important;
+      font-size: ${styleProps.chapterTitle.size}px;
+      text-align: ${styleProps.chapterTitle.align}!important;
+      width: ${styleProps.chapterTitle.width}%;
+      ${fontStylesToCssProp(styleProps.chapterTitle.style)}
+      ${styleObjectToCss(styleProps.chapterTitle.extras)}
+      ${isThumbnail? thumbnailCssOverwrites.title(): ""}
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
+      display: inline-block;
+      font-family: ${getFontFamilyName(
+        styleProps.chapterSubtitle.font,
+        headerStyleToFontVariant(styleProps.chapterSubtitle.style)
+      )};
+      font-size: ${styleProps.chapterSubtitle.size}px;
+      text-align: ${styleProps.chapterSubtitle.align};
+      width: ${styleProps.chapterSubtitle.width}%;
+      ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
+      ${styleObjectToCss(styleProps.chapterSubtitle.extras)}
+      ${isThumbnail? thumbnailCssOverwrites.subtitle(): ""}
+    }
+
+    .${themeProps._id} header .${addPrefix("meta", prefix)}{
+      font-size: ${4 + 2 * styleProps.header.size}pt;
+      font-family: ${styleProps.header.font};
+    }
+
+    .${themeProps._id} footer .${addPrefix("meta", prefix)}{
+      font-size: ${4 + 2 * styleProps.footer.size}pt;
+      font-family: ${styleProps.footer.font};
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .left{
+      text-align: left;
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .center{
+      text-align: center;
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .right{
+      text-align: right;
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}{
+      width: 100%;
+      justify-content:center;
+    }
+
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_bg", prefix)}{
       background-color: rgba(255,255,255, ${1 - getNormalizedOpacity(
         styleProps.image.opacity
@@ -57,7 +128,7 @@ export const getChapterHeaderCss = (
       word-break: break-word;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
+    .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3{
       color: ${
         renderLightHeaderText ? "white" : "black"
       };
@@ -128,75 +199,6 @@ export const getChapterHeaderCss = (
 
     .${themeProps._id} .${addPrefix("chapter-number", prefix)} span, .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2, .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3 {
         font-weight: 400;
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-number", prefix)} span{
-      display: inline-block;
-      font-family: ${getFontFamilyName(
-        styleProps.chapterNo.font,
-        headerStyleToFontVariant(styleProps.chapterNo.style)
-      )};
-      font-size: ${styleProps.chapterNo.size}px;
-      text-align: ${styleProps.chapterNo.align};
-      width: ${styleProps.chapterNo.width}%;
-      ${fontStylesToCssProp(styleProps.chapterNo.style)}
-      ${styleObjectToCss(styleProps.chapterNo.extras)}
-      ${isThumbnail? thumbnailCssOverwrites.number(): ""}
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2{
-      display: inline-block;
-      font-family: ${getFontFamilyName(
-        styleProps.chapterTitle.font,
-        headerStyleToFontVariant(styleProps.chapterTitle.style)
-      )} !important;
-      font-size: ${styleProps.chapterTitle.size}px;
-      text-align: ${styleProps.chapterTitle.align}!important;
-      width: ${styleProps.chapterTitle.width}%;
-      ${fontStylesToCssProp(styleProps.chapterTitle.style)}
-      ${styleObjectToCss(styleProps.chapterTitle.extras)}
-      ${isThumbnail? thumbnailCssOverwrites.title(): ""}
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3{
-      display: inline-block;
-      font-family: ${getFontFamilyName(
-        styleProps.chapterSubtitle.font,
-        headerStyleToFontVariant(styleProps.chapterSubtitle.style)
-      )};
-      font-size: ${styleProps.chapterSubtitle.size}px;
-      text-align: ${styleProps.chapterSubtitle.align};
-      width: ${styleProps.chapterSubtitle.width}%;
-      ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
-      ${styleObjectToCss(styleProps.chapterSubtitle.extras)}
-      ${isThumbnail? thumbnailCssOverwrites.subtitle(): ""}
-    }
-
-    .${themeProps._id} header .${addPrefix("meta", prefix)}{
-      font-size: ${4 + 2 * styleProps.header.size}pt;
-      font-family: ${styleProps.header.font};
-    }
-
-    .${themeProps._id} footer .${addPrefix("meta", prefix)}{
-      font-size: ${4 + 2 * styleProps.footer.size}pt;
-      font-family: ${styleProps.footer.font};
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .left{
-      text-align: left;
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .center{
-      text-align: center;
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .right{
-      text-align: right;
-    }
-
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}{
-      width: 100%;
-      justify-content:center;
     }
 
     `;
