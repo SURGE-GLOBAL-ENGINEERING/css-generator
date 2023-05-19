@@ -8,9 +8,6 @@ export const getTocCss = (themeProps: Theme, themeId: string ,) => {
       margin-left: 0px;
       list-style: none;
     }
-    .${themeId} .toc-subtitle{
-      margin-left: 1.5rem;
-    }
     .${themeId} .toc-subheading{
       margin-left: 1.5rem;
     }
@@ -41,6 +38,9 @@ export const getTocCss = (themeProps: Theme, themeId: string ,) => {
 
     .${themeId} .toc-block {
       list-style: none;
+    }
+    .${themeId} .chapter-num-hidden {
+      visibility: hidden;
     }
   `
 };
