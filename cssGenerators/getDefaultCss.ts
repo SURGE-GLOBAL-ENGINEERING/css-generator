@@ -90,6 +90,9 @@ export const getDefaultCss = (themeId: string, paragraphSpacing: number): string
         line-height: ${paragraphSpacing};
       }
 
+      .${themeId} ul .reset-padding, .${themeId} ol .reset-padding{
+        margin-left: -1rem;
+      }
       .${themeId} li{
         padding: 0.2rem 0rem;
       }
