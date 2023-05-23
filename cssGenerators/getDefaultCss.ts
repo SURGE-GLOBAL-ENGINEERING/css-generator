@@ -50,7 +50,6 @@ export const getDefaultCss = (themeId: string, paragraphSpacing: number): string
 
       .${themeId} h1 {
         font-size: 1.3em;
-        font-weight: bold;
         padding: 0.6em 0em;
       }
   
