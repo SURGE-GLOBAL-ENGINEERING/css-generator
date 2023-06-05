@@ -197,6 +197,7 @@ export type ThemeMeta = {
   _id: string;
   name: string;
   css: string;
+  originThemeId: string,
   isPredefinedTheme: boolean;
   fonts: string[];
   isFavourite: boolean;
