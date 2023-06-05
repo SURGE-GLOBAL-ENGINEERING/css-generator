@@ -1,6 +1,6 @@
 import { find } from "lodash";
 import { capitalizeFirstLetter } from "../misc";
-import { BookTitleFontMap, Font, FontVariant, HeaderFonts, HeaderFontStyle } from "../../types";
+import { BookTitleFontMap, Font, FontVariant, HeaderFonts, HeaderFontStyle, ThemeStyleProps } from "../../types";
 import { fonts } from "./fontList";
 import { headerStyleToFontVariant } from "./getFontVariant";
 
@@ -27,10 +27,24 @@ export const getFontFileNameForEpubGen = (fontId: string, style: HeaderFontStyle
   return getFontFileName(font, fontVariant);
 }
 
-export const getFontFamilyFromFontMap = (fonts: HeaderFonts, fontMap: BookTitleFontMap): string => {
+export const getFontFamilyFromFontMap = (themeStyleProps: ThemeStyleProps, fontMap: BookTitleFontMap): string => {
+  const headerFontConfig: HeaderFonts = {
+    chapterTitleFont: {
+      fontId: themeStyleProps.chapterTitle.font,
+      fontVariant: headerStyleToFontVariant(themeStyleProps.chapterTitle.style)
+    },
+    chapterSubtitleFont: {
+      fontId: themeStyleProps.chapterSubtitle.font,
+      fontVariant: headerStyleToFontVariant(themeStyleProps.chapterSubtitle.style)
+    },
+    chapterNumberFont: {
+      fontId: themeStyleProps.chapterNo.font,
+      fontVariant: headerStyleToFontVariant(themeStyleProps.chapterNo.style)
+    }
+  };
   switch(fontMap){
-    case "chapterTitle": return getFontFamilyName(fonts.chapterTitleFont, FontVariant.regular);
-    case "chapterSubtitle": return getFontFamilyName(fonts.chapterSubtitleFont, FontVariant.regular);
-    default: return getFontFamilyName(fonts.chapterNumberFont, FontVariant.regular)
+    case "chapterTitle": return getFontFamilyName(headerFontConfig.chapterTitleFont.fontId, headerFontConfig.chapterTitleFont.fontVariant);
+    case "chapterSubtitle": return getFontFamilyName(headerFontConfig.chapterSubtitleFont.fontId, headerFontConfig.chapterSubtitleFont.fontVariant);
+    default: return getFontFamilyName(headerFontConfig.chapterNumberFont.fontId, headerFontConfig.chapterNumberFont.fontVariant);
   }
 }

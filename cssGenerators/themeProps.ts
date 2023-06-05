@@ -129,16 +129,7 @@ export const themePropsToCss = (
 
     /* Chapter Types */
 
-    ${getBookTitleCss({
-      themeId: themeProps._id,
-      chapterHeaderFonts: {
-        chapterTitleFont: styleProps.chapterTitle.font,
-        chapterSubtitleFont: styleProps.chapterSubtitle.font,
-        chapterNumberFont: styleProps.chapterNo.font
-      },
-      isPreviewer,
-      titlePageConfigs: styleProps.bookTitlePage
-    })}
+    ${getBookTitleCss(themeProps, isPreviewer)}
 
     ${getTocCss(themeProps, themeProps._id)}
 
