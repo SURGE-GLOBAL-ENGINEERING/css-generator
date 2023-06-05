@@ -1,24 +1,46 @@
 import styleObjectToCss from "react-style-object-to-css";
 
-import { getFontFamilyName, getFontFamilyFromFontMap } from "../../helpers";
-import { FontVariant, BookTitlePage, HeaderFonts } from "../../types";
+import {
+  getFontFamilyName,
+  getFontFamilyFromFontMap,
+  headerStyleToFontVariant,
+} from "../../helpers";
+import { Theme } from "../../types";
 
-interface bookTitlteCssProps {
-  themeId: string;
-  chapterHeaderFonts: HeaderFonts;
-  isPreviewer: boolean;
-  titlePageConfigs?: BookTitlePage;
-}
-export const getBookTitleCss = (props: bookTitlteCssProps) => {
-  const {
-    themeId,
-    chapterHeaderFonts,
-    isPreviewer,
-    titlePageConfigs
-  } = props;
+export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
+  const styleProps = themeProps.properties;
+  const titlePageConfigs = styleProps.bookTitlePage;
+
+  const bookTitleFont = titlePageConfigs?.title?.fontMap
+    ? getFontFamilyFromFontMap(styleProps, titlePageConfigs.title.fontMap)
+    : getFontFamilyName(
+        styleProps.chapterTitle.font,
+        headerStyleToFontVariant(styleProps.chapterTitle.style)
+      );
+
+  const bookSubtitleFont = titlePageConfigs?.subtitle?.fontMap
+    ? getFontFamilyFromFontMap(styleProps, titlePageConfigs.subtitle.fontMap)
+    : getFontFamilyName(
+        styleProps.chapterTitle.font,
+        headerStyleToFontVariant(styleProps.chapterTitle.style)
+      );
+
+  const bookAuthorFont = titlePageConfigs?.author?.fontMap
+    ? getFontFamilyFromFontMap(styleProps, titlePageConfigs.author.fontMap)
+    : getFontFamilyName(
+        styleProps.chapterTitle.font,
+        headerStyleToFontVariant(styleProps.chapterTitle.style)
+      );
+
+  const bookPublisherFont = titlePageConfigs?.publisher?.fontMap
+    ? getFontFamilyFromFontMap(styleProps, titlePageConfigs.publisher.fontMap)
+    : getFontFamilyName(
+        styleProps.chapterNo.font,
+        headerStyleToFontVariant(styleProps.chapterNo.style)
+      );
 
   return `
-    .${themeId} .title{
+    .${themeProps._id} .title{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -27,7 +49,7 @@ export const getBookTitleCss = (props: bookTitlteCssProps) => {
       height: ${isPreviewer ? "100%" : "100vh"};
     }
     
-    .${themeId} .title-card{
+    .${themeProps._id} .title-card{
       position: relative;
       top:0px;
       width: 100%;
@@ -35,44 +57,32 @@ export const getBookTitleCss = (props: bookTitlteCssProps) => {
       padding: 2rem 0.4rem;
     }
 
-    .${themeId} .title-card h1{
+    .${themeProps._id} .title-card h1{
       font-size: 44px;
       text-align: inherit;
       padding: 0.6em 0em;
-      font-family: ${
-        titlePageConfigs?.title?.fontMap
-          ? getFontFamilyFromFontMap(chapterHeaderFonts, titlePageConfigs.title.fontMap)
-          : getFontFamilyName(chapterHeaderFonts.chapterTitleFont, FontVariant.regular)
-      };
-      ${styleObjectToCss(titlePageConfigs?.title?.extras)}
+      font-family: ${bookTitleFont};
+      ${styleObjectToCss(styleProps.bookTitlePage?.title?.extras)}
     }
     
-    .${themeId} .title-card h2{
+    .${themeProps._id} .title-card h2{
       font-size: 22px;
       text-align: inherit;
       padding: 1em 0em;
       font-weight: normal;
-      font-family: ${
-        titlePageConfigs?.author?.fontMap
-          ? getFontFamilyFromFontMap(chapterHeaderFonts, titlePageConfigs.author.fontMap)
-          : getFontFamilyName(chapterHeaderFonts.chapterTitleFont, FontVariant.regular)
-      };
-      ${styleObjectToCss(titlePageConfigs?.author?.extras)}
+      font-family: ${bookAuthorFont};
+      ${styleObjectToCss(styleProps.bookTitlePage?.author?.extras)}
     }
     
-    .${themeId} .title-card h3{
+    .${themeProps._id} .title-card h3{
       font-size: 20px;
       text-align: inherit;
       padding: 1em 0em;
-      font-family: ${
-        titlePageConfigs?.subtitle?.fontMap
-          ? getFontFamilyFromFontMap(chapterHeaderFonts, titlePageConfigs.subtitle.fontMap)
-          : getFontFamilyName(chapterHeaderFonts.chapterTitleFont, FontVariant.regular)
-      };
-      ${styleObjectToCss(titlePageConfigs?.subtitle?.extras)}
+      font-family: ${bookSubtitleFont};
+      ${styleObjectToCss(styleProps?.bookTitlePage?.subtitle?.extras)}
     }
 
-    .${themeId} .publisher-details{
+    .${themeProps._id} .publisher-details{
       position: absolute;
       bottom: 16px;
       display: flex;
@@ -82,21 +92,17 @@ export const getBookTitleCss = (props: bookTitlteCssProps) => {
       width: 100%;
       padding: 2rem 1.6rem;
       text-transform:capitalize;
-      font-family: ${
-        titlePageConfigs?.publisher?.fontMap
-          ? getFontFamilyFromFontMap(chapterHeaderFonts, titlePageConfigs.publisher.fontMap)
-          : getFontFamilyName(chapterHeaderFonts.chapterNumberFont, FontVariant.regular)
-      };
-      ${styleObjectToCss(titlePageConfigs?.publisher?.extras)}
+      font-family: ${bookPublisherFont};
+      ${styleObjectToCss(styleProps.bookTitlePage?.publisher?.extras)}
     }
     
-    .${themeId} .publisher-logo{
+    .${themeProps._id} .publisher-logo{
       width: auto;
       max-width: 80px !important;
       padding: 0.8rem 0rem;
     }
 
-    .${themeId} .publisher-logo img{
+    .${themeProps._id} .publisher-logo img{
       width: 80px;
       height: auto;
     }

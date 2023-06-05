@@ -1,3 +1,5 @@
+import { FontVariant } from "./fonts";
+
 export type ChapterType = 'uncategorized' | 'chapter' | 'custom' | 'half-title' | 'title' | 'toc' | 'endnotes'
 | 'image'|  'about-author' | 'copyrights' | 'epigraph' | 'foreword' | 'introduction' | 'preface' | 'prologue'
  | 'epilogue' | 'afterword' | 'acknowledgments' | 'also-by' | 'dedication' | 'blurbs' | 'volume' | 'part';
@@ -204,8 +206,13 @@ export type ThemeMeta = {
 
 export type Theme = ThemeMeta & { properties: ThemeStyleProps };
 
+interface HeaderFont {
+  fontId: string;
+  fontVariant: FontVariant;
+}
+
 export interface HeaderFonts {
-  chapterNumberFont: string;
-  chapterSubtitleFont: string;
-  chapterTitleFont: string;
+  chapterNumberFont: HeaderFont;
+  chapterSubtitleFont: HeaderFont;
+  chapterTitleFont: HeaderFont;
 }
