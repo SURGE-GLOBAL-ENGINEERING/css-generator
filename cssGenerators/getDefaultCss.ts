@@ -60,28 +60,27 @@ export const getDefaultCss = (themeId: string, paragraphSpacing: number): string
       }
   
       .${themeId} h3 {
-        font-size: 1.15em;
-        font-weight: bold;
+        font-size: 1.1em;
+        font-weight: 600;
         padding: 0.6em 0em;
       }
   
       .${themeId} h4 {
-        font-size: 1.1em;
+        font-size: 1em;
         font-weight: 500;
         padding: 0.6em 0em;
       }
   
       .${themeId} h5 {
-        font-size: 1.075em;
+        font-size: 0.95em;
         font-weight: 500;
         padding: 0.6em 0em;
       }
   
       .${themeId} h6 {
-        font-size: 1.075em;
+        font-size: 0.9em;
         font-weight: 500;
         padding: 0.6em 0em;
-        font-style: italic;
       }
   
       .${themeId} ul, .${themeId} ol{
