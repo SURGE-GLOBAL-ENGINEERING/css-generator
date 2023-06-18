@@ -116,6 +116,8 @@ export type LayoutPriority =
   | "BALANCED_PAGE_SPREAD"
   | "BEST_OF_BOTH";
 
+export type ImageCaptionLayout = "left" | "left-line-above" | "left-line-preceding" | "center" | "center-italized";
+
 export type FirstParagraph = {
   indent: 0 | 1;
   uppercaseFourWords: boolean;
@@ -193,6 +195,11 @@ export type ThemeStyleProps = {
   ePubNotesMode: EpubNotesMode;
   bookTitlePage?: BookTitlePage;
   chapterOverrides?: Record<ChapterType, Record<ThemeHeaderPropsType, any>>
+  
+  imageCaption: {
+    layout: ImageCaptionLayout
+    size: number
+  }
 };
 
 export type ThemeMeta = {
