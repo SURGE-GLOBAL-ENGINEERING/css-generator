@@ -6,3 +6,4 @@ export * from "./ornamentalBreak";
 export * from "./verse";
 export * from "./endnote";
 export * from "./list";
+export * from "./hangingIndent";

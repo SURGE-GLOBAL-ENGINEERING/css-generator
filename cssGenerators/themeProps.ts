@@ -21,6 +21,7 @@ import {
   getAlsobyCss,
   getListPluginCss,
   getPartCss,
+  getHangingIndentCss,
 } from "./.";
 
 import { Theme } from "../types";
@@ -126,6 +127,8 @@ export const themePropsToCss = (
     ${getMarkCss(themeProps._id)}
 
     ${getListPluginCss(themeProps._id, isPreviewer)}
+
+    ${getHangingIndentCss(themeProps._id)}
 
     /* Chapter Types */
 
