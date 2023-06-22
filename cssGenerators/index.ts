@@ -8,3 +8,4 @@ export * from "./getChapterHeaderCss";
 export * from "./getFullBleedImageCss";
 export * from "./getFirstParagraphCss";
 export * from "./getThemeThumbnailCss";
+export * from "./getHeadingCss"

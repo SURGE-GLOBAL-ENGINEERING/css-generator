@@ -1,7 +1,7 @@
 export const getDefaultCss = (themeId: string, paragraphSpacing: number): string => {
   return `
       .${themeId} html, .${themeId} body, .${themeId} div, .${themeId} span, .${themeId} applet, .${themeId} object, .${themeId} iframe,
-      .${themeId} h1, .${themeId} h2, .${themeId} h3, .${themeId} h4, .${themeId} h5, .${themeId} h6, .${themeId} p, .${themeId} blockquote, .${themeId} pre,
+      .${themeId} h1, .${themeId} p, .${themeId} blockquote, .${themeId} pre,
       .${themeId} a, .${themeId} abbr, .${themeId} acronym, .${themeId} address, .${themeId} big, .${themeId} cite, .${themeId} code,
       .${themeId} del, .${themeId} dfn, .${themeId} em, .${themeId} img, .${themeId} ins, .${themeId} kbd, .${themeId} q, .${themeId} s, .${themeId} samp,
       .${themeId} small, .${themeId} strike, .${themeId} strong, .${themeId} tt, .${themeId} var,
@@ -50,36 +50,6 @@ export const getDefaultCss = (themeId: string, paragraphSpacing: number): string
 
       .${themeId} h1 {
         font-size: 1.3em;
-        padding: 0.6em 0em;
-      }
-  
-      .${themeId} h2 {
-        font-size: 1.2em;
-        font-weight: 600;
-        padding: 0.6em 0em;
-      }
-  
-      .${themeId} h3 {
-        font-size: 1.1em;
-        font-weight: 600;
-        padding: 0.6em 0em;
-      }
-  
-      .${themeId} h4 {
-        font-size: 1em;
-        font-weight: 500;
-        padding: 0.6em 0em;
-      }
-  
-      .${themeId} h5 {
-        font-size: 0.95em;
-        font-weight: 500;
-        padding: 0.6em 0em;
-      }
-  
-      .${themeId} h6 {
-        font-size: 0.9em;
-        font-weight: 500;
         padding: 0.6em 0em;
       }
   

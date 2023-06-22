@@ -21,6 +21,7 @@ import {
   getAlsobyCss,
   getListPluginCss,
   getPartCss,
+  getHeadingCss
 } from "./.";
 
 import { Theme } from "../types";
@@ -55,6 +56,8 @@ export const themePropsToCss = (
     ${getChapterHeaderCss(themeProps, isPreviewer, false, containerClassName)}
 
     ${getDefaultCss(themeProps._id, themeProps.properties.paragraph.paragraphSpacing)}
+
+    ${getHeadingCss(themeProps._id,themeProps)}
 
     .${themeProps._id} .wrapper{
       /* https://css-tricks.com/almanac/properties/o/overflow-wrap/ */
