@@ -11,6 +11,7 @@ import {
   getChapterHeaderCss,
   getOrnamentalBreakCss,
   getVerseCss,
+  getCalloutBoxCss,
   getFullBleedImageCss,
   getFullPageImageCss,
   getEndNoteCss,
@@ -120,6 +121,8 @@ export const themePropsToCss = (
     ${getSMIconCss(themeProps._id)}
 
     ${getVerseCss(themeProps._id)}
+
+    ${getCalloutBoxCss(themeProps._id)} 
 
     ${getEndNoteCss(themeProps._id)}
 
