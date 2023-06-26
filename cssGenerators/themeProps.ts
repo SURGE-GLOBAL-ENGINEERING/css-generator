@@ -11,6 +11,7 @@ import {
   getChapterHeaderCss,
   getOrnamentalBreakCss,
   getVerseCss,
+  getCalloutBoxCss,
   getFullBleedImageCss,
   getFullPageImageCss,
   getEndNoteCss,
@@ -21,7 +22,8 @@ import {
   getAlsobyCss,
   getListPluginCss,
   getPartCss,
-  getHeadingCss
+  getHeadingCss,
+  getHangingIndentCss
 } from "./.";
 
 import { Theme } from "../types";
@@ -124,11 +126,15 @@ export const themePropsToCss = (
 
     ${getVerseCss(themeProps._id)}
 
+    ${getCalloutBoxCss(themeProps._id)} 
+
     ${getEndNoteCss(themeProps._id)}
 
     ${getMarkCss(themeProps._id)}
 
     ${getListPluginCss(themeProps._id, isPreviewer)}
+
+    ${getHangingIndentCss(themeProps._id)}
 
     /* Chapter Types */
 
