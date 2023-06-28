@@ -25,6 +25,26 @@ export const getHeaderElementFontFaceCss = (
     {
       fontId: styleProps.chapterSubtitle.font,
       variant: headerStyleToFontVariant(styleProps.chapterSubtitle.style)
+    },
+    {
+      fontId: styleProps.headings.h2.font,
+      variant: headerStyleToFontVariant([])
+    },
+    {
+      fontId: styleProps.headings.h3.font,
+      variant: headerStyleToFontVariant([])
+    },
+    {
+      fontId: styleProps.headings.h4.font,
+      variant: headerStyleToFontVariant([])
+    },
+    {
+      fontId: styleProps.headings.h5.font,
+      variant: headerStyleToFontVariant([])
+    },
+    {
+      fontId: styleProps.headings.h6.font,
+      variant: headerStyleToFontVariant([])
     }
   ];
 

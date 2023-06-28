@@ -162,6 +162,29 @@ export type ThemeStyleProps = {
   printBaseFont: string;
   baseFontSize: number;
 
+  headings: {
+    h2: {
+      size: number;
+      font: string;
+    };
+    h3: {
+      size: number;
+      font: string;
+    };
+    h4: {
+      size: number;
+      font: string;
+    };
+    h5: {
+      size: number;
+      font: string;
+    };
+    h6: {
+      size: number;
+      font: string;
+    };
+  }
+
   trim: {
     unit?: TrimUnits;
     height: number;
