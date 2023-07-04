@@ -6,8 +6,6 @@ export const getHangingIndentCss = (themeId: string) => {
         padding-bottom: 0.75rem;
         text-indent: -0.5in;
         padding-left: 0.5in;
-        orphans: 3; 
-        widows: 3;
       }
     `
   };
