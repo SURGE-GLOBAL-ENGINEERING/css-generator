@@ -118,6 +118,11 @@ export type LayoutPriority =
 
 export type ImageCaptionLayout = "left" | "left-line-above" | "left-line-preceding" | "center" | "center-italized";
 
+export interface ImageCaption {
+  layout: ImageCaptionLayout,
+  size: number
+}
+
 export type FirstParagraph = {
   indent: 0 | 1;
   uppercaseFourWords: boolean;
@@ -136,6 +141,7 @@ export type ThemeHeaderPropsType = "chapterNo" | "chapterTitle" | "chapterSubtit
 export type MarginUnits = "in" | "mm";
 
 export type TrimUnits = "in" | "mm"
+
 
 export type ThemeStyleProps = {
   individualChapterImage: boolean;
@@ -196,10 +202,7 @@ export type ThemeStyleProps = {
   bookTitlePage?: BookTitlePage;
   chapterOverrides?: Record<ChapterType, Record<ThemeHeaderPropsType, any>>
   
-  imageCaption: {
-    layout: ImageCaptionLayout
-    size: number
-  }
+  imageCaption: ImageCaption
 };
 
 export type ThemeMeta = {
