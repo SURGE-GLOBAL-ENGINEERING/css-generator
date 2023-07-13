@@ -1,12 +1,12 @@
-export const getFullPageImageCss = (themeId: string) => {
+export const getFullPageImageCss = (prefixRule: string) => {
   return `
-    .${themeId} .image-full{
+    ${prefixRule}.image-full{
       width: 100%;
       height:auto;
       vertical-align: middle;
     }
 
-    .${themeId} .image-full img{
+    ${prefixRule}.image-full img{
       width: 100%;
       height: auto;
       max-height:100%;
@@ -14,7 +14,7 @@ export const getFullPageImageCss = (themeId: string) => {
       vertical-align: middle;
     }
 
-    .${themeId} .fullpage-image{
+    ${prefixRule}.fullpage-image{
       height: 100%;
       max-height:100%;
       position:relative;

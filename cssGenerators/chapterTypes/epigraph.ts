@@ -1,6 +1,6 @@
-export const getEpigraphCss = (themeId: string) => {
+export const getEpigraphCss = (prefixRule: string) => {
   return `
-    .${themeId} .epigraph{
+    ${prefixRule}.epigraph{
       padding-top: 33.33%;
     }
   `;

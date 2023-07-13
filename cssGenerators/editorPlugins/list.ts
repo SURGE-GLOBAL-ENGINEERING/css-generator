@@ -1,7 +1,7 @@
 /** li ol css in getDefaultCss.ts */
-export const getListPluginCss = (themeId: string, isPreviewer: boolean) => {
+export const getListPluginCss = (prefixRule: string, isPreviewer: boolean) => {
   if (!isPreviewer) {
-    return `.${themeId} .list-parent{
+    return `${prefixRule}.list-parent{
       padding: 1rem;
     }`;
   }

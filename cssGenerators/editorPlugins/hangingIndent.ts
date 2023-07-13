@@ -1,6 +1,6 @@
-export const getHangingIndentCss = (themeId: string) => {
+export const getHangingIndentCss = (prefixRule: string) => {
     return `
-      .${themeId} .hanging{
+      ${prefixRule}.hanging{
         line-height: 1.6em;
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;

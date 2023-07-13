@@ -9,12 +9,11 @@ export const getThemeThumbnailCss = (
   prefix?: string,
 ) => {
   const { properties: styleProps } = theme;
-  const thumbnailChapterHeaderCss = getChapterHeaderCss(theme, false, true, prefix)
+  const prefixRule = `.${theme._id} `;
+  const thumbnailChapterHeaderCss = getChapterHeaderCss(theme, false, true, prefixRule, prefix);
   const thumbnailChapterBodyCss = `
     .thumbnail-body, .${theme?._id} p{
-      text-indent: ${
-        styleProps.paragraph.indent ? styleProps.paragraph.indent : 0
-      }em;
+      text-indent: ${styleProps.paragraph.indent ? styleProps.paragraph.indent : 0}em;
       margin-block-end: ${
         !styleProps.paragraph.indent ? styleProps.paragraph.paragraphSpacing : 0
       }em;
