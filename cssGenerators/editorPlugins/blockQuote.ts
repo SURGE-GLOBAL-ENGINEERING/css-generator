@@ -1,6 +1,6 @@
-export const getBlockQuoteCss = (themeId: string) => {
+export const getBlockQuoteCss = (prefixRule: string) => {
   return `
-    .${themeId} blockquote{
+    ${prefixRule}blockquote{
       line-height: 1.6em;
       padding-left: 10%;
       padding-right: 10%;
@@ -10,7 +10,7 @@ export const getBlockQuoteCss = (themeId: string) => {
       widows: 3;
     }
 
-    .${themeId} blockquote .quotee{
+    ${prefixRule}blockquote .quotee{
       text-align: right;
     }
   `

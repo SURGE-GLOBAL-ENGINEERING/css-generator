@@ -52,24 +52,25 @@ export const themePropsToCss = (
     throw new Error("Missing font base Url for previewer");
   }
 
+  const prefixRule = isPreviewer ? `.${themeProps._id} ` : "";
+
   const fontFaceCss = getHeaderElementFontFaceCss(styleProps, fontLocation);
 
   const styleCss = `
-    ${getChapterHeaderCss(themeProps, isPreviewer, false, containerClassName)}
+    ${getChapterHeaderCss(themeProps, isPreviewer, false, prefixRule, containerClassName,)}
 
-    ${getDefaultCss(themeProps._id, themeProps.properties.paragraph.paragraphSpacing)}
+    ${getDefaultCss(prefixRule, themeProps.properties.paragraph.paragraphSpacing, prefixRule)}
 
-    ${getHeadingCss(themeProps._id,themeProps)}
+    ${getHeadingCss(prefixRule, themeProps, prefixRule)}
 
-    .${themeProps._id} .wrapper{
+    ${prefixRule}.wrapper{
       /* https://css-tricks.com/almanac/properties/o/overflow-wrap/ */
       overflow-wrap: break-word;
       ${styleProps.paragraph.hyphens ? `hyphens: auto;` : ``}
-
       ${styleProps.paragraph.justify ? `text-align: justify;` : ``}
     }
 
-    .${themeProps._id} p{
+    ${prefixRule}p{
       orphans: 2;
       widows: 2;
       padding-bottom: 0em;
@@ -84,75 +85,75 @@ export const themePropsToCss = (
       }em;
     }
 
-    .${themeProps._id} p:empty:not(:first-of-type){
+    ${prefixRule}p:empty:not(:first-of-type){
       min-height: 1em;
     }
 
-    .${themeProps._id} p:first-of-type{
+    ${prefixRule}p:first-of-type{
       text-indent: 0rem !important;
     }
 
-    .${themeProps._id} .text-after-subheading {
+    ${prefixRule}.text-after-subheading {
       text-indent: 0rem !important;
     }
 
-    .${themeProps._id} .print-wrapper{
+    ${prefixRule}.print-wrapper{
       height: 100%;
       max-height:100%;
     }
 
     ${getFirstParagraphCss(
       styleProps.firstParagraph,
-      themeProps._id,
+      prefixRule
     )}
 
-    ${getFullBleedImageCss(themeProps._id)}
+    ${getFullBleedImageCss(prefixRule)}
 
     /* Editor Plugins */
 
-    ${getAlignCss(themeProps._id)}
+    ${getAlignCss(prefixRule)}
 
-    ${getBlockQuoteCss(themeProps._id)}
+    ${getBlockQuoteCss(prefixRule)}
 
     ${getOrnamentalBreakCss(
       styleProps.ornamentalBreakWidth,
-      themeProps._id,
+      prefixRule,
       isPreviewer
     )}
 
-    ${getImageCss(themeProps._id, themeProps.properties.imageCaption)}
+    ${getImageCss(prefixRule, themeProps.properties.imageCaption)}
 
-    ${getSMIconCss(themeProps._id)}
+    ${getSMIconCss(prefixRule)}
 
-    ${getVerseCss(themeProps._id)}
+    ${getVerseCss(prefixRule)}
 
-    ${getCalloutBoxCss(themeProps._id)} 
+    ${getCalloutBoxCss(prefixRule)} 
 
-    ${getEndNoteCss(themeProps._id)}
+    ${getEndNoteCss(prefixRule)}
 
-    ${getMarkCss(themeProps._id)}
+    ${getMarkCss(prefixRule)}
 
-    ${getListPluginCss(themeProps._id, isPreviewer)}
+    ${getListPluginCss(prefixRule, isPreviewer)}
 
-    ${getHangingIndentCss(themeProps._id)}
+    ${getHangingIndentCss(prefixRule)}
 
     /* Chapter Types */
 
     ${getBookTitleCss(themeProps, isPreviewer)}
 
-    ${getTocCss(themeProps, themeProps._id)}
+    ${getTocCss(themeProps, prefixRule)}
 
-    ${getCopyrightCss(themeProps._id)}
+    ${getCopyrightCss(prefixRule)}
 
-    ${getDedicationCss(themeProps._id)}
+    ${getDedicationCss(prefixRule)}
 
-    ${getEpigraphCss(themeProps._id)}
+    ${getEpigraphCss(prefixRule)}
 
-    ${getAlsobyCss(themeProps._id)}
+    ${getAlsobyCss(prefixRule)}
 
-    ${getFullPageImageCss(themeProps._id)}
+    ${getFullPageImageCss(prefixRule)}
 
-    ${getPartCss(themeProps._id)}
+    ${getPartCss(prefixRule)}
   `;
 
   return `${styleCss} ${fontFaceCss}`;
