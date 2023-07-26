@@ -22,6 +22,10 @@ export const getEndNoteCss = (prefixRule: string, footnoteFontSize: number) => {
       color: inherit;
       text-decoration: none;
     }
+    ${prefixRule}.endnote-text-item{
+      display: inline-block;
+      height:0px;
+    }
     ${prefixRule}a{
       text-decoration: none;
       color: inherit;
