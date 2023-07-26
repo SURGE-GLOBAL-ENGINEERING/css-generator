@@ -1,12 +1,12 @@
-export const getEndNoteCss = (themeId: string) => {
+export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
   return `
     .${themeId} .endnote-link{
       color: inherit;
       text-decoration: none;
       padding-left: 0.2rem;
     }
-    .${themeId} .endnotes{
-      font-size: 0.9rem !important;
+    ${themeId}.endnotes{
+      font-size: ${footnoteFontSize}rem !important;
       padding-top: 1rem !important;
       margin-top: 1rem !important;
       margin-bottom: 2rem !important;
