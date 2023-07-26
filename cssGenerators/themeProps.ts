@@ -61,7 +61,7 @@ export const themePropsToCss = (
 
     ${getDefaultCss(prefixRule, themeProps.properties.paragraph.paragraphSpacing, prefixRule)}
 
-    ${getHeadingCss(prefixRule, themeProps, prefixRule)}
+    ${getHeadingCss(prefixRule, themeProps, prefixRule)} 
 
     ${prefixRule}.wrapper{
       /* https://css-tricks.com/almanac/properties/o/overflow-wrap/ */
@@ -120,16 +120,16 @@ export const themePropsToCss = (
       prefixRule,
       isPreviewer
     )}
-
+    
     ${getImageCss(prefixRule, themeProps.properties.imageCaption)}
-
+    
     ${getSMIconCss(prefixRule)}
 
     ${getVerseCss(prefixRule)}
 
     ${getCalloutBoxCss(prefixRule)} 
 
-    ${getEndNoteCss(prefixRule)}
+    ${getEndNoteCss(prefixRule, styleProps.footnoteFontSize)}
 
     ${getMarkCss(prefixRule)}
 
