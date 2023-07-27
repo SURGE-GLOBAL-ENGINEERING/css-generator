@@ -6,7 +6,7 @@ export const getEndNoteCss = (prefixRule: string, footnoteFontSize: number) => {
       padding-left: 0.2rem;
     }
     ${prefixRule}.endnotes{
-      font-size: ${footnoteFontSize}rem !important;
+      font-size: ${footnoteFontSize ? footnoteFontSize : 0.9}rem !important;
       padding-top: 1rem !important;
       margin-top: 1rem !important;
       margin-bottom: 2rem !important;
