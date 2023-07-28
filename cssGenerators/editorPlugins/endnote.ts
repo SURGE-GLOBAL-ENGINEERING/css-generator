@@ -1,4 +1,4 @@
-export const getEndNoteCss = (prefixRule: string) => {
+export const getEndNoteCss = (prefixRule: string, footnoteFontSize: number) => {
   return `
     ${prefixRule}.endnote-link{
       color: inherit;
@@ -6,7 +6,7 @@ export const getEndNoteCss = (prefixRule: string) => {
       padding-left: 0.2rem;
     }
     ${prefixRule}.endnotes{
-      font-size: 0.9rem !important;
+      font-size: ${footnoteFontSize ? footnoteFontSize : 0.9}rem !important;
       padding-top: 1rem !important;
       margin-top: 1rem !important;
       margin-bottom: 2rem !important;
