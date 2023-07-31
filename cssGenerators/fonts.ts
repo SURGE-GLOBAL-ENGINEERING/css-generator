@@ -1,5 +1,5 @@
 import { headerStyleToFontVariant, getFontFaceCss } from "../helpers";
-import { ThemeStyleProps } from "../types";
+import { Subheadings, ThemeStyleProps } from "../types";
 
 /**
  * Generates @font-face css for rendering selected fonts and font varients of header elements
@@ -12,7 +12,7 @@ export const getHeaderElementFontFaceCss = (
   fontBaseUrl: string,
 ): string => {
   let fontCss = "";
-  const headings: ("h2" | "h3" | "h4" | "h5" | "h6")[] = ["h2", "h3", "h4", "h5", "h6"];
+    const headings: Subheadings[] = ["h2", "h3", "h4", "h5", "h6"];
 
   const headerFonts = [
     {
