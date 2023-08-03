@@ -135,7 +135,7 @@ export const themePropsToCss = (
 
     ${getListPluginCss(prefixRule, isPreviewer)}
 
-    ${getHangingIndentCss(prefixRule)}
+    ${getHangingIndentCss(prefixRule, styleProps.hangingIndent)}
 
     /* Chapter Types */
 
