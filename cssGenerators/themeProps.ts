@@ -134,7 +134,11 @@ export const themePropsToCss = (
 
     ${getListPluginCss(themeProps._id, isPreviewer)}
 
+<<<<<<< HEAD
     ${getHangingIndentCss(themeProps._id)}
+=======
+    ${getHangingIndentCss(prefixRule, styleProps.hangingIndent)}
+>>>>>>> 31cf9ee (AT-1838 feat(hanging): added epub support)
 
     /* Chapter Types */
 
