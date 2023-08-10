@@ -77,8 +77,8 @@ export const themePropsToCss = (
       padding-top: 0em;
       line-height: 1.6em;
       text-indent: ${
-        styleProps.paragraph.indent ? styleProps.paragraph.indent : 0
-      }em;
+        styleProps.paragraph.indent ? styleProps.hangingIndent :  0
+      }cm;
       margin-block-end: ${
         !styleProps.paragraph.indent ? styleProps.paragraph.paragraphSpacing : 0
       }em;
