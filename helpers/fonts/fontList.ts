@@ -2,6 +2,60 @@ import { Font, FontVariant } from "../../types";
 
 export const fonts: Font[] = [
   {
+    id: "3Dumb",
+    name: "3Dumb",
+    variants: [FontVariant.regular],
+    availableForDropCap: true
+    },
+  {
+    id: "CaviarDreams",
+    name: "CaviarDreams",
+    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    availableForDropCap: true
+    },
+  {
+    id: "AbrilFatface",
+    name: "Abril Fatface",
+    variants: [FontVariant.regular],
+    availableForDropCap: true
+    },
+  {
+    id: "ArchitectsDaughter",
+    name: "Architects Daughter",
+    variants: [FontVariant.regular],
+    availableForDropCap: true
+    },
+  {
+    id: "BerkshireSwash",
+    name: "Berkshire Swash",
+    variants: [FontVariant.regular],
+    availableForDropCap: true
+    },
+  {
+    id: "Chomsky",
+    name: "Chomsky",
+    variants: [FontVariant.regular],
+    availableForDropCap: true
+    },
+  {
+    id: "Comfortaa",
+    name: "Comfortaa",
+    variants: [FontVariant.regular, FontVariant.bold],
+    availableForDropCap: true
+    },
+  {
+    id: "FrederickatheGreat",
+    name: "Fredericka the Great",
+    variants: [FontVariant.regular],
+    availableForDropCap: true
+    },
+  {
+    id: "Kalam",
+    name: "Kalam",
+    variants: [FontVariant.regular, FontVariant.bold],
+    availableForDropCap: true
+    },
+  {
     id: "Aldrich",
     name: "Aldrich",
     variants: [FontVariant.regular]
@@ -66,7 +120,8 @@ export const fonts: Font[] = [
   {
     id: "CinzelDecorative",
     name: "Cinzel Decorative",
-    variants: [FontVariant.regular, FontVariant.bold]
+    variants: [FontVariant.regular, FontVariant.bold],
+    availableForDropCap: true
   },
   {
     id: "CourierPrime",
@@ -118,7 +173,8 @@ export const fonts: Font[] = [
   {
     id: "EuphoriaScript",
     name: "Euphoria Script",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForDropCap: true
   },
   {
     id: "Forum",
@@ -134,6 +190,12 @@ export const fonts: Font[] = [
     id: "HelveticaNeue",
     name: "Helvetica Neue",
     variants: [FontVariant.regular]
+  },
+  {
+    id: "ImperialScript",
+    name: "Imperial Script",
+    variants: [FontVariant.regular],
+    availableForDropCap: true
   },
   {
     id: "OpenSansLT",
@@ -282,7 +344,8 @@ export const fonts: Font[] = [
   {
     id: "SpecialElite",
     name: "Special Elite",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForDropCap: true
   },
   {
     id: "Spectral",
