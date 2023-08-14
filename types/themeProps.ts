@@ -211,6 +211,7 @@ export type ThemeStyleProps = {
     outer: number;
     inner: number;
   };
+  hangingIndent: number;
   dynamicPageBreaks: {
     breakSubheadings: boolean;
     breakOrnamentalBreaks: boolean;
@@ -223,6 +224,7 @@ export type ThemeStyleProps = {
 
   notesMode: NotesMode;
   ePubNotesMode: EpubNotesMode;
+  footnoteFontSize:number;
   bookTitlePage?: BookTitlePage;
   chapterOverrides?: Record<ChapterType, Record<ThemeHeaderPropsType, any>>
   
@@ -250,3 +252,5 @@ export interface HeaderFonts {
   chapterSubtitleFont: HeaderFont;
   chapterTitleFont: HeaderFont;
 }
+
+export type Subheadings = "h2" | "h3" | "h4" | "h5" | "h6" ;

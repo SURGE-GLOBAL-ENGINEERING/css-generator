@@ -61,7 +61,7 @@ export const themePropsToCss = (
 
     ${getDefaultCss(prefixRule, themeProps.properties.paragraph.paragraphSpacing, prefixRule)}
 
-    ${getHeadingCss(prefixRule, themeProps, prefixRule)}
+    ${getHeadingCss(prefixRule, themeProps, prefixRule)} 
 
     ${prefixRule}.wrapper{
       /* https://css-tricks.com/almanac/properties/o/overflow-wrap/ */
@@ -78,8 +78,8 @@ export const themePropsToCss = (
       padding-top: 0em;
       line-height: 1.6em;
       text-indent: ${
-        styleProps.paragraph.indent ? styleProps.paragraph.indent : 0
-      }em;
+        styleProps.paragraph.indent ? styleProps.hangingIndent :  0
+      }cm;
       margin-block-end: ${
         !styleProps.paragraph.indent ? styleProps.paragraph.paragraphSpacing : 0
       }em;
@@ -120,22 +120,22 @@ export const themePropsToCss = (
       prefixRule,
       isPreviewer
     )}
-
+    
     ${getImageCss(prefixRule, themeProps.properties.imageCaption)}
-
+    
     ${getSMIconCss(prefixRule)}
 
     ${getVerseCss(prefixRule)}
 
     ${getCalloutBoxCss(prefixRule)} 
 
-    ${getEndNoteCss(prefixRule)}
+    ${getEndNoteCss(prefixRule, styleProps.footnoteFontSize)}
 
     ${getMarkCss(prefixRule)}
 
     ${getListPluginCss(prefixRule, isPreviewer)}
 
-    ${getHangingIndentCss(prefixRule)}
+    ${getHangingIndentCss(prefixRule, styleProps.hangingIndent)}
 
     /* Chapter Types */
 
