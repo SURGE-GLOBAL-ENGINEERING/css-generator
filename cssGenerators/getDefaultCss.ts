@@ -1,4 +1,4 @@
-export const getDefaultCss = (themeId: string, paragraphSpacing: number, prefixRule: string): string => {
+export const getDefaultCss = (paragraphSpacing: number, prefixRule: string): string => {
   return `
       ${prefixRule}html, ${prefixRule}body, ${prefixRule}div, ${prefixRule}span, ${prefixRule}applet, ${prefixRule}object, ${prefixRule}iframe,
       ${prefixRule}h1, ${prefixRule}p, ${prefixRule}blockquote, ${prefixRule}pre,

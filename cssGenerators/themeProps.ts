@@ -59,7 +59,7 @@ export const themePropsToCss = (
   const styleCss = `
     ${getChapterHeaderCss(themeProps, isPreviewer, false, prefixRule, containerClassName,)}
 
-    ${getDefaultCss(prefixRule, themeProps.properties.paragraph.paragraphSpacing, prefixRule)}
+    ${getDefaultCss(themeProps.properties.paragraph.paragraphSpacing, `.${themeProps._id} `)}
 
     ${getHeadingCss(prefixRule, themeProps, prefixRule)} 
 
