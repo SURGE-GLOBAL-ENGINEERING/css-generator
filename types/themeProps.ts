@@ -202,6 +202,7 @@ export type ThemeStyleProps = {
     outer: number;
     inner: number;
   };
+  hangingIndent: number;
   dynamicPageBreaks: {
     breakSubheadings: boolean;
     breakOrnamentalBreaks: boolean;

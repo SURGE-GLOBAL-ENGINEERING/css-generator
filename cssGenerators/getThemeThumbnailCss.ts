@@ -12,9 +12,7 @@ export const getThemeThumbnailCss = (
   const thumbnailChapterHeaderCss = getChapterHeaderCss(theme, false, true, prefix)
   const thumbnailChapterBodyCss = `
     .thumbnail-body, .${theme?._id} p{
-      text-indent: ${
-        styleProps.paragraph.indent ? styleProps.paragraph.indent : 0
-      }em;
+      text-indent: ${styleProps.paragraph.indent ? styleProps.hangingIndent : 0}cm;
       margin-block-end: ${
         !styleProps.paragraph.indent ? styleProps.paragraph.paragraphSpacing : 0
       }em;
