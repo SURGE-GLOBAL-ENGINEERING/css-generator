@@ -23,7 +23,8 @@ import {
   getListPluginCss,
   getPartCss,
   getHeadingCss,
-  getHangingIndentCss
+  getHangingIndentCss,
+  getDropCapFontFaceCss
 } from "./.";
 
 import { Theme } from "../types";
@@ -53,6 +54,8 @@ export const themePropsToCss = (
   }
 
   const fontFaceCss = getHeaderElementFontFaceCss(styleProps, fontLocation);
+
+  const dropCapFontFaceCss = getDropCapFontFaceCss(styleProps, fontLocation);
 
   const styleCss = `
     ${getChapterHeaderCss(themeProps, isPreviewer, false, containerClassName)}
@@ -155,5 +158,5 @@ export const themePropsToCss = (
     ${getPartCss(themeProps._id)}
   `;
 
-  return `${styleCss} ${fontFaceCss}`;
+  return `${styleCss} ${fontFaceCss} ${dropCapFontFaceCss}`;
 };
