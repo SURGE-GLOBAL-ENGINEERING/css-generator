@@ -26,5 +26,13 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
       text-decoration: none;
       color: inherit;
     }
+    
+    ${prefixRule}.endnote-item{
+      padding-left: 20px
+    }
+    
+    ${prefixRule}.endnote-title{
+      padding-top: 20px
+    }
   `;
 };
