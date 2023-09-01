@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.77](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.76...v1.1.77) (2023-08-23)
+
 ### [1.1.76](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.65...v1.1.76) (2023-08-23)
 
 ### [1.1.75](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.74...v1.1.75) (2023-08-10)
