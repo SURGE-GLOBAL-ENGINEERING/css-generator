@@ -229,6 +229,16 @@ export type ThemeStyleProps = {
   chapterOverrides?: Record<ChapterType, Record<ThemeHeaderPropsType, any>>
   
   imageCaption: ImageCaption
+
+  pdfEndnotesChapterSettings: {
+    showTitle: boolean,
+    categorizeByTitle: boolean 
+  },
+
+  ePubEndnotesChapterSettings: {
+    showTitle: boolean,
+    categorizeByTitle: boolean 
+  },
 };
 
 export type ThemeMeta = {
