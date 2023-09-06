@@ -107,7 +107,8 @@ export const themePropsToCss = (
 
     ${getFirstParagraphCss(
       styleProps.firstParagraph,
-      prefixRule
+      prefixRule,
+      isPreviewer
     )}
 
     ${getFullBleedImageCss(prefixRule)}

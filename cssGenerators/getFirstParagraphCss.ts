@@ -7,6 +7,7 @@ import { headerStyleToFontVariant, getDropCapFontCss } from "../helpers";
 export const getFirstParagraphCss = (
   firstParagraph: FirstParagraph,
   prefixRule: string,
+  isPreviewer: boolean
 ) => {
   return `
     @font-face{
@@ -32,7 +33,7 @@ export const getFirstParagraphCss = (
         font-size: 3rem;
         font-family: '${firstParagraph.dropcapFont}${headerStyleToFontVariant([])}';
         line-height: 1;
-        ${getDropCapFontCss(firstParagraph.dropcapFont)}
+        ${getDropCapFontCss(firstParagraph.dropcapFont, isPreviewer)}
         webkit-initial-letter: 2;
         initial-letter: 2;
         transform: scale(1.1);
