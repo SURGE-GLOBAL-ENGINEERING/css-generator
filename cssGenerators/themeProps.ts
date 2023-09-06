@@ -111,7 +111,7 @@ export const themePropsToCss = (
       max-height:100%;
     }
 
-    ${getFirstParagraphCss(styleProps.firstParagraph, themeProps._id)}
+    ${getFirstParagraphCss(styleProps.firstParagraph, themeProps._id, isPreviewer)}
 
     ${getFullBleedImageCss(themeProps._id)}
 
