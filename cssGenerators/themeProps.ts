@@ -107,6 +107,7 @@ export const themePropsToCss = (
     ${getFirstParagraphCss(
       styleProps.firstParagraph,
       themeProps._id,
+      isPreviewer
     )}
 
     ${getFullBleedImageCss(themeProps._id)}
