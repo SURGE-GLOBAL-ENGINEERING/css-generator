@@ -41,7 +41,7 @@ import { epubFontBaseUrl } from "../helpers";
  */
 export const themePropsToCss = (
   themeProps: Theme,
-  prerule: string = "",
+  prerule?: string,
   fontBaseUrl?: string,
   isPreviewer: boolean = false,
   containerClassName?: string
