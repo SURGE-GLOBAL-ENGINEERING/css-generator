@@ -35,11 +35,13 @@ import { epubFontBaseUrl } from "../helpers";
  * @param fontBaseUrl The base url for the location where the actual font files reside
  * @param isPreviewer If css is generated for editor previewer, default false
  * @param containerClassName Class name for the immediate parent element to avoid css conflicts
+ * @param prerule determine if pre rule needs to be added or not
  * when generated css is used in multiple places
  * @returns {string} Css string to format the book according to provided theme properties
  */
 export const themePropsToCss = (
   themeProps: Theme,
+  prerule?: string,
   fontBaseUrl?: string,
   isPreviewer: boolean = false,
   containerClassName?: string
@@ -52,7 +54,7 @@ export const themePropsToCss = (
     throw new Error("Missing font base Url for previewer");
   }
 
-  const prefixRule = isPreviewer ? `.${themeProps._id} ` : "";
+  const prefixRule = prerule || "";
 
   const fontFaceCss = getHeaderElementFontFaceCss(styleProps, fontLocation);
 
