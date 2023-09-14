@@ -22,17 +22,20 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
       color: inherit;
       text-decoration: none;
     }
-    .${themeId} a{
+    ${themeId}.endnote-text-item{
+      display: inline-block;
+    }
+    ${themeId}a{
       text-decoration: none;
       color: inherit;
     }
     
-    ${prefixRule}.endnote-item{
-      padding-left: 20px
+    ${themeId}.endnote-item{
+      margin-left: 1.2rem
     }
     
-    ${prefixRule}.endnote-title{
-      padding-top: 20px
+    ${themeId}.endnote-title{
+      padding-top: 1rem
     }
   `;
 };
