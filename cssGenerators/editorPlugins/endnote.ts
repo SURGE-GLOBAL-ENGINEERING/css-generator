@@ -24,7 +24,6 @@ export const getEndNoteCss = (prefixRule: string, footnoteFontSize: number) => {
     }
     ${prefixRule}.endnote-text-item{
       display: inline-block;
-      height:0px;
     }
     ${prefixRule}a{
       text-decoration: none;
@@ -32,11 +31,11 @@ export const getEndNoteCss = (prefixRule: string, footnoteFontSize: number) => {
     }
     
     ${prefixRule}.endnote-item{
-      padding-left: 20px
+      margin-left: 1.2rem
     }
     
     ${prefixRule}.endnote-title{
-      padding-top: 20px
+      padding-top: 1rem
     }
   `;
 };
