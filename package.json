@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "prepare": "echo \"Test build\" npm run build",
-    "release-dev": "release-it prepatch --git.requireBranch=dev --preRelease=beta",
+    "release-dev": "release-it prepatch --git.requireBranch=prod --preRelease=beta",
     "release-qa": "release-it --dry-run prepatch --git.requireBranch=qa --preRelease=qa",
     "release-main": "release-it --dry-run patch --git.requireBranch=main",
     "release": "standard-version && git push --follow-tags && npm publish"
