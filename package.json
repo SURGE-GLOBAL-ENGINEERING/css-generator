@@ -10,7 +10,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "prepare": "npm run build",
+    "prepare": "echo \"Test build\" npm run build",
+    "relase-dev": "release-it --dry-run prepatch  --preRelease=beta",
+    "relase-qa": "",
+    "relase-staging": "",
+    "relase-prod": "",
     "release": "standard-version && git push --follow-tags && npm publish"
   },
   "repository": {
