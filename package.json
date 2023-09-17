@@ -1,6 +1,6 @@
 {
   "name": "@paladin-analytics/css-generator",
-  "version": "1.1.78-beta.0",
+  "version": "1.3.0",
   "description": "Generate css styles based on theme properties for Atticus themes",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,11 +9,10 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"Test build\" && tsc",
+    "build": "tsc",
     "release-dev": "release-it prepatch --git.requireBranch=dev --preRelease=beta",
     "release-qa": "release-it --dry-run prepatch --git.requireBranch=qa --preRelease=qa",
-    "release-main": "release-it --dry-run patch --git.requireBranch=main",
-    "release": "standard-version && git push --follow-tags && npm publish"
+    "release-main": "release-it --dry-run patch --git.requireBranch=main"
   },
   "repository": {
     "type": "git",
