@@ -1,18 +1,18 @@
-export const getDefaultCss = (themeId: string, paragraphSpacing: number): string => {
+export const getDefaultCss = (themeId: string, paragraphSpacing: number, prefixRule: string): string => {
   return `
-      .${themeId} html, .${themeId} body, .${themeId} div, .${themeId} span, .${themeId} applet, .${themeId} object, .${themeId} iframe,
-      .${themeId} h1, .${themeId} p, .${themeId} blockquote, .${themeId} pre,
-      .${themeId} a, .${themeId} abbr, .${themeId} acronym, .${themeId} address, .${themeId} big, .${themeId} cite, .${themeId} code,
-      .${themeId} del, .${themeId} dfn, .${themeId} em, .${themeId} img, .${themeId} ins, .${themeId} kbd, .${themeId} q, .${themeId} s, .${themeId} samp,
-      .${themeId} small, .${themeId} strike, .${themeId} strong, .${themeId} tt, .${themeId} var,
-      .${themeId} b, .${themeId} u, .${themeId} i, .${themeId} center,
-      .${themeId} dl, .${themeId} dt, .${themeId} dd, .${themeId} ol, .${themeId} ul, .${themeId} li,
-      .${themeId} fieldset, .${themeId} form, .${themeId} label, .${themeId} legend,
-      .${themeId} table, .${themeId} caption, .${themeId} tbody, .${themeId} tfoot, .${themeId} thead, .${themeId} tr, .${themeId} th, .${themeId} td,
-      .${themeId} article, .${themeId} aside, .${themeId} canvas, .${themeId} details, .${themeId} embed, 
-      .${themeId} figure, .${themeId} figcaption, .${themeId} footer, .${themeId} header, .${themeId} hgroup, 
-      .${themeId} menu, .${themeId} nav, .${themeId} output, .${themeId} ruby, .${themeId} section, .${themeId} summary,
-      .${themeId} time, .${themeId} mark, .${themeId} audio, .${themeId} video {
+      ${prefixRule}html, ${prefixRule}body, ${prefixRule}div, ${prefixRule}span, ${prefixRule}applet, ${prefixRule}object, ${prefixRule}iframe,
+      ${prefixRule}h1, ${prefixRule}p, ${prefixRule}blockquote, ${prefixRule}pre,
+      ${prefixRule}a, ${prefixRule}abbr, ${prefixRule}acronym, ${prefixRule}address, ${prefixRule}big, ${prefixRule}cite, ${prefixRule}code,
+      ${prefixRule}del, ${prefixRule}dfn, ${prefixRule}em, ${prefixRule}img, ${prefixRule}ins, ${prefixRule}kbd, ${prefixRule}q, ${prefixRule}s, ${prefixRule}samp,
+      ${prefixRule}small, ${prefixRule}strike, ${prefixRule}strong, ${prefixRule}tt, ${prefixRule}var,
+      ${prefixRule}b, ${prefixRule}u, ${prefixRule}i, ${prefixRule}center,
+      ${prefixRule}dl, ${prefixRule}dt, ${prefixRule}dd, ${prefixRule}ol, ${prefixRule}ul, ${prefixRule}li,
+      ${prefixRule}fieldset, ${prefixRule}form, ${prefixRule}label, ${prefixRule}legend,
+      ${prefixRule}table, ${prefixRule}caption, ${prefixRule}tbody, ${prefixRule}tfoot, ${prefixRule}thead, ${prefixRule}tr, ${prefixRule}th, ${prefixRule}td,
+      ${prefixRule}article, ${prefixRule}aside, ${prefixRule}canvas, ${prefixRule}details, ${prefixRule}embed, 
+      ${prefixRule}figure, ${prefixRule}figcaption, ${prefixRule}footer, ${prefixRule}header, ${prefixRule}hgroup, 
+      ${prefixRule}menu, ${prefixRule}nav, ${prefixRule}output, ${prefixRule}ruby, ${prefixRule}section, ${prefixRule}summary,
+      ${prefixRule}time, ${prefixRule}mark, ${prefixRule}audio, ${prefixRule}video {
         margin: 0;
         margin-block: 0;
         padding: 0;
@@ -21,47 +21,47 @@ export const getDefaultCss = (themeId: string, paragraphSpacing: number): string
         font: inherit;
       }
       /* HTML5 display-role reset for older browsers */
-      .${themeId} article, .${themeId} aside, .${themeId} details, .${themeId} figcaption, .${themeId} figure, 
-      .${themeId} footer, .${themeId} header, .${themeId} hgroup, .${themeId} menu, .${themeId} nav, .${themeId} section {
+      ${prefixRule}article, ${prefixRule}aside, ${prefixRule}details, ${prefixRule}figcaption, ${prefixRule}figure, 
+      ${prefixRule}footer, ${prefixRule}header, ${prefixRule}hgroup, ${prefixRule}menu, ${prefixRule}nav, ${prefixRule}section {
         display: block;
       }
-      .${themeId} body {
+      ${prefixRule}body {
         line-height: 1;
       }
-      .${themeId} blockquote, .${themeId} q {
+      ${prefixRule}blockquote, ${prefixRule}q {
         quotes: none;
       }
-      .${themeId} blockquote:before, .${themeId} blockquote:after,
-      .${themeId} q:before, .${themeId} q:after {
+      ${prefixRule}blockquote:before, ${prefixRule}blockquote:after,
+      ${prefixRule}q:before, ${prefixRule}q:after {
         content: '';
         content: none;
       }
-      .${themeId} table {
+      ${prefixRule}table {
         border-collapse: collapse;
         border-spacing: 0;
       }
-      .${themeId} b{
+      ${prefixRule}b{
         font-weight: bold;
       }
     
-      .${themeId} em, .${themeId} i{
+      ${prefixRule}em, ${prefixRule}i{
         font-style: italic;
       }
 
-      .${themeId} h1 {
+      ${prefixRule}h1 {
         font-size: 1.3em;
         padding: 0.6em 0em;
       }
   
-      .${themeId} ul, .${themeId} ol{
+      ${prefixRule}ul, ${prefixRule}ol{
         padding: 0rem 1rem;
         line-height: ${paragraphSpacing};
       }
 
-      .${themeId} ul .reset-padding, .${themeId} ol .reset-padding{
+      ${prefixRule}ul .reset-padding, ${prefixRule}ol .reset-padding{
         margin-left: -1rem;
       }
-      .${themeId} li{
+      ${prefixRule}li{
         padding: 0.2rem 0rem;
       }
 

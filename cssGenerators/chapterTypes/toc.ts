@@ -1,45 +1,45 @@
 import { Alignment, Theme } from "../../types";
 
-export const getTocCss = (themeProps: Theme, themeId: string ,) => {
+export const getTocCss = (themeProps: Theme, prefixRule: string ,) => {
   const { properties: styleProps } = themeProps;
   return `
-    .${themeId} .toc-list{
+    ${prefixRule}.toc-list{
       padding: 0px;
       margin-left: 0px;
       list-style: none;
     }
-    .${themeId} .toc-subheading{
+    ${prefixRule}.toc-subheading{
       margin-left: 1.5rem;
     }
-    .${themeId} .toc-subheading-epub{
+    ${prefixRule}.toc-subheading-epub{
       margin-left: 0.5rem;
       list-style-type:none;
     }
-    .${themeId} .toc-subtitle-epub{
+    ${prefixRule}.toc-subtitle-epub{
       margin-left: 0.5rem;
       list-style-type:none;
     }
-    .${themeId} .toc-subtitle-inner{
+    ${prefixRule}.toc-subtitle-inner{
       text-decoration:none;
     }
-    .${themeId} .table-of-content{
+    ${prefixRule}.table-of-content{
       margin-left: 0px;
       line-height: 1.6rem;
     }
     /* EPUB TOC */
-    .${themeId} .epub-toc-title-card h2 {
+    ${prefixRule}.epub-toc-title-card h2 {
       text-align: ${styleProps.chapterTitle.align};
       font-family: '${styleProps.chapterTitle.font}';
     }
 
-    .${themeId} .toc-entry {
+    ${prefixRule}.toc-entry {
       line-height: 1.6rem;
     }
 
-    .${themeId} .toc-block {
+    ${prefixRule}.toc-block {
       list-style: none;
     }
-    .${themeId} .chapter-num-hidden {
+    ${prefixRule}.chapter-num-hidden {
       visibility: hidden;
     }
   `

@@ -1,6 +1,6 @@
-export const getHangingIndentCss = (themeId: string, indentValue: number) => {
+export const getHangingIndentCss = (prefixRule: string, indentValue: number) => {
     return `
-      .${themeId} .hanging{
+      ${prefixRule}.hanging{
         line-height: 1.6em;
         text-indent: -${indentValue}cm;
         padding-left: ${indentValue}cm;

@@ -1,6 +1,6 @@
-export const getPartCss = (themeId: string) => {
+export const getPartCss = (prefixRule: string) => {
   return `
-    .${themeId} .part-title {
+    ${prefixRule}.part-title {
         margin-top: 30%;
       }
       `;
