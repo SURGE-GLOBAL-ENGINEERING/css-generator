@@ -49,7 +49,7 @@ case "$stage" in
         ;;
 esac
 
-release-it --dry-run $releaseType --git.requireBranch=release-it-extended $preRelease
+release-it $releaseType --git.requireBranch=$stage $preRelease
 
 
 
