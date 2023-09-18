@@ -92,7 +92,7 @@ echo "Stage flag is set to: $stage"
 echo "release type: $releaseType"
 echo "prerelease: $preRelease"
 
-release-it --dry-run $releaseType --git.requireBranch=$stage $preRelease
+release-it --dry-run $releaseType --git.requireBranch=release-it-extended $preRelease
 
 
 
