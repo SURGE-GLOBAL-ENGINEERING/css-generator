@@ -1,6 +1,6 @@
 export const getFullBleedImageCss = (prefixRule: string) => {
   return `
-    ${prefixRule}image-full-bleed{
+    ${prefixRule}.image-full-bleed{
       width: 100%;
       height:100%;
       vertical-align: middle;
