@@ -12,7 +12,8 @@
     "build": "tsc",
     "release-dev": "release-it prepatch --git.requireBranch=dev --preRelease=beta",
     "release-qa": "release-it prepatch --git.requireBranch=qa --preRelease=qa",
-    "release-main": "release-it patch --git.requireBranch=main"
+    "release-main": "release-it patch --git.requireBranch=main",
+    "test-release": "sh ./release-package.sh --type major --stage main"
   },
   "repository": {
     "type": "git",
