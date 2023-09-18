@@ -49,6 +49,8 @@ case "$stage" in
         ;;
 esac
 
+git pull
+
 release-it $releaseType --git.requireBranch=$stage $preRelease
 
 
