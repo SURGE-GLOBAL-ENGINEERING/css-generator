@@ -10,9 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "release-dev": "release-it prepatch --git.requireBranch=dev --preRelease=beta",
-    "release-qa": "release-it prepatch --git.requireBranch=qa --preRelease=qa",
-    "release-main": "release-it patch --git.requireBranch=main"
+    "release": "sh release-package.sh"
   },
   "repository": {
     "type": "git",
