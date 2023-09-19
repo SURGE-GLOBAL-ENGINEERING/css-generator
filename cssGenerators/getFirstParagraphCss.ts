@@ -1,5 +1,5 @@
 import { FirstParagraph } from "../types";
-import { headerStyleToFontVariant, getDropCapFontCss } from "../helpers";
+import { headerStyleToFontVariant, getDropCapCssClasses } from "../helpers";
 
 /**
  * Can contain previewer only styles
@@ -33,8 +33,10 @@ export const getFirstParagraphCss = (
         font-size: 3rem;
         font-family: '${firstParagraph.dropcapFont}${headerStyleToFontVariant([])}';
         line-height: 1;
-        ${getDropCapFontCss(firstParagraph.dropcapFont, isPreviewer)}
-      }`
+        padding: 0 0.25rem;
+        margin-right: 0.125rem;
+      }
+      ${getDropCapCssClasses(firstParagraph.dropcapFont, themeId, isPreviewer)}`
         : ""
     }
     ${
