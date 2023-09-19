@@ -128,7 +128,7 @@ export const themePropsToCss = (
 
     ${getCalloutBoxCss(themeProps._id)} 
 
-    ${getEndNoteCss(themeProps._id)}
+    ${getEndNoteCss(themeProps._id, styleProps.footnoteFontSize)}
 
     ${getMarkCss(themeProps._id)}
 

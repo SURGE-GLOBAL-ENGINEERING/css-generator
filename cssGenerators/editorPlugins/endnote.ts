@@ -1,4 +1,4 @@
-export const getEndNoteCss = (themeId: string) => {
+export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
   return `
     .${themeId} .endnote-link{
       color: inherit;
@@ -6,7 +6,7 @@ export const getEndNoteCss = (themeId: string) => {
       padding-left: 0.2rem;
     }
     .${themeId} .endnotes{
-      font-size: 0.9rem !important;
+      font-size: ${footnoteFontSize ? footnoteFontSize : 0.9}rem !important;
       padding-top: 1rem !important;
       margin-top: 1rem !important;
       margin-bottom: 2rem !important;
@@ -22,9 +22,20 @@ export const getEndNoteCss = (themeId: string) => {
       color: inherit;
       text-decoration: none;
     }
-    .${themeId} a{
+    .${themeId} .endnote-text-item{
+      display: inline-block;
+    }
+    .${themeId}a{
       text-decoration: none;
       color: inherit;
+    }
+    
+    .${themeId} .endnote-item{
+      margin-left: 1.2rem
+    }
+    
+    .${themeId} .endnote-title{
+      padding-top: 1rem
     }
   `;
 };

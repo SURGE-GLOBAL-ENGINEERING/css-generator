@@ -215,8 +215,20 @@ export type ThemeStyleProps = {
 
   notesMode: NotesMode;
   ePubNotesMode: EpubNotesMode;
+  footnoteFontSize:number;
   bookTitlePage?: BookTitlePage;
   chapterOverrides?: Record<ChapterType, Record<ThemeHeaderPropsType, any>>
+  
+
+  pdfEndnotesChapterSettings: {
+    showTitle: boolean,
+    categorizeByTitle: boolean 
+  },
+
+  ePubEndnotesChapterSettings: {
+    showTitle: boolean,
+    categorizeByTitle: boolean 
+  },
 };
 
 export type ThemeMeta = {
