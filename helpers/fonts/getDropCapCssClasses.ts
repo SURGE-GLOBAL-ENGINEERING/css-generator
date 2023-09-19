@@ -17,11 +17,38 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
             }
         },
         FrederickatheGreat: {
-            default: {
-                "font-size": isPreviewer ? "4.1rem" : "3.6rem",
+            Q: {
+                "font-size": "3.6rem",
+                "margin-left": "-0.1rem",
+                padding: "0.15rem 0.35rem 0rem",
+            },
+            S: {
+                "font-size": "4.2rem",
+                "margin-left": "-0.4rem",
+                padding: "0.25rem 0.35rem 0rem",
+            },
+            V: {
+                "font-size": isPreviewer ? "4.2rem" : "3.6rem",
                 "margin-left": "0.46rem",
                 "margin-right": "0.8rem",
                 padding: "0.25rem 0.25rem 0rem",
+            },
+            W: {
+                "font-size": isPreviewer ? "4.2rem" : "3.6rem",
+                "margin-left": "0.46rem",
+                "margin-right": "0.8rem",
+                padding: "0.25rem 0.25rem 0rem",
+            },
+            Y: {
+                "font-size": isPreviewer ? "4.2rem" : "3.6rem",
+                "margin-left": "0.46rem",
+                "margin-right": "0.85rem",
+                padding: "0.25rem 0.25rem 0rem",
+            },
+            default: {
+                "font-size": "4.2rem",
+                "margin-left": "0.1rem",
+                padding: "0.25rem 0.45rem 0rem",
             }
         },
     };
