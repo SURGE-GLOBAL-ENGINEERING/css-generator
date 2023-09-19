@@ -5,7 +5,7 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
       text-decoration: none;
       padding-left: 0.2rem;
     }
-    ${themeId}.endnotes{
+    .${themeId} .endnotes{
       font-size: ${footnoteFontSize ? footnoteFontSize : 0.9}rem !important;
       padding-top: 1rem !important;
       margin-top: 1rem !important;
@@ -22,19 +22,19 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
       color: inherit;
       text-decoration: none;
     }
-    ${themeId}.endnote-text-item{
+    .${themeId} .endnote-text-item{
       display: inline-block;
     }
-    ${themeId}a{
+    .${themeId}a{
       text-decoration: none;
       color: inherit;
     }
     
-    ${themeId}.endnote-item{
+    .${themeId} .endnote-item{
       margin-left: 1.2rem
     }
     
-    ${themeId}.endnote-title{
+    .${themeId} .endnote-title{
       padding-top: 1rem
     }
   `;
