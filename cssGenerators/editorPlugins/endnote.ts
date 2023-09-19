@@ -24,11 +24,18 @@ export const getEndNoteCss = (prefixRule: string, footnoteFontSize: number) => {
     }
     ${prefixRule}.endnote-text-item{
       display: inline-block;
-      height:0px;
     }
     ${prefixRule}a{
       text-decoration: none;
       color: inherit;
+    }
+    
+    ${prefixRule}.endnote-item{
+      margin-left: 1.2rem
+    }
+    
+    ${prefixRule}.endnote-title{
+      padding-top: 1rem
     }
   `;
 };
