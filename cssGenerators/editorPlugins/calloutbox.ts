@@ -1,17 +1,17 @@
-export const getCalloutBoxCss = (prefixRule: string) => {
+export const getCalloutBoxCss = (themeId: string) => {
 	return `
-      ${prefixRule}.calloutbox {
+      .${themeId} .calloutbox {
         margin-top: 5px;
         border: 2px solid rgb(52, 51, 51);
         background-color: #faffef;
         padding: 1em 1em 1em 1em;
       }
 
-      ${prefixRule}.calloutbox-callout-unfilled{
+      .${themeId} .calloutbox-callout-unfilled{
         background-color: transparent !important;
       }
 
-      ${prefixRule}.calloutbox-callout-no-border{
+      .${themeId} .calloutbox-callout-no-border{
         border: none !important;
       }
     `;
