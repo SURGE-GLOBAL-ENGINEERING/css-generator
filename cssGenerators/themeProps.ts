@@ -130,13 +130,13 @@ export const themePropsToCss = (
 
     ${getCalloutBoxCss(themeProps._id)} 
 
-    ${getEndNoteCss(themeProps._id)}
+    ${getEndNoteCss(themeProps._id, styleProps.footnoteFontSize)}
 
     ${getMarkCss(themeProps._id)}
 
     ${getListPluginCss(themeProps._id, isPreviewer)}
 
-    ${getHangingIndentCss(themeProps._id)}
+    ${getHangingIndentCss(themeProps._id, styleProps.hangingIndent)}
 
     /* Chapter Types */
 

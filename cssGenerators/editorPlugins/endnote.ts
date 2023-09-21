@@ -1,4 +1,4 @@
-export const getEndNoteCss = (themeId: string) => {
+export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
   return `
     .${themeId} .endnote-link{
       color: inherit;
