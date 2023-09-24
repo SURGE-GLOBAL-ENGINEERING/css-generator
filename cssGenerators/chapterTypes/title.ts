@@ -10,7 +10,6 @@ import { Theme } from "../../types";
 export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
   const styleProps = themeProps.properties;
   const titlePageConfigs = styleProps.bookTitlePage;
-  const prefixRule = isPreviewer ? `.${themeProps._id} ` : "";
 
   const bookTitleFont = titlePageConfigs?.title?.fontMap
     ? getFontFamilyFromFontMap(styleProps, titlePageConfigs.title.fontMap)
@@ -41,7 +40,7 @@ export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
       );
 
   return `
-    ${prefixRule}.title{
+    .${themeProps._id} .title{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -50,7 +49,7 @@ export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
       height: ${isPreviewer ? "100%" : "100vh"};
     }
     
-    ${prefixRule}.title-card{
+    .${themeProps._id} .title-card{
       position: relative;
       top:0px;
       width: 100%;
@@ -58,7 +57,7 @@ export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
       padding: 2rem 0.4rem;
     }
 
-    ${prefixRule}.title-card h1{
+    .${themeProps._id} .title-card h1{
       font-size: 44px;
       text-align: inherit;
       padding: 0.6em 0em;
@@ -66,7 +65,7 @@ export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
       ${styleObjectToCss(styleProps.bookTitlePage?.title?.extras)}
     }
     
-    ${prefixRule}.title-card h2{
+    .${themeProps._id} .title-card h2{
       font-size: 22px;
       text-align: inherit;
       padding: 1em 0em;
@@ -75,7 +74,7 @@ export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
       ${styleObjectToCss(styleProps.bookTitlePage?.author?.extras)}
     }
     
-    ${prefixRule}.title-card h3{
+    .${themeProps._id} .title-card h3{
       font-size: 20px;
       text-align: inherit;
       padding: 1em 0em;
@@ -83,7 +82,7 @@ export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
       ${styleObjectToCss(styleProps?.bookTitlePage?.subtitle?.extras)}
     }
 
-    ${prefixRule}.publisher-details{
+    .${themeProps._id} .publisher-details{
       position: absolute;
       bottom: 16px;
       display: flex;
@@ -97,13 +96,13 @@ export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
       ${styleObjectToCss(styleProps.bookTitlePage?.publisher?.extras)}
     }
     
-    ${prefixRule}.publisher-logo{
+    .${themeProps._id} .publisher-logo{
       width: auto;
       max-width: 80px !important;
       padding: 0.8rem 0rem;
     }
 
-    ${prefixRule}.publisher-logo img{
+    .${themeProps._id} .publisher-logo img{
       width: 80px;
       height: auto;
     }

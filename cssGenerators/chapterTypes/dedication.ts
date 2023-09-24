@@ -1,13 +1,13 @@
-export const getDedicationCss = (prefixRule: string) => {
+export const getDedicationCss = (themeId: string) => {
   return `
-    ${prefixRule}.dedication{
+    .${themeId} .dedication{
       padding-top: 33.33%;
       text-align: center;
       display: flex;
       justify-content: center;
     }
     
-    ${prefixRule}.dedication * {
+    .${themeId} .dedication * {
       text-align: center;
     }
   `;

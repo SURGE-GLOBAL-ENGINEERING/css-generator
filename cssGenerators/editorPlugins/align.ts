@@ -1,12 +1,12 @@
-export const getAlignCss = (prefixRule: string) => {
+export const getAlignCss = (themeId: string) => {
   return `
-    ${prefixRule}.align-left{
+    .${themeId} .align-left{
       text-align: left !important;
     }
-    ${prefixRule}.align-center{
+    .${themeId} .align-center{
       text-align: center !important;
     }
-    ${prefixRule}.align-right{
+    .${themeId} .align-right{
       text-align: right !important;
     }
   `;
