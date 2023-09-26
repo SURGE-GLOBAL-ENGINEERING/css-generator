@@ -1,11 +1,11 @@
-export const getEndNoteCss = (prefixRule: string, footnoteFontSize: number) => {
+export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
   return `
-    ${prefixRule}.endnote-link{
+    .${themeId} .endnote-link{
       color: inherit;
       text-decoration: none;
       padding-left: 0.2rem;
     }
-    ${prefixRule}.endnotes{
+    .${themeId} .endnotes{
       font-size: ${footnoteFontSize ? footnoteFontSize : 0.9}rem !important;
       padding-top: 1rem !important;
       margin-top: 1rem !important;
@@ -13,28 +13,28 @@ export const getEndNoteCss = (prefixRule: string, footnoteFontSize: number) => {
       page-break-inside: avoid;
       break-inside: avoid;
     }
-    ${prefixRule}.endnotes-separator{
+    .${themeId} .endnotes-separator{
       height:0.175rem;
       background-color:#000000;
       margin-bottom: 2rem !important;
     }
-    ${prefixRule}.endnote-backlink{
+    .${themeId} .endnote-backlink{
       color: inherit;
       text-decoration: none;
     }
-    ${prefixRule}.endnote-text-item{
+    .${themeId} .endnote-text-item{
       display: inline-block;
     }
-    ${prefixRule}a{
+    .${themeId} a{
       text-decoration: none;
       color: inherit;
     }
     
-    ${prefixRule}.endnote-item{
+    .${themeId} .endnote-item{
       margin-left: 1.2rem
     }
     
-    ${prefixRule}.endnote-title{
+    .${themeId} .endnote-title{
       padding-top: 1rem
     }
   `;

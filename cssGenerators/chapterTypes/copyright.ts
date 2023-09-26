@@ -1,19 +1,19 @@
-export const getCopyrightCss = (prefixRule: string) => {
+export const getCopyrightCss = (themeId: string) => {
   return `
-    ${prefixRule}.copyrights {
+    .${themeId} .copyrights {
       font-size: 0.75rem;
     }
 
-    ${prefixRule}.copyrights p{
+    .${themeId} .copyrights p{
       text-indent: 0em !important;
       margin-bottom: 0.8em;
     }
 
-    ${prefixRule}.copyrights p:first-of-type .word:nth-child(-n+4){
+    .${themeId} .copyrights p:first-of-type .word:nth-child(-n+4){
       text-transform: none;
     }
 
-    ${prefixRule}.copyrights p:first-of-type .first-letter{
+    .${themeId} .copyrights p:first-of-type .first-letter{
       font-size: 1em;
       line-height: inherit;
       margin: inherit;

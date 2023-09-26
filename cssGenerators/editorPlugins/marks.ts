@@ -1,14 +1,14 @@
-export const getMarkCss = (prefixRule: string) => {
+export const getMarkCss = (themeId: string) => {
   return `
-    ${prefixRule}span.monospace {
+    .${themeId} span.monospace {
       font-family: 'Courier', sans-serif;
     }
 
-    ${prefixRule}span.smallcaps {
+    .${themeId} span.smallcaps {
       font-variant: small-caps;
     }
 
-    ${prefixRule}span.sansserif {
+    .${themeId} span.sansserif {
       font-family: 'PT Sans';
     }
   `;

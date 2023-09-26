@@ -19,7 +19,6 @@ export const getChapterHeaderCss = (
   themeProps: Theme,
   isPreviewer: boolean = false,
   isThumbnail: boolean = false,
-  prefixRule: string,
   prefix?: string,
 ) => {
   const { properties: styleProps } = themeProps;
@@ -28,7 +27,9 @@ export const getChapterHeaderCss = (
     styleProps.image?.headerTextColor === "light";
 
   return `
-    ${prefixRule}.${addPrefix("chapter-number", prefix)} span{
+    
+
+    .${themeProps._id} .${addPrefix("chapter-number", prefix)} span{
       display: inline-block;
       font-family: ${getFontFamilyName(
         styleProps.chapterNo.font,
@@ -42,7 +43,7 @@ export const getChapterHeaderCss = (
       ${isThumbnail? thumbnailCssOverwrites.number(): ""}
     }
 
-    ${prefixRule}.${addPrefix("chapter-title", prefix)} h2, ${prefixRule}.${addPrefix("epub-toc-title-card", prefix)} h2{
+    .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2{
       display: inline-block;
       font-family: ${getFontFamilyName(
         styleProps.chapterTitle.font,
@@ -56,7 +57,7 @@ export const getChapterHeaderCss = (
       ${isThumbnail? thumbnailCssOverwrites.title(): ""}
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
       display: inline-block;
       font-family: ${getFontFamilyName(
         styleProps.chapterSubtitle.font,
@@ -70,34 +71,34 @@ export const getChapterHeaderCss = (
       ${isThumbnail? thumbnailCssOverwrites.subtitle(): ""}
     }
 
-    ${prefixRule}header .${addPrefix("meta", prefix)}{
+    .${themeProps._id} header .${addPrefix("meta", prefix)}{
       font-size: ${4 + 2 * styleProps.header.size}pt;
       font-family: ${styleProps.header.font};
     }
 
-    ${prefixRule}footer .${addPrefix("meta", prefix)}{
+    .${themeProps._id} footer .${addPrefix("meta", prefix)}{
       font-size: ${4 + 2 * styleProps.footer.size}pt;
       font-family: ${styleProps.footer.font};
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)} .left{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .left{
       text-align: left;
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)} .center{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .center{
       text-align: center;
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)} .right{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .right{
       text-align: right;
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}{
       width: 100%;
       justify-content:center;
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_bg", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_bg", prefix)}{
       background-color: rgba(255,255,255, ${1 - getNormalizedOpacity(
         styleProps.image.opacity
       )});
@@ -111,7 +112,7 @@ export const getChapterHeaderCss = (
       background-repeat: no-repeat;
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-title", prefix)} h2{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-title", prefix)} h2{
       color: ${
         renderLightHeaderText ? "white" : "black"
       };
@@ -119,7 +120,7 @@ export const getChapterHeaderCss = (
       word-break: break-word;
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)} span{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)} span{
       color: ${
         renderLightHeaderText ? "white" : "black"
       };
@@ -127,7 +128,7 @@ export const getChapterHeaderCss = (
       word-break: break-word;
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
       color: ${
         renderLightHeaderText ? "white" : "black"
       };
@@ -135,12 +136,12 @@ export const getChapterHeaderCss = (
       word-break: break-word;
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)}, ${prefixRule}.${addPrefix("title-card", prefix)}, ${prefixRule}.${addPrefix("epub-toc-title-card", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${themeProps._id} .${addPrefix("title-card", prefix)}, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)}{
       display: flex;
       flex-direction: column;
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)}, ${prefixRule}.${addPrefix("epub-toc-title-card", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)}, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)}{
       display: flex;
       position: relative;
       min-height: 15em;
@@ -149,7 +150,7 @@ export const getChapterHeaderCss = (
       ${isThumbnail? thumbnailCssOverwrites.titleCard(): ""}
     }
 
-    ${prefixRule}.${addPrefix("chp_clr_none", prefix)} img, .${addPrefix("chp_clr_none", prefix)}{
+    .${themeProps._id} .${addPrefix("chp_clr_none", prefix)} img, .${addPrefix("chp_clr_none", prefix)}{
       filter: grayscale(100%);
       -webkit-filter: grayscale(100%);
       -moz-filter: grayscale(100%);
@@ -157,7 +158,7 @@ export const getChapterHeaderCss = (
       -o-filter: grayscale(100%);
     }
 
-    ${prefixRule}.${addPrefix("chp_clr_all", prefix)} img, .${addPrefix("chp_clr_all", prefix)}{
+    .${themeProps._id} .${addPrefix("chp_clr_all", prefix)} img, .${addPrefix("chp_clr_all", prefix)}{
       filter: grayscale(0%);
       -webkit-filter: grayscale(0%);
       -moz-filter: grayscale(0%);
@@ -165,7 +166,7 @@ export const getChapterHeaderCss = (
       -o-filter: grayscale(0%);
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_img", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_img", prefix)}{
       order: ${getImagePlacementOrder(styleProps.image.placement)};
       text-align: ${styleProps.image.alignment};
       padding-top: 0.3em;
@@ -173,30 +174,30 @@ export const getChapterHeaderCss = (
       ${isThumbnail? thumbnailCssOverwrites.imageContainer(): ""}
     }
 
-    ${prefixRule}.${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_img", prefix)} img{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chp_img", prefix)} img{
       width: ${styleProps.image.width}%;
     }
 
-    ${prefixRule}.${addPrefix("chapter-number", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-number", prefix)}{
       text-align: ${styleProps.chapterNo.align}!important;
       order: 2;
       text-transform: capitalize;
       z-index: 10;
     }
 
-    ${prefixRule}.${addPrefix("chapter-title", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title", prefix)}{
       text-align: ${styleProps.chapterTitle.align}!important;
       order: 3;
       z-index: 10;
     }
 
-    ${prefixRule}.${addPrefix("chapter-subtitle", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)}{
       text-align: ${styleProps.chapterSubtitle.align}!important;
       order: 4;
       z-index: 10;
     }
 
-    ${prefixRule}.${addPrefix("chapter-number", prefix)} span, ${prefixRule}.${addPrefix("chapter-title", prefix)} h2, ${prefixRule}.${addPrefix("epub-toc-title-card", prefix)} h2, ${prefixRule}.${addPrefix("chapter-subtitle", prefix)} h3 {
+    .${themeProps._id} .${addPrefix("chapter-number", prefix)} span, .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2, .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3 {
         font-weight: 400;
     }
 

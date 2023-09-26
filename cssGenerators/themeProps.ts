@@ -36,13 +36,11 @@ import { epubFontBaseUrl } from "../helpers";
  * @param fontBaseUrl The base url for the location where the actual font files reside
  * @param isPreviewer If css is generated for editor previewer, default false
  * @param containerClassName Class name for the immediate parent element to avoid css conflicts
- * @param prerule determine if pre rule needs to be added or not
  * when generated css is used in multiple places
  * @returns {string} Css string to format the book according to provided theme properties
  */
 export const themePropsToCss = (
   themeProps: Theme,
-  prerule?: string,
   fontBaseUrl?: string,
   isPreviewer: boolean = false,
   containerClassName?: string
@@ -55,27 +53,26 @@ export const themePropsToCss = (
     throw new Error("Missing font base Url for previewer");
   }
 
-  const prefixRule = prerule || "";
-
   const fontFaceCss = getHeaderElementFontFaceCss(styleProps, fontLocation);
 
   const dropCapFontFaceCss = getDropCapFontFaceCss(styleProps, fontLocation);
 
   const styleCss = `
-    ${getChapterHeaderCss(themeProps, isPreviewer, false, prefixRule, containerClassName,)}
+    ${getChapterHeaderCss(themeProps, isPreviewer, false, containerClassName)}
 
-    ${getDefaultCss(prefixRule, themeProps.properties.paragraph.paragraphSpacing, prefixRule)}
+    ${getDefaultCss(themeProps._id, themeProps.properties.paragraph.paragraphSpacing)}
 
-    ${getHeadingCss(prefixRule, themeProps, prefixRule)} 
+    ${getHeadingCss(themeProps._id,themeProps)}
 
-    ${prefixRule}.wrapper{
+    .${themeProps._id} .wrapper{
       /* https://css-tricks.com/almanac/properties/o/overflow-wrap/ */
       overflow-wrap: break-word;
       ${styleProps.paragraph.hyphens ? `hyphens: auto;` : ``}
+
       ${styleProps.paragraph.justify ? `text-align: justify;` : ``}
     }
 
-    ${prefixRule}p{
+    .${themeProps._id} p{
       orphans: 2;
       widows: 2;
       padding-bottom: 0em;
@@ -90,76 +87,76 @@ export const themePropsToCss = (
       }em;
     }
 
-    ${prefixRule}p:empty:not(:first-of-type){
+    .${themeProps._id} p:empty:not(:first-of-type){
       min-height: 1em;
     }
 
-    ${prefixRule}p:first-of-type{
+    .${themeProps._id} p:first-of-type{
       text-indent: 0rem !important;
     }
 
-    ${prefixRule}.text-after-subheading {
+    .${themeProps._id} .text-after-subheading {
       text-indent: 0rem !important;
     }
 
-    ${prefixRule}.print-wrapper{
+    .${themeProps._id} .print-wrapper{
       height: 100%;
       max-height:100%;
     }
 
     ${getFirstParagraphCss(
       styleProps.firstParagraph,
-      prefixRule,
+      themeProps._id,
       isPreviewer
     )}
 
-    ${getFullBleedImageCss(prefixRule)}
+    ${getFullBleedImageCss(themeProps._id)}
 
     /* Editor Plugins */
 
-    ${getAlignCss(prefixRule)}
+    ${getAlignCss(themeProps._id)}
 
-    ${getBlockQuoteCss(prefixRule)}
+    ${getBlockQuoteCss(themeProps._id)}
 
     ${getOrnamentalBreakCss(
       styleProps.ornamentalBreakWidth,
-      prefixRule,
+      themeProps._id,
       isPreviewer
     )}
-    
-    ${getImageCss(prefixRule, themeProps.properties.imageCaption)}
-    
-    ${getSMIconCss(prefixRule)}
 
-    ${getVerseCss(prefixRule)}
+    ${getImageCss(themeProps._id, themeProps.properties.imageCaption)}
 
-    ${getCalloutBoxCss(prefixRule)} 
+    ${getSMIconCss(themeProps._id)}
 
-    ${getEndNoteCss(prefixRule, styleProps.footnoteFontSize)}
+    ${getVerseCss(themeProps._id)}
 
-    ${getMarkCss(prefixRule)}
+    ${getCalloutBoxCss(themeProps._id)} 
 
-    ${getListPluginCss(prefixRule, isPreviewer)}
+    ${getEndNoteCss(themeProps._id, styleProps.footnoteFontSize)}
 
-    ${getHangingIndentCss(prefixRule, styleProps.hangingIndent)}
+    ${getMarkCss(themeProps._id)}
+
+    ${getListPluginCss(themeProps._id, isPreviewer)}
+
+    ${getHangingIndentCss(themeProps._id, styleProps.hangingIndent)}
 
     /* Chapter Types */
 
     ${getBookTitleCss(themeProps, isPreviewer)}
 
-    ${getTocCss(themeProps, prefixRule)}
+    ${getTocCss(themeProps, themeProps._id)}
 
-    ${getCopyrightCss(prefixRule)}
+    ${getCopyrightCss(themeProps._id)}
 
-    ${getDedicationCss(prefixRule)}
+    ${getDedicationCss(themeProps._id)}
 
-    ${getEpigraphCss(prefixRule)}
+    ${getEpigraphCss(themeProps._id)}
 
-    ${getAlsobyCss(prefixRule)}
+    ${getAlsobyCss(themeProps._id)}
 
-    ${getFullPageImageCss(prefixRule)}
+    ${getFullPageImageCss(themeProps._id)}
 
-    ${getPartCss(prefixRule)}
+    ${getPartCss(themeProps._id)}
   `;
 
   return `${styleCss} ${fontFaceCss} ${dropCapFontFaceCss}`;
