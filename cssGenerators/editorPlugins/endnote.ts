@@ -28,6 +28,7 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
     }
     .${themeId} .endnote-text-item{
       display: inline-block;
+      padding-left: 0.5em;
     }
     .${themeId} a{
       text-decoration: none;
