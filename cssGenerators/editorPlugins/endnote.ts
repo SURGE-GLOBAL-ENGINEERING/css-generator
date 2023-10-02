@@ -21,14 +21,6 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
     .${themeId} .endnote-backlink{
       color: inherit;
       text-decoration: none;
-      line-height: 1.6em;
-    }
-    .${themeId} .endnote-wrapper{
-      display: flex;
-    }
-    .${themeId} .endnote-text-item{
-      display: inline-block;
-      padding-left: 0.5em;
     }
     .${themeId}a{
       text-decoration: none;
@@ -37,7 +29,6 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
     
     .${themeId} .endnote-item{
       margin-left: 1.2rem;
-      display: flex;
     }
     
     .${themeId} .endnote-title{
