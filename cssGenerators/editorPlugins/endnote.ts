@@ -22,7 +22,7 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
       color: inherit;
       text-decoration: none;
     }
-    .${themeId}a{
+    .${themeId} a{
       text-decoration: none;
       color: inherit;
     }
