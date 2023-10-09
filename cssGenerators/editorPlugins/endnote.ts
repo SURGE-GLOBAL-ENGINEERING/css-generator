@@ -31,7 +31,7 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
     }
     
     .${themeId} .endnote-item{
-      margin-left: 1.2rem
+      margin-left: 1.2rem;
     }
     
     .${themeId} .endnote-title{

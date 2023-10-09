@@ -28,6 +28,7 @@ import {
 
 import { Theme } from "../types";
 import { epubFontBaseUrl } from "../helpers";
+import { getTextMessagesCss } from "./editorPlugins/textMessages";
 
 /**
  * Returns a css string to style the book according to provided theme properties
@@ -120,7 +121,7 @@ export const themePropsToCss = (
       isPreviewer
     )}
 
-    ${getImageCss(themeProps._id)}
+    ${getImageCss(themeProps._id, themeProps.properties.imageCaption)}
 
     ${getSMIconCss(themeProps._id)}
 
@@ -135,6 +136,8 @@ export const themePropsToCss = (
     ${getListPluginCss(themeProps._id, isPreviewer)}
 
     ${getHangingIndentCss(themeProps._id, styleProps.hangingIndent)}
+
+    ${getTextMessagesCss(themeProps._id)}
 
     /* Chapter Types */
 
