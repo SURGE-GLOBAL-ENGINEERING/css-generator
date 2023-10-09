@@ -120,7 +120,7 @@ export const getChapterHeaderCss = (
       word-break: break-word;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)} span{
       color: ${
         renderLightHeaderText ? "white" : "black"
       };
@@ -128,7 +128,7 @@ export const getChapterHeaderCss = (
       word-break: break-word;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
       color: ${
         renderLightHeaderText ? "white" : "black"
       };
@@ -199,6 +199,12 @@ export const getChapterHeaderCss = (
 
     .${themeProps._id} .${addPrefix("chapter-number", prefix)} span, .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2, .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3 {
         font-weight: 400;
+    }
+
+    .inverted h2, .inverted h3, .inverted span, .inverted{
+      color: ${
+        renderLightHeaderText ? "black" : "white"
+      } !important;
     }
 
     `;

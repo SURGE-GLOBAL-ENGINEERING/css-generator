@@ -1,5 +1,5 @@
 import { headerStyleToFontVariant, getFontFaceCss } from "../helpers";
-import { ThemeStyleProps } from "../types";
+import { Subheadings, ThemeStyleProps } from "../types";
 
 /**
  * Generates @font-face css for rendering selected fonts and font varients of header elements
@@ -12,6 +12,7 @@ export const getHeaderElementFontFaceCss = (
   fontBaseUrl: string,
 ): string => {
   let fontCss = "";
+    const headings: Subheadings[] = ["h2", "h3", "h4", "h5", "h6"];
 
   const headerFonts = [
     {
@@ -26,27 +27,18 @@ export const getHeaderElementFontFaceCss = (
       fontId: styleProps.chapterSubtitle.font,
       variant: headerStyleToFontVariant(styleProps.chapterSubtitle.style)
     },
-    {
-      fontId: styleProps.headings.h2.font,
-      variant: headerStyleToFontVariant([])
-    },
-    {
-      fontId: styleProps.headings.h3.font,
-      variant: headerStyleToFontVariant([])
-    },
-    {
-      fontId: styleProps.headings.h4.font,
-      variant: headerStyleToFontVariant([])
-    },
-    {
-      fontId: styleProps.headings.h5.font,
-      variant: headerStyleToFontVariant([])
-    },
-    {
-      fontId: styleProps.headings.h6.font,
-      variant: headerStyleToFontVariant([])
-    }
   ];
+
+  // include every subheading fonts used except for "Default" font 
+  for (const heading of headings) {
+    const { font } = styleProps.headings[heading];
+    if (font !== "Default") {
+      headerFonts.push({
+        fontId: font,
+        variant: headerStyleToFontVariant([]),
+      });
+    }
+  }
 
   headerFonts.map(font => {
     fontCss += getFontFaceCss(font.fontId, font.variant, fontBaseUrl);
