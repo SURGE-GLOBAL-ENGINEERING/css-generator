@@ -11,6 +11,56 @@ type FontStyles = Record<string, Record<string, CharacterFontStyle>>;
 
 const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: boolean) => {
     const fontStyles: FontStyles = {
+        AbrilFatface: {
+            C: {
+                "font-size": isPreviewer ? "3.3rem" : "3.0rem",
+                "margin-left": "-0.3rem",
+                "margin-right": "0.1rem",
+                padding: isPreviewer ? "0.23rem 0.25rem 0rem" : "0.3rem 0.25rem 0rem",
+                transform: "scale(0.9)",
+                "line-height": 0.7
+            },
+            G: {
+                "font-size": isPreviewer ? "3.3rem" : "3.0rem",
+                "margin-left": "-0.3rem",
+                "margin-right": "0.1rem",
+                padding: isPreviewer ? "0.23rem 0.25rem 0rem" : "0.3rem 0.25rem 0rem",
+                transform: "scale(0.9)",
+                "line-height": 0.7
+            },
+            O: {
+                "font-size": isPreviewer ? "3.3rem" : "3.0rem",
+                "margin-left": "-0.3rem",
+                "margin-right": "0.1rem",
+                padding: isPreviewer ? "0.23rem 0.25rem 0rem" : "0.3rem 0.25rem 0rem",
+                transform: "scale(0.9)",
+                "line-height": 0.7
+            },
+            Q: {
+                "font-size": isPreviewer ? "2.7rem" : "2.3rem",
+                "margin-left": "-0.3rem",
+                "margin-right": "0.1rem",
+                padding: isPreviewer ? "0.1rem 0.25rem 0rem" : "0.35rem 0.25rem 0rem",
+                transform: "scale(0.9)",
+                "line-height": 0.7
+            },
+            S: {
+                "font-size": isPreviewer ? "3.3rem" : "3.0rem",
+                "margin-left": "-0.3rem",
+                "margin-right": "0.1rem",
+                padding: isPreviewer ? "0.23rem 0.25rem 0rem" : "0.3rem 0.25rem 0rem",
+                transform: "scale(0.9)",
+                "line-height": 0.7
+            },
+            default: {
+                "font-size": isPreviewer ? "3.3rem" : "3.1rem",
+                "margin-left": "-0.3rem",
+                "margin-right": "0.1rem",
+                padding: isPreviewer ? "0.23rem 0.25rem 0rem" : "0.3rem 0.25rem 0rem",
+                transform: "scale(0.9)",
+                "line-height": 0.7
+            }
+        },
         ArchitectsDaughter: {
             default: {
                 "font-size": isPreviewer ? "3rem" : "2.9rem",
