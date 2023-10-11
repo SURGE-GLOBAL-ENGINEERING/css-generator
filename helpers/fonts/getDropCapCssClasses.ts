@@ -68,6 +68,14 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 padding: "0 0.25rem",
             }
         },
+        Comfortaa : {
+            default: {
+                "font-size": "2.49rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+            }
+           
+        },
         FrederickatheGreat: {
             Q: {
                 "font-size": "3.6rem",
