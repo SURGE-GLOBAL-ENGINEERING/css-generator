@@ -3,6 +3,8 @@ type CharacterFontStyle = {
     "margin-left"?: string;
     "margin-right"?: string;
     padding?: string;
+    transform?: string;
+    "line-height"?: number;
 }
 
 type FontStyles = Record<string, Record<string, CharacterFontStyle>>;
