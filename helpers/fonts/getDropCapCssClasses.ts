@@ -138,7 +138,7 @@ export const getDropCapCssClasses = (fontFamily: string, prefixRule: string, isP
     for (let letter of alphabet) {
         const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer);
         if (fontRule) {
-            cssString += `${prefixRule}.withDropcap .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
+            cssString += `.${prefixRule} .withDropcap .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
         }
     }
 
