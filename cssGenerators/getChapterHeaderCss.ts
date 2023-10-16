@@ -120,7 +120,7 @@ export const getChapterHeaderCss = (
       word-break: break-word;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)} span{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)} {
       color: ${
         renderLightHeaderText ? "white" : "black"
       };
