@@ -12,6 +12,11 @@ import {
 
 import { Theme } from "../types";
 
+const intevertTextColor = (color: "white" | "black"): "black" | "white" => {
+  if(color ===  "white") return "black";
+  return "white";
+}
+
 /**
  * Can contain previewer only styles
  */
@@ -26,6 +31,9 @@ export const getChapterHeaderCss = (
     styleProps.image?.placement === "background-image" &&
     styleProps.image?.headerTextColor === "light";
 
+  const headerTextColor = renderLightHeaderText ? "white" : "black";
+  const lightTextCssOverwrites =  "color: white !important";
+
   return `
     
 
@@ -35,12 +43,18 @@ export const getChapterHeaderCss = (
         styleProps.chapterNo.font,
         headerStyleToFontVariant(styleProps.chapterNo.style)
       )};
+      color: ${headerTextColor};
       font-size: ${styleProps.chapterNo.size}px;
       text-align: ${styleProps.chapterNo.align};
       width: ${styleProps.chapterNo.width}%;
       ${fontStylesToCssProp(styleProps.chapterNo.style)}
       ${styleObjectToCss(styleProps.chapterNo.extras)}
       ${isThumbnail? thumbnailCssOverwrites.number(): ""}
+      ${renderLightHeaderText ? lightTextCssOverwrites : ""}
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-number", prefix)} .invert {
+      color: ${intevertTextColor(headerTextColor)} !important;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2{
@@ -55,9 +69,14 @@ export const getChapterHeaderCss = (
       ${fontStylesToCssProp(styleProps.chapterTitle.style)}
       ${styleObjectToCss(styleProps.chapterTitle.extras)}
       ${isThumbnail? thumbnailCssOverwrites.title(): ""}
+      ${renderLightHeaderText ? lightTextCssOverwrites : ""}
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
+    .${themeProps._id} .${addPrefix("chapter-title", prefix)} .invert {
+      color: ${intevertTextColor(headerTextColor)} !important;
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3{
       display: inline-block;
       font-family: ${getFontFamilyName(
         styleProps.chapterSubtitle.font,
@@ -69,6 +88,11 @@ export const getChapterHeaderCss = (
       ${fontStylesToCssProp(styleProps.chapterSubtitle.style)}
       ${styleObjectToCss(styleProps.chapterSubtitle.extras)}
       ${isThumbnail? thumbnailCssOverwrites.subtitle(): ""}
+      ${renderLightHeaderText ? lightTextCssOverwrites : ""}
+    }
+
+    .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} .invert {
+      color: ${intevertTextColor(headerTextColor)} !important;
     }
 
     .${themeProps._id} header .${addPrefix("meta", prefix)}{
@@ -113,25 +137,16 @@ export const getChapterHeaderCss = (
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-title", prefix)} h2{
-      color: ${
-        renderLightHeaderText ? "white" : "black"
-      };
       opacity: 1 !important;
       word-break: break-word;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)} span{
-      color: ${
-        renderLightHeaderText ? "white" : "black"
-      };
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)} {
       opacity: 1 !important;
       word-break: break-word;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
-      color: ${
-        renderLightHeaderText ? "white" : "black"
-      };
       opacity: 1 !important;
       word-break: break-word;
     }
@@ -200,12 +215,5 @@ export const getChapterHeaderCss = (
     .${themeProps._id} .${addPrefix("chapter-number", prefix)} span, .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2, .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3 {
         font-weight: 400;
     }
-
-    .inverted h2, .inverted h3, .inverted span, .inverted{
-      color: ${
-        renderLightHeaderText ? "black" : "white"
-      } !important;
-    }
-
     `;
 };
