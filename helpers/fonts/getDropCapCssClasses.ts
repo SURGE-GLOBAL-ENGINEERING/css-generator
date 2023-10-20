@@ -350,6 +350,123 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "line-height": 0.9
             },
         },
+        EuphoriaScript: {
+            A: {
+                "font-size": "2.5rem",
+                padding: "0.3rem 0.2rem 0rem"
+            },
+            C: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0rem 0rem",
+                "margin-right": "0.4rem"
+            },
+            F: {
+                "font-size": "2.5rem",
+                padding: "0.3rem 0.2rem 0rem",
+                "margin-right": "0.2rem"
+            },
+            G: {
+                "font-size": "2.2rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.15rem"
+            },
+            I: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            J: {
+                "font-size": "2.4rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            K: {
+                "font-size": "2.35rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.45rem"
+            },
+            L: {
+                "font-size": "2.35rem",
+                padding: "0.2rem 0.2rem 0rem",
+                "margin-right": "0.45rem"
+            },
+            M: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            N: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            O: {
+                "font-size": "2.86rem",
+                padding: "0.2rem 0rem 0rem",
+                "margin-right": "0.35rem",
+                "margin-left": "-0.1rem"
+            },
+            P: {
+                "font-size": "2.85rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.45rem"
+            },
+            Q: {
+                "font-size": "2.35rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.4rem"
+            },
+            R: {
+                "font-size": "2.55rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.35rem"
+            },
+            S: {
+                "font-size": "2.55rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.2rem"
+            },
+            T: {
+                "font-size": "2.45rem",
+                padding: "0.38rem 0.1rem 0rem",
+                "margin-right": "0.65rem"
+            },
+            U: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            V: {
+                "font-size": "2.7rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.35rem"
+            },
+            W: {
+                "font-size": "2.7rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.35rem"
+            },
+            X: {
+                "font-size": "2.55rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.5rem"
+            },
+            Y: {
+                "font-size": "2.2rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.15rem"
+            },
+            Z: {
+                "font-size": "2.35rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.45rem"
+            },
+            default: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0.17rem 0rem",
+                "margin-right": "0.2rem"
+            }
+        },
     };
 
     const fontFamilyStyles = fontStyles[fontFamily] || {};
