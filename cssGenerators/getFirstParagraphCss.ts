@@ -5,19 +5,19 @@ import { FirstParagraph, Paragraph } from "../types";
  */
 export const getFirstParagraphCss = (
   firstParagraph: FirstParagraph,
-  prefixRule: string,
+  themeId: string,
 ) => {
   return `
-    ${prefixRule}.withDropcap .dropcap, ${prefixRule}.ornamental-break + p{
+    .${themeId} .withDropcap .dropcap, .${themeId} .ornamental-break + p{
       text-indent: 0!important;
     }
     ${
       firstParagraph.dropcap
         ? `
-        ${prefixRule}.withDropcap .dropcap {
+      .${themeId} .withDropcap .dropcap {
         float: left;
       }
-      ${prefixRule}.withDropcap .dropcap{
+      .${themeId} .withDropcap .dropcap{
         font-size: 3rem;
         line-height: 1;
         padding: 0 0.25rem;
@@ -26,15 +26,15 @@ export const getFirstParagraphCss = (
         initial-letter: 2;
         transform: scale(1.1);
       }
-      ${prefixRule}.withDropcap .dropcap:before,
-      ${prefixRule}.withDropcap .dropcap:after {
+      .${themeId} .withDropcap .dropcap:before,
+      .${themeId} .withDropcap .dropcap:after {
         content: "";
         display: block;
       }
-      ${prefixRule}.withDropcap .dropcap:before {
+      .${themeId} .withDropcap .dropcap:before {
         margin-bottom: 0.275rem;
       }
-      ${prefixRule}.withDropcap .dropcap:after {
+      .${themeId} .withDropcap .dropcap:after {
         margin-top: -0.175rem;
       }`
         : ""
@@ -42,8 +42,8 @@ export const getFirstParagraphCss = (
     ${
       firstParagraph.uppercaseFourWords
         ? `
-      ${prefixRule}.withDropcap .dropcap,
-      ${prefixRule}.withDropcap .lead_word{
+      .${themeId} .withDropcap .dropcap,
+      .${themeId} .withDropcap .lead_word{
         text-transform: uppercase;
       }
       `

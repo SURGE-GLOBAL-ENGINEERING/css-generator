@@ -9,8 +9,7 @@ export const getThemeThumbnailCss = (
   prefix?: string,
 ) => {
   const { properties: styleProps } = theme;
-  const prefixRule = `.${theme._id} `;
-  const thumbnailChapterHeaderCss = getChapterHeaderCss(theme, false, true, prefixRule, prefix);
+  const thumbnailChapterHeaderCss = getChapterHeaderCss(theme, false, true, prefix)
   const thumbnailChapterBodyCss = `
     .thumbnail-body, .${theme?._id} p{
       text-indent: ${styleProps.paragraph.indent ? styleProps.hangingIndent : 0}cm;
