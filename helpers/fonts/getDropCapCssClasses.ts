@@ -467,6 +467,136 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-right": "0.2rem"
             }
         },
+        CinzelDecorative: {
+            A: {
+                "font-size": "2rem",
+                padding: "0.3rem 0.1rem 0rem",
+                "margin-right": "0.7rem"
+            },
+            D: {
+                "font-size": "2.8rem",
+                padding: "0.1rem 0.4rem 0rem",
+                "margin-right": "0.125rem"
+            },
+            E: {
+                "font-size": "2.4rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.4rem",
+                "margin-left": "-0.1rem"
+            },
+            F: {
+                "font-size": "2.4rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.4rem",
+                "margin-left": "-0.1rem"
+            },
+            G: {
+                "font-size": "2.1rem",
+                padding: "0.25rem 0rem 0rem",
+                "margin-right": "0.9rem"
+            },
+            H: {
+                "font-size": "2.1rem",
+                padding: "0.325rem 0rem 0rem",
+                "margin-right": "0.4rem"
+            },
+            J: {
+                "font-size": "2.2rem",
+                padding: "0.25rem 0.2rem 0rem",
+                "margin-right": "0.1rem"
+            },
+            K: {
+                "font-size": "2rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.8rem",
+                "margin-left": "-0.1rem"
+            },
+            L: {
+                "font-size": "2rem",
+                padding: "0.25rem 0rem 0rem",
+                "margin-right": "1.4rem",
+                "margin-left": "-0.2rem"
+            },
+            M: {
+                "font-size": "1.9rem",
+                padding: "0.5rem 0.45rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            N: {
+                "font-size": "1.9rem",
+                padding: "0.5rem 0.45rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            O: {
+                "font-size": "2.86rem",
+                padding: "0.2rem 0rem 0rem",
+                "margin-right": "0.35rem",
+                "margin-left": "-0.1rem"
+            },
+            P: {
+                "font-size": "2.4rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.4rem",
+                "margin-left": "-0.1rem"
+            },
+            Q: {
+                "font-size": "2rem",
+                padding: "0.25rem 0rem 0rem",
+                "margin-right": "1.6rem"
+            },
+            R: {
+                "font-size": "2rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.8rem",
+                "margin-left": "-0.1rem"
+            },
+            S: {
+                "font-size": "2.3rem",
+                padding: "0.25rem 0rem 0rem",
+                "margin-right": "0.4rem"
+            },
+            T: {
+                "font-size": "2.8rem",
+                padding: "0.1rem 0.4rem 0rem",
+                "margin-right": "0.125rem"
+            },
+            U: {
+                "font-size": "2.16rem",
+                padding: "0.6rem 0rem 0rem",
+                "margin-right": "0.55rem",
+                "margin-left": "-0.1rem"
+            },
+            V: {
+                "font-size": "2rem",
+                padding: "0.75rem 0rem 0rem",
+                "margin-right": "0.8rem"
+            },
+            W: {
+                "font-size": "1.7rem",
+                padding: "0.7rem 0rem 0rem",
+                "margin-right": "0.75rem"
+            },
+            X: {
+                "font-size": "1.9rem",
+                padding: "0.5rem 0.45rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            Y: {
+                "font-size": "2.4rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.4rem"
+            },
+            Z: {
+                "font-size": "2.1rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "1.1rem"
+            },
+            default: {
+                "font-size": "2.8rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.325rem"
+            }
+        }
     };
 
     const fontFamilyStyles = fontStyles[fontFamily] || {};
