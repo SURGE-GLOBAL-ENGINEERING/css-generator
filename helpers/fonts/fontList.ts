@@ -4,317 +4,481 @@ export const fonts: Font[] = [
   {
     id: "Aldrich",
     name: "Aldrich",
-    variants: [FontVariant.regular]
-    },
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
+  },
   {
     id: "Alegreya",
     name: "Alegreya",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
-    },
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForChapterHeaderOptions: true,
+  },
   {
     id: "AlegreyaSansSC",
     name: "Alegreya Sans SC",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Allura",
     name: "Allura",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Anton",
     name: "Anton",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Audiowide",
     name: "Audiowide",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Benne",
     name: "Benne",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "BigShouldersDisplay",
     name: "Big Shoulders Display",
-    variants: [FontVariant.regular, FontVariant.bold]
+    variants: [FontVariant.regular, FontVariant.bold],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "BlackOpsOne",
     name: "BlackOpsOne",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Cantarell",
     name: "Cantarell",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Cardo",
     name: "Cardo",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Cinzel",
     name: "Cinzel",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "CinzelDecorative",
     name: "Cinzel Decorative",
-    variants: [FontVariant.regular, FontVariant.bold]
+    variants: [FontVariant.regular, FontVariant.bold],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "CourierPrime",
     name: "Courier Prime",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "ComicRelief",
     name: "Comic Relief",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: false,
   },
   {
     id: "CrimsonPro",
     name: "Crimson Pro",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Crushed",
     name: "Crushed",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "DelaGothicOne",
     name: "Dela Gothic One",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Delius",
     name: "Delius",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "DPSansMono",
     name: "DP Sans Mono",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: false,
   },
   {
     id: "EBGaramond",
     name: "EB Garamond",
     variants: [FontVariant.regular, FontVariant.italic],
-    availableForPrint: true
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "EmilysCandy",
     name: "Emilys Candy",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "EuphoriaScript",
     name: "Euphoria Script",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Forum",
     name: "Forum",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "GreatVibes",
     name: "Great Vibes",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "HelveticaNeue",
     name: "Helvetica Neue",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "OpenSansLT",
     name: "Large Print Open Sans",
     variants: [FontVariant.regular, FontVariant.bold],
     additionalInfo: "no italics",
-    availableForPrint: true
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "LibreBaskerville",
     name: "Libre Baskerville",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
     fontType: "otf",
     additionalInfo: "may not be compatible with IngramSpark",
-    availableForPrint: true
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "LibreCaslon",
     name: "Libre Caslon",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
     fontType: "otf",
-    availableForPrint: true
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "LifeSavers",
     name: "Life Savers",
-    variants: [FontVariant.regular, FontVariant.bold]
-  }, 
+    variants: [FontVariant.regular, FontVariant.bold],
+    availableForChapterHeaderOptions: true,
+  },
   {
     id: "Lora",
     name: "Lora",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Marcellus",
     name: "Marcellus",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Megrim",
     name: "Megrim",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Montserrat",
     name: "Montserrat",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "OldStandardTT",
     name: "Old Standard",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic]
+    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "OpenDyslexic",
     name: "OpenDyslexic",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "OpenSans",
     name: "Open Sans",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Oswald",
     name: "Oswald",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Poppins",
     name: "Poppins",
-    variants: [FontVariant.regular]
-  }, 
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
+  },
   {
     id: "PressStart2P",
     name: "Press Start 2P",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "PTSans",
     name: "PT Sans",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Quantico",
     name: "Quantico",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Raleway",
     name: "Raleway",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Roboto",
     name: "Roboto",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
-  }, 
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForChapterHeaderOptions: true,
+  },
   {
     id: "RobotoCondensed",
     name: "Roboto Condensed",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
-  }, 
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForChapterHeaderOptions: true,
+  },
   {
     id: "RobotoLight",
     name: "Roboto Light",
-    variants: [FontVariant.regular, FontVariant.italic]
-  }, 
+    variants: [FontVariant.regular, FontVariant.italic],
+    availableForChapterHeaderOptions: true,
+  },
   {
     id: "RockSalt",
     name: "Rock Salt",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Rosario",
     name: "Rosario",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Selima",
     name: "Selima",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "SixCaps",
     name: "Six Caps",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "SourceSansPro",
     name: "Source Sans Pro",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
     fontType: "otf",
-    availableForPrint: true
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Spartan",
     name: "Spartan",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "SpecialElite",
     name: "Special Elite",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Spectral",
     name: "Spectral",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Syncopate",
     name: "Syncopate",
-    variants: [FontVariant.regular, FontVariant.bold]
+    variants: [FontVariant.regular, FontVariant.bold],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "TheanoDidot",
     name: "TheanoDidot",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "VollkornSC",
     name: "Vollkorn SC",
-    variants: [FontVariant.regular, FontVariant.bold]
+    variants: [FontVariant.regular, FontVariant.bold],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "Voltaire",
     name: "Voltaire",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForChapterHeaderOptions: true,
   },
   {
     id: "YoungSerif",
     name: "Young Serif",
-    variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
-    availableForPrint: true
+    variants: [
+      FontVariant.regular,
+      FontVariant.bold,
+      FontVariant.italic,
+      FontVariant.boldItalic,
+    ],
+    availableForPrint: true,
+    availableForChapterHeaderOptions: true,
   },
-]
+];
