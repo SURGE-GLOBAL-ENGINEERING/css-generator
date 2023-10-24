@@ -178,6 +178,37 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 padding: "0.18rem 0.25rem 0rem",
             }
         },
+        "3Dumb": {
+            R: {
+              "font-size": isPreviewer ? "2.45rem" : "2.4rem",
+            },
+            S: {
+              "font-size": isPreviewer ? "2.3rem" : "2.3rem",
+              padding: "0.15rem 0.25rem 0rem",
+            },
+            T: {
+              "font-size": isPreviewer ? "2.45rem" : "2.4rem",
+            },
+            U: {
+              "font-size": isPreviewer ? "2.5rem" : "2.4rem",
+            },
+            W: {
+              "font-size": isPreviewer ? "2.4rem" : "2.2rem",
+            },
+            X: {
+              "font-size": isPreviewer ? "2.5rem" : "2.45rem",
+            },
+            Y: {
+              "font-size": isPreviewer ? "2.4rem" : "2.35rem",
+            },
+            Z: {
+              "font-size": isPreviewer ? "2.4rem" : "2.35rem",
+            },
+            default: {
+              "font-size": isPreviewer ? "2.4rem" : "2.3rem",
+              padding: "0.1rem 0.25rem 0rem",
+            },
+        },
         ImperialScript: {
             A: {
                 "font-size": "4.2rem",
@@ -615,8 +646,10 @@ export const getDropCapCssClasses = (fontFamily: string, prefixRule: string, isP
 
     for (let letter of alphabet) {
         const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer);
+        console.log("fontRulle", fontRule);
         if (fontRule) {
             cssString += `.${prefixRule} .withDropcap .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
+            console.log("string", cssString);
         }
     }
 
