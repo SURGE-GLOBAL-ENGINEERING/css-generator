@@ -22,9 +22,6 @@ export const getChapterHeaderCss = (
   prefix?: string,
 ) => {
   const { properties: styleProps } = themeProps;
-  const renderLightHeaderText =
-    styleProps.image?.placement === "background-image" &&
-    styleProps.image?.headerTextColor === "light";
 
   return `
     
@@ -113,25 +110,16 @@ export const getChapterHeaderCss = (
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-title", prefix)} h2{
-      color: ${
-        renderLightHeaderText ? "white" : "black"
-      };
       opacity: 1 !important;
       word-break: break-word;
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)}{
-      color: ${
-        renderLightHeaderText ? "white" : "black"
-      };
       opacity: 1 !important;
       word-break: break-word;
     }
 
     .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3{
-      color: ${
-        renderLightHeaderText ? "white" : "black"
-      };
       opacity: 1 !important;
       word-break: break-word;
     }
@@ -199,6 +187,10 @@ export const getChapterHeaderCss = (
 
     .${themeProps._id} .${addPrefix("chapter-number", prefix)} span, .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2, .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3 {
         font-weight: 400;
+    }
+
+    .inverted * {
+      color: white !important;
     }
 
     `;
