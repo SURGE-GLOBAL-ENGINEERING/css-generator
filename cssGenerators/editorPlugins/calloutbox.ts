@@ -3,6 +3,8 @@ export const getCalloutBoxCss = (themeId: string) => {
       .${themeId} .calloutbox {
         margin-top: 5px;
         padding: 1em 1em 1em 1em;
+        display: inline-block;
+        width: 100%;
       }
     `;
 };
