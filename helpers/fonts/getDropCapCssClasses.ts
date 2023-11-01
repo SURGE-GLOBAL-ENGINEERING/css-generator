@@ -627,7 +627,147 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 padding: "0.1rem 0.1rem 0rem",
                 "margin-right": "0.325rem"
             }
-        }
+        },
+        Kalam: {
+            C: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.53rem",
+                "margin-left": "-0.23rem",
+                "line-height": 0.8,
+            },
+            D: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.6rem",
+                "margin-left": "-0.3rem",
+                "line-height": 0.8,
+            },
+            E: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.625rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            F: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.775rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            G: {
+                "font-size": "4.1rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.25rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            H: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.525rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            I: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.6rem",
+                "margin-left": "-0.3rem",
+                "line-height": 0.8,
+            },
+            J: {
+                "font-size": "4.8rem",
+                padding: "0.65rem 0rem 0rem",
+                "margin-right": "0.625rem",
+                "line-height": 0.8,
+            },
+            M: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.525rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            O: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.6rem",
+                "margin-left": "-0.23rem",
+                "line-height": 0.8,
+            },
+            P: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.525rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            Q: {
+                "font-size": "4rem",
+                padding: "0.65rem 0rem 0rem",
+                "margin-right": "0.25rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            T: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.75rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            U: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.6rem",
+                "margin-left": "-0.3rem",
+                "line-height": 0.8,
+            },
+            V: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.825rem",
+                "margin-left": "-0.3rem",
+                "line-height": 0.8,
+            },
+            W: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.455rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            X: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.525rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            Y: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.725rem",
+                "margin-left": "-0.3rem",
+                "line-height": 0.8,
+            },
+            Z: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.5rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            default: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.325rem",
+                "line-height": 0.8,
+            }
+        },
     };
 
     const fontFamilyStyles = fontStyles[fontFamily] || {};
