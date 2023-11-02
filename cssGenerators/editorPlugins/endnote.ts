@@ -12,6 +12,7 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
       margin-bottom: 2rem !important;
       page-break-inside: avoid;
       break-inside: avoid;
+      text-align: left;
     }
     .${themeId} .endnotes-separator{
       height:0.175rem;
