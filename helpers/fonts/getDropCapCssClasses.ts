@@ -768,6 +768,40 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "line-height": 0.8,
             }
         },
+        CaviarDreams: {
+            A: {
+                "font-size": "4.25rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.4rem",
+            },
+            Q: {
+                "font-size": "3.63rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.4rem",
+                "margin-left": "-0.2rem"
+            },
+            S: {
+                "font-size": "4.25rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.4rem",
+            },
+            T: {
+                "font-size": "4.25rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.4rem",
+            },
+            X: {
+                "font-size": "4.25rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.4rem",
+            },
+            default: {
+                "font-size": "4.25rem",
+                padding: "0.1rem 0rem 0rem",
+                "margin-right": "0.4rem",
+                "margin-left": "-0.15rem"
+            }
+        },
     };
 
     const fontFamilyStyles = fontStyles[fontFamily] || {};
