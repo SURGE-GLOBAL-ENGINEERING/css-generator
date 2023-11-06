@@ -210,6 +210,79 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
               padding: "0.1rem 0.25rem 0rem",
             },
         },
+        Chomsky:{
+            A: {
+                "font-size": "5.4rem",
+                "line-height": 0.75,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            B: {
+                "font-size":  "5.2rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            C: {
+                "font-size": "5.2rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            F: {
+                "font-size": "4.4rem",
+                "line-height": 0.75,
+                padding: "0.1rem 1rem 0rem 0.1rem",
+            },
+            I: {
+                "font-size": "4.7rem",
+                "line-height": 0.75,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            J: {
+                "font-size": "4.8rem",
+                "line-height": 0.75,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            M: {
+                "font-size": "4.7rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            N: {
+                "font-size": "4.8rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            P: {
+                "font-size": "4.7rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            Q: {
+                "font-size": "4.7rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            S: {
+                "font-size": "4.3rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            X: {
+                "font-size": "4.7rem",
+                "line-height": 0.75,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            Y: {
+                "font-size": "4.2rem",
+                "line-height": 0.75,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            default: {
+                "font-size": "5.2rem",
+                "line-height": 0.75,
+                padding: "0.1rem 0.5rem 0rem 0rem",
+              },
+        }
+
     };
 
     const fontFamilyStyles = fontStyles[fontFamily] || {};
