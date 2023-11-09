@@ -1,7 +1,9 @@
 export const getTextMessagesCss = (themeId: string) => {
     return `
     .${themeId} .text-messages-container{
-      margin: 0px 30px 0px;
+      display: inline-block;
+      width: 100%;
+      padding: 0px 30px 0px;
       word-break: break-word;
     }
 
