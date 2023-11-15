@@ -74,7 +74,6 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-right": "0.35rem",
                 padding: "0.3rem 0.125rem 0.25rem",
             }
-           
         },
         FrederickatheGreat: {
             Q: {
@@ -177,6 +176,599 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": "2.4rem",
                 "margin-right": "0.35rem",
                 padding: "0.18rem 0.25rem 0rem",
+            }
+        },
+        ImperialScript: {
+            A: {
+                "font-size": "4.2rem",
+                "margin-right": "1.4rem",
+                padding: "0.05rem 0.325rem 0rem",
+                transform: "scale(1.2)",
+            },
+            B: {
+                "font-size": "4.6rem",
+                "margin-right": "0.8rem",
+                padding: "0.05rem 0rem",
+                transform: "scale(1.2)",
+            },
+            C: {
+                "font-size": "4.4rem",
+                "margin-right": "1.3rem",
+                padding: "0.1rem 0.1rem 0rem",
+                transform: "scale(1.2)",
+            },
+            D: {
+                "font-size": "4.65rem",
+                "margin-right": "0.4rem",
+                padding: "0.05rem 0.5rem 0rem",
+                transform: "scale(1.2)",
+            },
+            E: {
+                "font-size": "4.6rem",
+                "margin-right": "1rem",
+                padding: "0.03rem 0rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.9
+            },
+            F: {
+                "font-size": "4.7rem",
+                "margin-right": "1.7rem",
+                padding: "0.03rem 0.4rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.9
+            },
+            G: {
+                "font-size": "3.1rem",
+                "margin-right": "0.9rem",
+                padding: "0.1rem 0rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 1.2
+            },
+            H: {
+                "font-size": "4.3rem",
+                "margin-right": "1.8rem",
+                padding: "0.2rem 0.4rem 0rem",
+                transform: "scale(1.2)",
+            },
+            I: {
+                "font-size": "4.5rem",
+                "margin-right": "1.8rem",
+                padding: "0.05rem 0.2rem 0rem",
+                transform: "scale(1.2)",
+            },
+            J: {
+                "font-size": "3.6rem",
+                "margin-right": "1.1rem",
+                padding: "0rem 0.32rem 0rem",
+                transform: "scale(1.2)",
+            },
+            K: {
+                "font-size": "4.1rem",
+                "margin-right": "1.9rem",
+                padding: "0rem 0.4rem 0rem",
+                transform: "scale(1.2)",
+            },
+            L: {
+                "font-size": "4.6rem",
+                "margin-right": "1.5rem",
+                padding: "0rem 0.55rem 0rem",
+                transform: "scale(1.2)",
+            },
+            M: {
+                "font-size": "4.2rem",
+                "margin-right": "2.5rem",
+                padding: "0.25rem 0.35rem 0rem",
+                transform: "scale(1.2)",
+            },
+            N: {
+                "font-size": "4.0rem",
+                "margin-right": "2.8rem",
+                padding: "0.25rem 0.15rem 0rem",
+                transform: "scale(1.2)",
+            },
+            O: {
+                "font-size": "4.4rem",
+                "margin-right": "1rem",
+                padding: "0.325rem 0rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.9
+            },
+            P: {
+                "font-size": "4.3rem",
+                "margin-right": "1.5rem",
+                padding: "0.325rem 0.25rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.9
+            },
+            Q: {
+                "font-size": "4.6rem",
+                "margin-right": "1rem",
+                padding: "0.325rem 0.rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.85
+            },
+            R: {
+                "font-size": "4.6rem",
+                "margin-right": "1.1rem",
+                padding: "0.325rem 0rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.85
+            },
+            S: {
+                "font-size": "4.2rem",
+                "margin-right": "0.2rem",
+                padding: "0.325rem 0.5rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.9
+            },
+            T: {
+                "font-size": "4.54rem",
+                "margin-right": "1.7rem",
+                padding: "0.4rem 0.5rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.8
+            },
+            U: {
+                "font-size": "4rem",
+                "margin-right": "1.3rem",
+                padding: "0.4rem 0.45rem 0rem",
+                transform: "scale(1.2)",
+            },
+            V: {
+                "font-size": "4.21rem",
+                "margin-right": "2.7rem",
+                padding: "0.45rem 0.1rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.9
+            },
+            W: {
+                "font-size": "4.21rem",
+                "margin-right": "2.4rem",
+                padding: "0.45rem 0.4rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.9
+            },
+            X: {
+                "font-size": "4.0rem",
+                "margin-right": "0.6rem",
+                padding: "0.45rem 0.7rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.75
+            },
+            Y: {
+                "font-size": "3.04rem",
+                "margin-right": "1.2rem",
+                padding: "0.47rem 0.2rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.9
+            },
+            Z: {
+                "font-size": "3.04rem",
+                "margin-right": "0.6rem",
+                padding: "0.47rem 0.2rem 0rem",
+                transform: "scale(1.2)",
+                "line-height": 0.9
+            },
+        },
+        EuphoriaScript: {
+            A: {
+                "font-size": "2.5rem",
+                padding: "0.3rem 0.2rem 0rem"
+            },
+            C: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0rem 0rem",
+                "margin-right": "0.4rem"
+            },
+            F: {
+                "font-size": "2.5rem",
+                padding: "0.3rem 0.2rem 0rem",
+                "margin-right": "0.2rem"
+            },
+            G: {
+                "font-size": "2.2rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.15rem"
+            },
+            I: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            J: {
+                "font-size": "2.4rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            K: {
+                "font-size": "2.35rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.45rem"
+            },
+            L: {
+                "font-size": "2.35rem",
+                padding: "0.2rem 0.2rem 0rem",
+                "margin-right": "0.45rem"
+            },
+            M: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            N: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            O: {
+                "font-size": "2.86rem",
+                padding: "0.2rem 0rem 0rem",
+                "margin-right": "0.35rem",
+                "margin-left": "-0.1rem"
+            },
+            P: {
+                "font-size": "2.85rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.45rem"
+            },
+            Q: {
+                "font-size": "2.35rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.4rem"
+            },
+            R: {
+                "font-size": "2.55rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.35rem"
+            },
+            S: {
+                "font-size": "2.55rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.2rem"
+            },
+            T: {
+                "font-size": "2.45rem",
+                padding: "0.38rem 0.1rem 0rem",
+                "margin-right": "0.65rem"
+            },
+            U: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            V: {
+                "font-size": "2.7rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.35rem"
+            },
+            W: {
+                "font-size": "2.7rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.35rem"
+            },
+            X: {
+                "font-size": "2.55rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "0.5rem"
+            },
+            Y: {
+                "font-size": "2.2rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.15rem"
+            },
+            Z: {
+                "font-size": "2.35rem",
+                padding: "0.2rem 0.1rem 0rem",
+                "margin-right": "0.45rem"
+            },
+            default: {
+                "font-size": "2.65rem",
+                padding: "0.25rem 0.17rem 0rem",
+                "margin-right": "0.2rem"
+            }
+        },
+        CinzelDecorative: {
+            A: {
+                "font-size": "2rem",
+                padding: "0.3rem 0.1rem 0rem",
+                "margin-right": "0.7rem"
+            },
+            D: {
+                "font-size": "2.8rem",
+                padding: "0.1rem 0.4rem 0rem",
+                "margin-right": "0.125rem"
+            },
+            E: {
+                "font-size": "2.4rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.4rem",
+                "margin-left": "-0.1rem"
+            },
+            F: {
+                "font-size": "2.4rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.4rem",
+                "margin-left": "-0.1rem"
+            },
+            G: {
+                "font-size": "2.1rem",
+                padding: "0.25rem 0rem 0rem",
+                "margin-right": "0.9rem"
+            },
+            H: {
+                "font-size": "2.1rem",
+                padding: "0.325rem 0rem 0rem",
+                "margin-right": "0.4rem"
+            },
+            J: {
+                "font-size": "2.2rem",
+                padding: "0.25rem 0.2rem 0rem",
+                "margin-right": "0.1rem"
+            },
+            K: {
+                "font-size": "2rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.8rem",
+                "margin-left": "-0.1rem"
+            },
+            L: {
+                "font-size": "2rem",
+                padding: "0.25rem 0rem 0rem",
+                "margin-right": "1.4rem",
+                "margin-left": "-0.2rem"
+            },
+            M: {
+                "font-size": "1.9rem",
+                padding: "0.5rem 0.45rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            N: {
+                "font-size": "1.9rem",
+                padding: "0.5rem 0.45rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            O: {
+                "font-size": "2.86rem",
+                padding: "0.2rem 0rem 0rem",
+                "margin-right": "0.35rem",
+                "margin-left": "-0.1rem"
+            },
+            P: {
+                "font-size": "2.4rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.4rem",
+                "margin-left": "-0.1rem"
+            },
+            Q: {
+                "font-size": "2rem",
+                padding: "0.25rem 0rem 0rem",
+                "margin-right": "1.6rem"
+            },
+            R: {
+                "font-size": "2rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.8rem",
+                "margin-left": "-0.1rem"
+            },
+            S: {
+                "font-size": "2.3rem",
+                padding: "0.25rem 0rem 0rem",
+                "margin-right": "0.4rem"
+            },
+            T: {
+                "font-size": "2.8rem",
+                padding: "0.1rem 0.4rem 0rem",
+                "margin-right": "0.125rem"
+            },
+            U: {
+                "font-size": "2.16rem",
+                padding: "0.6rem 0rem 0rem",
+                "margin-right": "0.55rem",
+                "margin-left": "-0.1rem"
+            },
+            V: {
+                "font-size": "2rem",
+                padding: "0.75rem 0rem 0rem",
+                "margin-right": "0.8rem"
+            },
+            W: {
+                "font-size": "1.7rem",
+                padding: "0.7rem 0rem 0rem",
+                "margin-right": "0.75rem"
+            },
+            X: {
+                "font-size": "1.9rem",
+                padding: "0.5rem 0.45rem 0rem",
+                "margin-right": "0.25rem"
+            },
+            Y: {
+                "font-size": "2.4rem",
+                padding: "0.3rem 0rem 0rem",
+                "margin-right": "0.4rem"
+            },
+            Z: {
+                "font-size": "2.1rem",
+                padding: "0.25rem 0.1rem 0rem",
+                "margin-right": "1.1rem"
+            },
+            default: {
+                "font-size": "2.8rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.325rem"
+            }
+        },
+        Kalam: {
+            C: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.53rem",
+                "margin-left": "-0.23rem",
+                "line-height": 0.8,
+            },
+            D: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.6rem",
+                "margin-left": "-0.3rem",
+                "line-height": 0.8,
+            },
+            E: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.625rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            F: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.775rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            G: {
+                "font-size": "4.1rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.25rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            H: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.525rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            I: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.6rem",
+                "margin-left": "-0.3rem",
+                "line-height": 0.8,
+            },
+            J: {
+                "font-size": "4.8rem",
+                padding: "0.65rem 0rem 0rem",
+                "margin-right": "0.625rem",
+                "line-height": 0.8,
+            },
+            M: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.525rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            O: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.6rem",
+                "margin-left": "-0.23rem",
+                "line-height": 0.8,
+            },
+            P: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.525rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            Q: {
+                "font-size": "4rem",
+                padding: "0.65rem 0rem 0rem",
+                "margin-right": "0.25rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            T: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.75rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            U: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.6rem",
+                "margin-left": "-0.3rem",
+                "line-height": 0.8,
+            },
+            V: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.825rem",
+                "margin-left": "-0.3rem",
+                "line-height": 0.8,
+            },
+            W: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.455rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            X: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.525rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            Y: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.725rem",
+                "margin-left": "-0.3rem",
+                "line-height": 0.8,
+            },
+            Z: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.5rem",
+                "margin-left": "-0.1rem",
+                "line-height": 0.8,
+            },
+            default: {
+                "font-size": "4.7rem",
+                padding: "0.8rem 0rem 0rem",
+                "margin-right": "0.325rem",
+                "line-height": 0.8,
+            }
+        },
+        CaviarDreams: {
+            A: {
+                "font-size": "4.25rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.4rem",
+            },
+            Q: {
+                "font-size": "3.63rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.4rem",
+                "margin-left": "-0.2rem"
+            },
+            S: {
+                "font-size": "4.25rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.4rem",
+            },
+            T: {
+                "font-size": "4.25rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.4rem",
+            },
+            X: {
+                "font-size": "4.25rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.4rem",
+            },
+            default: {
+                "font-size": "4.25rem",
+                padding: "0.1rem 0rem 0rem",
+                "margin-right": "0.4rem",
+                "margin-left": "-0.15rem"
             }
         },
     };
