@@ -771,6 +771,110 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-left": "-0.15rem"
             }
         },
+        "3Dumb": {
+            R: {
+              "font-size": isPreviewer ? "2.45rem" : "2.4rem",
+            },
+            S: {
+              "font-size": isPreviewer ? "2.3rem" : "2.3rem",
+              padding: "0.15rem 0.25rem 0rem",
+            },
+            T: {
+              "font-size": isPreviewer ? "2.45rem" : "2.4rem",
+            },
+            U: {
+              "font-size": isPreviewer ? "2.5rem" : "2.4rem",
+            },
+            W: {
+              "font-size": isPreviewer ? "2.4rem" : "2.2rem",
+            },
+            X: {
+              "font-size": isPreviewer ? "2.5rem" : "2.45rem",
+            },
+            Y: {
+              "font-size": isPreviewer ? "2.4rem" : "2.35rem",
+            },
+            Z: {
+              "font-size": isPreviewer ? "2.4rem" : "2.35rem",
+            },
+            default: {
+              "font-size": isPreviewer ? "2.4rem" : "2.3rem",
+              padding: "0.1rem 0.25rem 0rem",
+            },
+        },
+        Chomsky:{
+            A: {
+                "font-size": "5.4rem",
+                "line-height": 0.75,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            B: {
+                "font-size":  "5.2rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            C: {
+                "font-size": "5.2rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            F: {
+                "font-size": "4.4rem",
+                "line-height": 0.75,
+                padding: "0.1rem 1rem 0rem 0.1rem",
+            },
+            I: {
+                "font-size": "4.7rem",
+                "line-height": 0.75,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            J: {
+                "font-size": "4.8rem",
+                "line-height": 0.75,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            M: {
+                "font-size": "4.7rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            N: {
+                "font-size": "4.8rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            P: {
+                "font-size": "4.7rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            Q: {
+                "font-size": "4.7rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            S: {
+                "font-size": "4.3rem",
+                "line-height": 0.8,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            X: {
+                "font-size": "4.7rem",
+                "line-height": 0.75,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            Y: {
+                "font-size": "4.2rem",
+                "line-height": 0.75,
+                padding: "0rem 0.5rem 0rem 0rem",
+            },
+            default: {
+                "font-size": "5.2rem",
+                "line-height": 0.75,
+                padding: "0.1rem 0.5rem 0rem 0rem",
+              },
+        }
+
     };
 
     const fontFamilyStyles = fontStyles[fontFamily] || {};
@@ -789,8 +893,10 @@ export const getDropCapCssClasses = (fontFamily: string, prefixRule: string, isP
 
     for (let letter of alphabet) {
         const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer);
+        console.log("fontRulle", fontRule);
         if (fontRule) {
             cssString += `.${prefixRule} .withDropcap .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
+            console.log("string", cssString);
         }
     }
 
