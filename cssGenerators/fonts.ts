@@ -1,5 +1,5 @@
 import { headerStyleToFontVariant, getFontFaceCss } from "../helpers";
-import { Subheadings, ThemeStyleProps } from "../types";
+import { FontVariant, Subheadings, ThemeStyleProps } from "../types";
 
 /**
  * Generates @font-face css for rendering selected fonts and font varients of header elements
@@ -46,3 +46,30 @@ export const getHeaderElementFontFaceCss = (
   
   return fontCss;
 };
+
+interface fontType {
+  fontId: string,
+  variant: FontVariant
+}
+
+export const getDropCapFontFaceCss = (
+  styleProps: ThemeStyleProps,
+  fontBaseUrl: string,
+): string => {
+  let fontCss = "";
+  let dropCapFont = styleProps.firstParagraph.dropcapFont;
+  let dropCapFontList: fontType[] = [];
+
+  if (dropCapFont !== 'Default') {
+    dropCapFontList.push({
+      fontId: dropCapFont,
+      variant: headerStyleToFontVariant([]),
+    });
+  }
+
+  dropCapFontList.map(font => {
+    fontCss += getFontFaceCss(font.fontId, font.variant, fontBaseUrl);
+  })
+
+  return fontCss;
+}
