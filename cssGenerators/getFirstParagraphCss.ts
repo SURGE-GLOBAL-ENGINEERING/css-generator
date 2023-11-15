@@ -1,5 +1,5 @@
 import { FirstParagraph } from "../types";
-import { headerStyleToFontVariant } from "../helpers";
+import { headerStyleToFontVariant, getDropCapCssClasses } from "../helpers";
 
 /**
  * Can contain previewer only styles
@@ -7,6 +7,7 @@ import { headerStyleToFontVariant } from "../helpers";
 export const getFirstParagraphCss = (
   firstParagraph: FirstParagraph,
   themeId: string,
+  isPreviewer: boolean
 ) => {
   return `
     @font-face{
@@ -38,6 +39,7 @@ export const getFirstParagraphCss = (
         initial-letter: 2;
         transform: scale(1.1);
       }
+      ${getDropCapCssClasses(firstParagraph.dropcapFont, themeId, isPreviewer)}
       .${themeId} .withDropcap .dropcap:before,
       .${themeId} .withDropcap .dropcap:after {
         content: "";
