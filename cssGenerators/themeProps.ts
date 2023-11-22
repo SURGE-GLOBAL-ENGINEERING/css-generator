@@ -26,7 +26,7 @@ import {
   getHangingIndentCss
 } from "./.";
 
-import { Theme } from "../types";
+import { Theme, UsedFont } from "../types";
 import { epubFontBaseUrl } from "../helpers";
 import { getTextMessagesCss } from "./editorPlugins/textMessages";
 
@@ -41,19 +41,14 @@ import { getTextMessagesCss } from "./editorPlugins/textMessages";
  */
 export const themePropsToCss = (
   themeProps: Theme,
+  usedFonts: UsedFont[],
   fontBaseUrl?: string,
   isPreviewer: boolean = false,
   containerClassName?: string
 ): string => {
   const { properties: styleProps } = themeProps;
-  /** "fonts/fontName.extension" is the default fonts folder location for bundled epubs */
-  const fontLocation = isPreviewer ? fontBaseUrl : epubFontBaseUrl;
 
-  if(!fontLocation){
-    throw new Error("Missing font base Url for previewer");
-  }
-
-  const fontFaceCss = getHeaderElementFontFaceCss(styleProps, fontLocation);
+  const fontFaceCss = getHeaderElementFontFaceCss(usedFonts, isPreviewer);
 
   const styleCss = `
     ${getChapterHeaderCss(themeProps, isPreviewer, false, containerClassName)}

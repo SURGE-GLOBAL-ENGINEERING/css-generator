@@ -1,55 +1,20 @@
 import { headerStyleToFontVariant, getFontFaceCss } from "../helpers";
-import { ThemeStyleProps } from "../types";
+import { ThemeStyleProps, UsedFont } from "../types";
 
 /**
  * Generates @font-face css for rendering selected fonts and font varients of header elements
- * @param styleProps Theme properties
- * @param fontBaseUrl The base url for the location where the actual font files reside
+ * @param usedFonts Fonts used in the epub
+ * @param isPreviewer whether the css are for previewer
  * @returns css for the fonts passed as inputs
  */
 export const getHeaderElementFontFaceCss = (
-  styleProps: ThemeStyleProps,
-  fontBaseUrl: string,
+  usedFonts: UsedFont[],
+  isPreviewer: boolean,
 ): string => {
   let fontCss = "";
 
-  const headerFonts = [
-    {
-      fontId: styleProps.chapterNo.font,
-      variant: headerStyleToFontVariant(styleProps.chapterNo.style)
-    },
-    {
-      fontId: styleProps.chapterTitle.font,
-      variant: headerStyleToFontVariant(styleProps.chapterTitle.style)
-    },
-    {
-      fontId: styleProps.chapterSubtitle.font,
-      variant: headerStyleToFontVariant(styleProps.chapterSubtitle.style)
-    },
-    {
-      fontId: styleProps.headings.h2.font,
-      variant: headerStyleToFontVariant([])
-    },
-    {
-      fontId: styleProps.headings.h3.font,
-      variant: headerStyleToFontVariant([])
-    },
-    {
-      fontId: styleProps.headings.h4.font,
-      variant: headerStyleToFontVariant([])
-    },
-    {
-      fontId: styleProps.headings.h5.font,
-      variant: headerStyleToFontVariant([])
-    },
-    {
-      fontId: styleProps.headings.h6.font,
-      variant: headerStyleToFontVariant([])
-    }
-  ];
-
-  headerFonts.map(font => {
-    fontCss += getFontFaceCss(font.fontId, font.variant, fontBaseUrl);
+  usedFonts.map(usedFont => {
+    fontCss += getFontFaceCss(usedFont, isPreviewer);
   })
   
   return fontCss;

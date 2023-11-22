@@ -11,21 +11,25 @@ export const getFontFileName = (font: Font, variant: FontVariant): string => {
   return `${font.id}-${capitalizeFirstLetter(variant)}.${extension}`
 }
 
-export const getFontFamilyName = (fontId: string, variant: FontVariant): string => {
+export const getFontFamilyName = (fontId: string, variant: FontVariant | string): string => {
   return `${fontId}${capitalizeFirstLetter(variant)}`;
 }
 
-export const getFontFileNameForEpubGen = (fontId: string, style: HeaderFontStyle[]): string => {
-  let font = find(fonts, {id: fontId});
-  if(!font){
-    font = fonts[0];
-  }
-  let fontVariant = headerStyleToFontVariant(style);
-  if(!font.variants.includes(fontVariant)){
-    fontVariant = FontVariant.regular;
-  }
-  return getFontFileName(font, fontVariant);
+export const getNumericPartFromVariant = (variant: string) => {
+  const numericPart = variant.match(/\d+/); // Match one or more digits
+  return numericPart ? parseInt(numericPart[0]) : null;
 }
+// export const getFontFileNameForEpubGen = (fontId: string, style: HeaderFontStyle[]): string => {
+//   let font = find(fonts, {id: fontId});
+//   if(!font){
+//     font = fonts[0];
+//   } 
+//   let fontVariant = headerStyleToFontVariant(style);
+//   if(!font.variants.includes(fontVariant)){
+//     fontVariant = FontVariant.regular;
+//   }
+//   return getFontFileName(font, fontVariant);
+// }
 
 export const getFontFamilyFromFontMap = (themeStyleProps: ThemeStyleProps, fontMap: BookTitleFontMap): string => {
   const headerFontConfig: HeaderFonts = {
