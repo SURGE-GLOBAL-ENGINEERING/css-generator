@@ -1,34 +1,55 @@
 import { startCase, find } from "lodash";
-import { FontVariant } from "../../types";
+import { FontVariant, UsedFont } from "../../types";
 import { fonts } from "./fontList";
-import { getFontFamilyName, getFontFileName } from "./misc";
+import { epubFontBaseUrl, getFontFamilyName, getFontFileName, getNumericPartFromVariant } from "./misc";
 
 /**
- * @param fontId font id for the selected font
- * @param fontVariant selected font variant
- * @param baseUrl base url for the location of the fonts
+ * @param usedFont A font used in the epub
+ * @param isPreviewer whether the css are for previewer
  * @returns @font-face css for the selected font variant
  */
-export const getFontFaceCss = (fontId: string, fontVariant: FontVariant,  baseUrl: string) => {
-  const font = find(fonts, {id: fontId});
-  if(!font) {
-    console.warn(`Warning: Could not find font ${fontId}`);
-    return "";
-  }
-  if(!font.variants.includes(fontVariant)){
-    console.warn(`Warning: Atticus does not support ${startCase(fontVariant)} variant of ${font.name}`);
-    return "";
-  }
-  
+export const getFontFaceCss = (usedFont: UsedFont, isPreviewer: boolean) => {
+  const {id, variant, remoteSrc, localSrc} = usedFont;
   let cssString = "\n";
 
-  const fontFamilyName = getFontFamilyName(font.id, fontVariant);
-  const fontFileName = getFontFileName(font, fontVariant);
+  const fontFamilyName = getFontFamilyName(id, variant);
 
-  cssString += `@font-face{\n  font-family: ${fontFamilyName};\n  src: url("${baseUrl}/${fontFileName}");\n  `;
-  if(fontVariant === FontVariant.bold) cssString += "font-weight: bold;  "
-  if(fontVariant === FontVariant.italic) cssString += "font-style: italic;  "
-  if(fontVariant === FontVariant.boldItalic) cssString += "font-weight: bold;\n  font-style: italic;  "
+  /** "fonts/fontName.extension" is the default fonts folder location for bundled epubs */
+  const fontSrc = isPreviewer ? remoteSrc : `${epubFontBaseUrl}/${localSrc}`;
+
+  cssString += `@font-face{\n  font-family: ${fontFamilyName};\n  src: url("${fontSrc}");\n  `;
+  if(variant === FontVariant.bold) cssString += "font-weight: bold;  "
+  if(variant === FontVariant.italic) cssString += "font-style: italic;  "
+  if(variant === FontVariant.boldItalic) cssString += "font-weight: bold;\n  font-style: italic;  "
+  if (
+    [
+      FontVariant.weight_100,
+      FontVariant.weight_200,
+      FontVariant.weight_300,
+      FontVariant.weight_500,
+      FontVariant.weight_600,
+      FontVariant.weight_700,
+      FontVariant.weight_800,
+      FontVariant.weight_900,
+    ].includes(variant)
+  ) {
+    cssString += `font-weight: ${variant};  `;
+  }
+  if (
+    [
+      FontVariant.italic_100,
+      FontVariant.italic_200,
+      FontVariant.italic_300,
+      FontVariant.italic_500,
+      FontVariant.italic_600,
+      FontVariant.italic_700,
+      FontVariant.italic_800,
+      FontVariant.italic_900,
+    ].includes(variant)
+  ) {
+    cssString += `font-weight: ${getNumericPartFromVariant(variant)};\n  font-style: italic;  `;
+  }
+
   cssString += `\n}\n.${fontFamilyName}{\n  font-family: ${fontFamilyName};\n}`
 
   return cssString;
