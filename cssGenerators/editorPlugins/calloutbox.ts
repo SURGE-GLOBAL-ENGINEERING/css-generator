@@ -1,18 +1,12 @@
 export const getCalloutBoxCss = (themeId: string) => {
 	return `
       .${themeId} .calloutbox {
+        box-sizing: border-box;
         margin-top: 5px;
-        border: 2px solid rgb(52, 51, 51);
-        background-color: #faffef;
+        margin-bottom: 5px;
         padding: 1em 1em 1em 1em;
-      }
-
-      .${themeId} .calloutbox-callout-unfilled{
-        background-color: transparent !important;
-      }
-
-      .${themeId} .calloutbox-callout-no-border{
-        border: none !important;
+        display: inline-block;
+        width: 100%;
       }
     `;
 };

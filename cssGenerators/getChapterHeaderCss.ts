@@ -22,9 +22,6 @@ export const getChapterHeaderCss = (
   prefix?: string,
 ) => {
   const { properties: styleProps } = themeProps;
-  const renderLightHeaderText =
-    styleProps.image?.placement === "background-image" &&
-    styleProps.image?.headerTextColor === "light";
 
   return `
     
@@ -113,25 +110,16 @@ export const getChapterHeaderCss = (
     }
 
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-title", prefix)} h2{
-      color: ${
-        renderLightHeaderText ? "white" : "black"
-      };
       opacity: 1 !important;
       word-break: break-word;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)} span{
-      color: ${
-        renderLightHeaderText ? "white" : "black"
-      };
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)} {
       opacity: 1 !important;
       word-break: break-word;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
-      color: ${
-        renderLightHeaderText ? "white" : "black"
-      };
+    .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3{
       opacity: 1 !important;
       word-break: break-word;
     }
@@ -201,10 +189,8 @@ export const getChapterHeaderCss = (
         font-weight: 400;
     }
 
-    .inverted h2, .inverted h3, .inverted span, .inverted{
-      color: ${
-        renderLightHeaderText ? "black" : "white"
-      } !important;
+    .inverted * {
+      color: white !important;
     }
 
     `;

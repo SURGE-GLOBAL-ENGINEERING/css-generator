@@ -24,10 +24,9 @@ import {
   getPartCss,
   getHeadingCss,
   getHangingIndentCss,
-  getDropCapFontFaceCss
 } from "./.";
 
-import { Theme } from "../types";
+import { Theme, UsedFont } from "../types";
 import { epubFontBaseUrl } from "../helpers";
 import { getTextMessagesCss } from "./editorPlugins/textMessages";
 
@@ -42,28 +41,24 @@ import { getTextMessagesCss } from "./editorPlugins/textMessages";
  */
 export const themePropsToCss = (
   themeProps: Theme,
+  usedFonts: UsedFont[],
   fontBaseUrl?: string,
   isPreviewer: boolean = false,
   containerClassName?: string
 ): string => {
   const { properties: styleProps } = themeProps;
-  /** "fonts/fontName.extension" is the default fonts folder location for bundled epubs */
-  const fontLocation = isPreviewer ? fontBaseUrl : epubFontBaseUrl;
 
-  if(!fontLocation){
-    throw new Error("Missing font base Url for previewer");
-  }
-
-  const fontFaceCss = getHeaderElementFontFaceCss(styleProps, fontLocation);
-
-  const dropCapFontFaceCss = getDropCapFontFaceCss(styleProps, fontLocation);
+  const fontFaceCss = getHeaderElementFontFaceCss(usedFonts, isPreviewer);
 
   const styleCss = `
     ${getChapterHeaderCss(themeProps, isPreviewer, false, containerClassName)}
 
-    ${getDefaultCss(themeProps._id, themeProps.properties.paragraph.paragraphSpacing)}
+    ${getDefaultCss(
+      themeProps._id,
+      themeProps.properties.paragraph.paragraphSpacing
+    )}
 
-    ${getHeadingCss(themeProps._id,themeProps)}
+    ${getHeadingCss(themeProps._id, themeProps)}
 
     .${themeProps._id} .wrapper{
       /* https://css-tricks.com/almanac/properties/o/overflow-wrap/ */
@@ -73,7 +68,15 @@ export const themePropsToCss = (
       ${styleProps.paragraph.justify ? `text-align: justify;` : ``}
     }
 
-    .${themeProps._id} p{
+    /*
+      The second target, checking if the paragraph is the first paragraph in
+      the document and is a descendant of class align-center and applying
+      the default paragraph styling is due to a bug where if the first
+      paragraph is centered, it does not align with the rest of the document
+      caused by {theme} p:first-of-type which needs to be overridden for this
+      scenario.
+    */
+    .${themeProps._id} p, .${themeProps._id} p:first-of-type {
       orphans: 2;
       widows: 2;
       padding-bottom: 0em;
@@ -81,18 +84,18 @@ export const themePropsToCss = (
       padding-top: 0em;
       line-height: 1.6em;
       text-indent: ${
-        styleProps.paragraph.indent ? styleProps.hangingIndent :  0
-      }cm;
+        styleProps.paragraph.indent ? styleProps.hangingIndent : 0
+      }cm !important;
       margin-block-end: ${
         !styleProps.paragraph.indent ? styleProps.paragraph.paragraphSpacing : 0
       }em;
     }
 
-    .${themeProps._id} p:empty:not(:first-of-type){
+    .${themeProps._id} p:empty:not(:first-of-type) {
       min-height: 1em;
     }
 
-    .${themeProps._id} p:first-of-type{
+    .${themeProps._id} p:first-of-type {
       text-indent: 0rem !important;
     }
 
@@ -131,7 +134,7 @@ export const themePropsToCss = (
 
     ${getVerseCss(themeProps._id)}
 
-    ${getCalloutBoxCss(themeProps._id)} 
+    ${getCalloutBoxCss(themeProps._id)}
 
     ${getEndNoteCss(themeProps._id, styleProps.footnoteFontSize)}
 
@@ -162,5 +165,5 @@ export const themePropsToCss = (
     ${getPartCss(themeProps._id)}
   `;
 
-  return `${styleCss} ${fontFaceCss} ${dropCapFontFaceCss}`;
+  return `${styleCss} ${fontFaceCss}`;
 };

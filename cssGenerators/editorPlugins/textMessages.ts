@@ -1,7 +1,10 @@
 export const getTextMessagesCss = (themeId: string) => {
     return `
     .${themeId} .text-messages-container{
-      margin: 0px 30px 0px
+      display: inline-block;
+      width: 100%;
+      padding: 0px 30px 0px;
+      word-break: break-word;
     }
 
     .${themeId} .message-bubble {
@@ -36,6 +39,7 @@ export const getTextMessagesCss = (themeId: string) => {
   
     .${themeId} .ios-received-bubble {
       background-color: #d8d8d8;
+      color: #000000;
       border-color: #d8d8d8;
     }
   
@@ -46,6 +50,7 @@ export const getTextMessagesCss = (themeId: string) => {
   
     .${themeId} .ios-android-received-bubble {
       background-color: #d8d8d8;
+      color: #000000;
       border-color: #d8d8d8;
     }
 
