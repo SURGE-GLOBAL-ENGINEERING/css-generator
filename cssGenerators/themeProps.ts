@@ -76,7 +76,7 @@ export const themePropsToCss = (
       caused by {theme} p:first-of-type which needs to be overridden for this
       scenario.
     */
-    .${themeProps._id} p, .${themeProps._id} .align-center p:first-of-type {
+    .${themeProps._id} p, .${themeProps._id} p:first-of-type {
       orphans: 2;
       widows: 2;
       padding-bottom: 0em;
