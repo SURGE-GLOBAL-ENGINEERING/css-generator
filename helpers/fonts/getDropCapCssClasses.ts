@@ -771,7 +771,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-left": "-0.15rem"
             }
         },
-        "3Dumb": {
+        ThreeDumb: {
             R: {
               "font-size": isPreviewer ? "2.45rem" : "2.4rem",
             },
