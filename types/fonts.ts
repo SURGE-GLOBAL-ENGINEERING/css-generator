@@ -5,7 +5,6 @@ export type Font = {
   fontType?: string,
   additionalInfo?: string,
   availableForPrint?: boolean
-  availableForChapterHeaderOptions: boolean
 }
 
 export enum FontVariant {
