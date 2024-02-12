@@ -6,6 +6,7 @@ export type Font = {
   additionalInfo?: string,
   availableForPrint?: boolean,
   availableForDropCap?: boolean,
+  availableForPreviewer?: boolean,
 }
 
 export enum FontVariant {
