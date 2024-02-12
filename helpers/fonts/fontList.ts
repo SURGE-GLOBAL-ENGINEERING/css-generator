@@ -27,9 +27,27 @@ export const fonts: Font[] = [
     variants: [FontVariant.regular]
   },
   {
+    id: "Athelas",
+    name: "Athelas",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
+  },
+  {
     id: "Audiowide",
     name: "Audiowide",
     variants: [FontVariant.regular]
+  },
+  {
+    id: "AvenirNext",
+    name: "Avenir Next",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
+  },
+  {
+    id: "Baskerville",
+    name: "Baskerville",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
   },
   {
     id: "Benne",
@@ -48,6 +66,18 @@ export const fonts: Font[] = [
     variants: [FontVariant.regular]
   },
   {
+    id: "Bookerly",
+    name: "Bookerly",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
+  },
+  {
+    id: "Caecilia",
+    name: "Caecilia",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
+  },
+  {
     id: "Cantarell",
     name: "Cantarell",
     variants: [FontVariant.regular]
@@ -57,6 +87,12 @@ export const fonts: Font[] = [
     name: "Cardo",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
     availableForPrint: true
+  },
+  {
+    id: "Charter",
+    name: "Charter",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
   },
   {
     id: "Cinzel",
@@ -106,6 +142,18 @@ export const fonts: Font[] = [
     variants: [FontVariant.regular]
   },
   {
+    id: "DroidSans",
+    name: "Droid Sans",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
+  },
+  {
+    id: "DroidSerif",
+    name: "Droid Serif",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
+  },
+  {
     id: "EBGaramond",
     name: "EB Garamond",
     variants: [FontVariant.regular, FontVariant.italic],
@@ -128,6 +176,12 @@ export const fonts: Font[] = [
     variants: [FontVariant.regular]
   },
   {
+    id: "GillSans",
+    name: "Gill Sans",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
+  },
+  {
     id: "GreatVibes",
     name: "Great Vibes",
     variants: [FontVariant.regular]
@@ -136,6 +190,12 @@ export const fonts: Font[] = [
     id: "HelveticaNeue",
     name: "Helvetica Neue",
     variants: [FontVariant.regular]
+  },
+  {
+    id: "Iowan",
+    name: "Iowan",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
   },
   {
     id: "OpenSansLT",
@@ -171,6 +231,12 @@ export const fonts: Font[] = [
     availableForPrint: true
   },
   {
+    id: "Lucida",
+    name: "Lucida",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
+  },
+  {
     id: "Marcellus",
     name: "Marcellus",
     variants: [FontVariant.regular]
@@ -184,6 +250,12 @@ export const fonts: Font[] = [
     id: "Montserrat",
     name: "Montserrat",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic]
+  },
+  {
+    id: "NewYork",
+    name: "New York",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
   },
   {
     id: "OldStandardTT",
@@ -206,6 +278,12 @@ export const fonts: Font[] = [
     id: "Oswald",
     name: "Oswald",
     variants: [FontVariant.regular]
+  },
+  {
+    id: "Palatino",
+    name: "Palatino",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
   },
   {
     id: "Poppins",
@@ -258,6 +336,18 @@ export const fonts: Font[] = [
     name: "Rosario",
     variants: [FontVariant.regular, FontVariant.bold, FontVariant.italic, FontVariant.boldItalic],
     availableForPrint: true
+  },
+  {
+    id: "SanFrancisco",
+    name: "San Francisco",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
+  },
+  {
+    id: "Seravek",
+    name: "Seravek",
+    variants: [FontVariant.regular],
+    availableForPreviewer: true
   },
   {
     id: "Selima",
