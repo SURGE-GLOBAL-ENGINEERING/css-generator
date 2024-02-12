@@ -4,7 +4,8 @@ export type Font = {
   variants: FontVariant[],
   fontType?: string,
   additionalInfo?: string,
-  availableForPrint?: boolean
+  availableForPrint?: boolean,
+  availableForPreviewer?: boolean,
 }
 
 export enum FontVariant {
