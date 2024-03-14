@@ -1,6 +1,7 @@
 export const getTextMessagesCss = (themeId: string) => {
     return `
     .${themeId} .text-messages-container{
+      box-sizing: border-box;
       display: inline-block;
       width: 100%;
       padding: 0px 30px 0px;
@@ -10,8 +11,8 @@ export const getTextMessagesCss = (themeId: string) => {
     .${themeId} .message-bubble {
       border-style: solid;
       border: 1px;
-      border-radius: 16px;
-      padding: 6px 10px;
+      border-radius: 1em;
+      padding: 2% 3%;
       margin-bottom: 5px;
       color: #fff;
       display: inline-block;
