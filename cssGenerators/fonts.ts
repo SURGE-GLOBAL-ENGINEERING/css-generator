@@ -1,5 +1,5 @@
-import { headerStyleToFontVariant, getFontFaceCss } from "../helpers";
-import { Subheadings, ThemeStyleProps, UsedFont } from "../types";
+import { getFontFaceCss } from "../helpers";
+import { UsedFont } from "../types";
 
 /**
  * Generates @font-face css for rendering selected fonts and font varients of header elements
