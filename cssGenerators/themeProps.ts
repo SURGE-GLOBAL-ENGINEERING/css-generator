@@ -76,7 +76,7 @@ export const themePropsToCss = (
       caused by {theme} p:first-of-type which needs to be overridden for this
       scenario.
     */
-    .${themeProps._id} p, .${themeProps._id} p:first-of-type {
+    .${themeProps._id} p {
       orphans: 2;
       widows: 2;
       padding-bottom: 0em;
@@ -124,7 +124,7 @@ export const themePropsToCss = (
       isPreviewer
     )}
 
-    ${getImageCss(themeProps._id)}
+    ${getImageCss(themeProps._id, themeProps.properties.imageCaption)}
 
     ${getSMIconCss(themeProps._id)}
 
