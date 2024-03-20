@@ -114,7 +114,7 @@ export const getChapterHeaderCss = (
       word-break: break-word;
     }
 
-    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)}{
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-number", prefix)} {
       opacity: 1 !important;
       word-break: break-word;
     }

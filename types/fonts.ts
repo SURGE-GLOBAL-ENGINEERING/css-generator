@@ -5,6 +5,7 @@ export type Font = {
   fontType?: string,
   additionalInfo?: string,
   availableForPrint?: boolean,
+  availableForDropCap?: boolean,
   availableForPreviewer?: boolean,
 }
 

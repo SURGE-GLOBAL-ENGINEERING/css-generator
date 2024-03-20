@@ -102,7 +102,8 @@ export const fonts: Font[] = [
   {
     id: "CinzelDecorative",
     name: "Cinzel Decorative",
-    variants: [FontVariant.regular, FontVariant.bold]
+    variants: [FontVariant.regular, FontVariant.bold],
+    availableForDropCap: true,
   },
   {
     id: "CourierPrime",
@@ -166,7 +167,8 @@ export const fonts: Font[] = [
   {
     id: "EuphoriaScript",
     name: "Euphoria Script",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForDropCap: true,
   },
   {
     id: "Forum",
@@ -372,7 +374,8 @@ export const fonts: Font[] = [
   {
     id: "SpecialElite",
     name: "Special Elite",
-    variants: [FontVariant.regular]
+    variants: [FontVariant.regular],
+    availableForDropCap: true,
   },
   {
     id: "Spectral",
