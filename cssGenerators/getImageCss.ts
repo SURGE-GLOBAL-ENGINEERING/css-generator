@@ -1,7 +1,7 @@
 import { ImageCaption } from "../types";
 import { getCaptionStyles } from "../helpers";
 
-export const getImageCss = (themeId: string, captionProps: ImageCaption) => {
+export const getImageCss = (themeId: string, captionProps?: ImageCaption) => {
   return `
     .${themeId} .image{
       display: flex;
@@ -46,8 +46,7 @@ export const getImageCss = (themeId: string, captionProps: ImageCaption) => {
 
     .${themeId} .image .caption{
       width: 96%;
-      font-size: ${captionProps.size}em;
-      ${getCaptionStyles(captionProps.layout)}
+      font-style: italic;
     }
 
     .${themeId} .image.image-size-small a{
