@@ -143,7 +143,7 @@ export type FirstParagraph = {
   indent: 0 | 1;
   uppercaseFourWords: boolean;
   dropcap: boolean;
-  dropcapFont: string;
+  dropcapFont?: string;
 };
 
 export type Paragraph = {
@@ -244,7 +244,7 @@ export type ThemeStyleProps = {
   bookTitlePage?: BookTitlePage;
   chapterOverrides?: Record<ChapterType, Record<ThemeHeaderPropsType, any>>
   
-  imageCaption: ImageCaption
+  imageCaption?: ImageCaption
 
   pdfEndnotesChapterSettings: {
     showTitle: boolean,

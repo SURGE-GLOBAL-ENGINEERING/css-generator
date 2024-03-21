@@ -21,7 +21,6 @@ export const getFirstParagraphCss = (
       }
       .${themeId} .withDropcap .dropcap{
         font-size: 3rem;
-        font-family: '${firstParagraph.dropcapFont}${headerStyleToFontVariant([])}';
         line-height: 1;
         padding: 0 0.25rem;
         margin-right: 0.125rem;
@@ -29,7 +28,6 @@ export const getFirstParagraphCss = (
         initial-letter: 2;
         transform: scale(1.1);
       }
-      ${getDropCapCssClasses(firstParagraph.dropcapFont, themeId, isPreviewer)}
       .${themeId} .withDropcap .dropcap:before,
       .${themeId} .withDropcap .dropcap:after {
         content: "";
