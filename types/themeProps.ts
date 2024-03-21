@@ -244,7 +244,7 @@ export type ThemeStyleProps = {
   bookTitlePage?: BookTitlePage;
   chapterOverrides?: Record<ChapterType, Record<ThemeHeaderPropsType, any>>
   
-  imageCaption: ImageCaption
+  imageCaption?: ImageCaption
 
   pdfEndnotesChapterSettings: {
     showTitle: boolean,
