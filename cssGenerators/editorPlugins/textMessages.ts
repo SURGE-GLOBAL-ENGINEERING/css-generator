@@ -45,8 +45,8 @@ export const getTextMessagesCss = (themeId: string) => {
     }
   
     .${themeId} .ios-android-sent-bubble {
-      background-color: #53d769;
-      border-color: #53d769;
+      background-color: #148527;
+      border-color: #148527;
     }
   
     .${themeId} .ios-android-received-bubble {
