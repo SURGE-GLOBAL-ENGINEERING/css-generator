@@ -1,5 +1,5 @@
 {
-  "name": "@paladin-analytics/css-generator",
+  "name": "@surge-global-engineering/css-generator",
   "version": "1.8.4-qa.0",
   "description": "Generate css styles based on theme properties for Atticus themes",
   "main": "dist/index.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Paladin-Analytics/css-generator.git"
+    "url": "git+https://github.com/SURGE-GLOBAL-ENGINEERING/css-generator.git"
   },
   "author": "Janith Gamage (janith@surge.global)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Paladin-Analytics/css-generator/issues"
+    "url": "https://github.com/SURGE-GLOBAL-ENGINEERING/css-generator/issues"
   },
-  "homepage": "https://github.com/Paladin-Analytics/css-generator#readme",
+  "homepage": "https://github.com/SURGE-GLOBAL-ENGINEERING/css-generator#readme",
   "devDependencies": {
     "@types/lodash": "^4.14.190",
     "release-it": "^16.1.5",
