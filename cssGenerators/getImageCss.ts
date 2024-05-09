@@ -1,4 +1,7 @@
-export const getImageCss = (themeId: string) => {
+import { ImageCaption } from "../types";
+import { getCaptionStyles } from "../helpers";
+
+export const getImageCss = (themeId: string, captionProps?: ImageCaption) => {
   return `
     .${themeId} .image{
       display: flex;

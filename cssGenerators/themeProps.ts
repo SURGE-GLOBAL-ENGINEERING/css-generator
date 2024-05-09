@@ -124,7 +124,7 @@ export const themePropsToCss = (
       isPreviewer
     )}
 
-    ${getImageCss(themeProps._id)}
+    ${getImageCss(themeProps._id, themeProps.properties.imageCaption)}
 
     ${getSMIconCss(themeProps._id)}
 
