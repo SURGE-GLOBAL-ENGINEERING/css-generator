@@ -1,4 +1,5 @@
-import { FirstParagraph, Paragraph } from "../types";
+import { FirstParagraph } from "../types";
+import { headerStyleToFontVariant, getDropCapCssClasses } from "../helpers";
 
 /**
  * Can contain previewer only styles
@@ -6,6 +7,7 @@ import { FirstParagraph, Paragraph } from "../types";
 export const getFirstParagraphCss = (
   firstParagraph: FirstParagraph,
   themeId: string,
+  isPreviewer: boolean
 ) => {
   return `
     .${themeId} .withDropcap .dropcap, .${themeId} .ornamental-break + p{
