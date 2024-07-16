@@ -108,7 +108,11 @@ export const themePropsToCss = (
       max-height:100%;
     }
 
-    ${getFirstParagraphCss(styleProps.firstParagraph, themeProps._id, isPreviewer)}
+    ${getFirstParagraphCss(
+      styleProps.firstParagraph,
+      themeProps._id,
+      isPreviewer
+    )}
 
     ${getFullBleedImageCss(themeProps._id)}
 
@@ -124,7 +128,7 @@ export const themePropsToCss = (
       isPreviewer
     )}
 
-    ${getImageCss(themeProps._id)}
+    ${getImageCss(themeProps._id, themeProps.properties.imageCaption)}
 
     ${getSMIconCss(themeProps._id)}
 
