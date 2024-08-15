@@ -473,6 +473,16 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 padding: "0.3rem 0.1rem 0rem",
                 "margin-right": "0.7rem"
             },
+            B: {
+                "font-size": isPreviewer ? "2.8rem" : "2.5rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.325rem"
+            },
+            C: {
+                "font-size": isPreviewer ? "2.8rem" : "2.5rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.325rem"
+            },
             D: {
                 "font-size": "2.8rem",
                 padding: "0.1rem 0.4rem 0rem",
@@ -528,7 +538,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-right": "0.25rem"
             },
             O: {
-                "font-size": "2.86rem",
+                "font-size": isPreviewer ? "2.86rem" : "2.5rem",
                 padding: "0.2rem 0rem 0rem",
                 "margin-right": "0.35rem",
                 "margin-left": "-0.1rem"
