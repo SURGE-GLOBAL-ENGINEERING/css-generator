@@ -168,7 +168,7 @@ export const fonts: Font[] = [
     id: "EuphoriaScript",
     name: "Euphoria Script",
     variants: [FontVariant.regular],
-    availableForDropCap: true
+    availableForDropCap: false
   },
   {
     id: "Forum",
@@ -375,7 +375,7 @@ export const fonts: Font[] = [
     id: "SpecialElite",
     name: "Special Elite",
     variants: [FontVariant.regular],
-    availableForDropCap: true
+    availableForDropCap: false
   },
   {
     id: "Spectral",
