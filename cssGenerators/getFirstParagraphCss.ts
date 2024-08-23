@@ -9,6 +9,13 @@ export const getFirstParagraphCss = (
   themeId: string,
   isPreviewer: boolean
 ) => {
+  const baseFontSize = 15; //html font size
+  const dropcapBaseFontSize = 12; // dropcap default font size
+
+  const calculateValue = (value: number) => isPreviewer 
+    ? `${(value / baseFontSize) * dropcapBaseFontSize}rem` 
+    : `${value}rem`;
+
   return `
     .${themeId} .withDropcap .dropcap, .${themeId} .ornamental-break + p{
       text-indent: 0!important;
@@ -20,11 +27,11 @@ export const getFirstParagraphCss = (
         float: left;
       }
       .${themeId} .withDropcap .dropcap{
-        font-size: 3rem;
+        font-size: ${calculateValue(3)};
         font-family: '${firstParagraph.dropcapFont}${headerStyleToFontVariant([])}';
-        line-height: 1;
+        line-height: ${parseFloat(calculateValue(1))};
         padding: 0 0.25rem;
-        margin-right: 0.125rem;
+        margin-right: ${calculateValue(0.125)};
       }
       ${getDropCapCssClasses(firstParagraph.dropcapFont, themeId, isPreviewer)}`
         : ""
