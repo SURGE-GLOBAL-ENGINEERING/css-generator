@@ -143,7 +143,7 @@ export type FirstParagraph = {
   indent: 0 | 1;
   uppercaseFourWords: boolean;
   dropcap: boolean;
-  dropcapFont?: string;
+  dropcapFont: string;
 };
 
 export type Paragraph = {
