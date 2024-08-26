@@ -9,6 +9,12 @@ type CharacterFontStyle = {
 
 type FontStyles = Record<string, Record<string, CharacterFontStyle>>;
 
+const baseFontSize = 15; //html font size
+const dropcapBaseFontSize = 12; // dropcap default font size
+const adjustFontSize = (originalSizeRem: string | number) => {
+    return `${parseFloat(originalSizeRem.toString()) / baseFontSize * dropcapBaseFontSize}rem`;
+};
+
 const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: boolean) => {
     const fontStyles: FontStyles = {
         AbrilFatface: {
@@ -338,14 +344,14 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
             Y: {
                 "font-size": "3.04rem",
                 "margin-right": "1.2rem",
-                padding: "0.47rem 0.2rem 0rem",
+                padding: isPreviewer ? "0.47rem 0.2rem 1rem" : "0.47rem 0.2rem 0rem",
                 transform: "scale(1.2)",
                 "line-height": 0.9
             },
             Z: {
                 "font-size": "3.04rem",
                 "margin-right": "0.6rem",
-                padding: "0.47rem 0.2rem 0rem",
+                padding: isPreviewer ? "0.47rem 0.2rem 1rem" : "0.47rem 0.2rem 0rem",
                 transform: "scale(1.2)",
                 "line-height": 0.9
             },
@@ -888,6 +894,18 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
 
     const fontFamilyStyles = fontStyles[fontFamily] || {};
     const styles = fontFamilyStyles[letter] || fontFamilyStyles.default || {};
+
+    // Adjust font size if it exists in styles and isPreviewer is true
+    if (isPreviewer) {
+        const styleKeys = ["font-size", "margin-left", "margin-right"] as const;
+        styleKeys.forEach((prop) => {
+            if (styles[prop]) styles[prop] = adjustFontSize(styles[prop] as string);
+        });
+    
+        if (styles["line-height"]) {
+            styles["line-height"] = parseFloat(adjustFontSize(styles["line-height"]));
+        }
+    }
 
     const css = Object.entries(styles)
         .map(([property, value]) => `${property}: ${value};`)
