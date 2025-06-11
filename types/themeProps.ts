@@ -79,6 +79,7 @@ export type HeaderImage = {
   opacity: number;
   colored: Colored;
   headerTextColor: HeaderTextColor;
+  alternativeText?: string;
 };
 
 export type HeaderElement = {
