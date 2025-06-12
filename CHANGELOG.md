@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/Paladin-Analytics/css-generator/compare/v1.2.1...v1.2.2) (2023-09-15)
+
+### [1.2.1](https://github.com/Paladin-Analytics/css-generator/compare/v1.2.0...v1.2.1) (2023-09-14)
+
+## [1.2.0](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.78...v1.2.0) (2023-09-12)
+
+
+### Features
+
+* prerule dynamically convert ([7a2b0ed](https://github.com/Paladin-Analytics/css-generator/commit/7a2b0ed2bd968ba083b934c1ed7d93c0ca321e03))
+
+
+### Bug Fixes
+
+* made prerule parameter optional ([c100745](https://github.com/Paladin-Analytics/css-generator/commit/c100745b10e69e1e77e5fa362954d7c5be024f7c))
+
+### [1.1.78](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.75...v1.1.78) (2023-09-01)
+
 ### [1.1.77](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.76...v1.1.77) (2023-08-23)
 
 ### [1.1.76](https://github.com/Paladin-Analytics/css-generator/compare/v1.1.65...v1.1.76) (2023-08-23)

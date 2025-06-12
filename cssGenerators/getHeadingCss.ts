@@ -6,10 +6,14 @@ export const getHeadingCss = (themeId: string, themeProps: Theme): string => {
   const { properties: styleProps } = themeProps;
 
   const getFontFamily = (font: string) => {
+    let fontFamily = "";
     if (font !== "Default") {
-      return getFontFamilyName(font, headerStyleToFontVariant([]));
+      fontFamily = `font-family: ${getFontFamilyName(
+        font,
+        headerStyleToFontVariant([])
+      )};`;
     }
-    return;
+    return fontFamily;
   };
 
   return `
@@ -17,35 +21,35 @@ export const getHeadingCss = (themeId: string, themeProps: Theme): string => {
     
         .${themeId} h2 {
           font-size: ${styleProps.headings.h2.size}em;
-          font-family:  ${getFontFamily(styleProps.headings.h2.font)};
+          ${getFontFamily(styleProps.headings.h2.font)}
           font-weight: 600;
           padding: 0.6em 0em;
         }
     
         .${themeId} h3 {
           font-size: ${styleProps.headings.h3.size}em;
-          font-family: ${getFontFamily(styleProps.headings.h3.font)};
+          ${getFontFamily(styleProps.headings.h3.font)}
           font-weight: 600;
           padding: 0.6em 0em;
         }
     
         .${themeId} h4 {
           font-size: ${styleProps.headings.h4.size}em;
-          font-family: ${getFontFamily(styleProps.headings.h4.font)};
+          ${getFontFamily(styleProps.headings.h4.font)}
           font-weight: 600;
           padding: 0.6em 0em;
         }
     
         .${themeId} h5 {
           font-size: ${styleProps.headings.h5.size}em;
-          font-family: ${getFontFamily(styleProps.headings.h5.font)};
+          ${getFontFamily(styleProps.headings.h5.font)}
           font-weight: 600;
           padding: 0.6em 0em;
         }
     
         .${themeId} h6 {
           font-size: ${styleProps.headings.h6.size}em;
-          font-family: ${getFontFamily(styleProps.headings.h6.font)};
+          ${getFontFamily(styleProps.headings.h6.font)}
           font-weight: 600;
           padding: 0.6em 0em;
         }
