@@ -32,22 +32,9 @@ export const getFirstParagraphCss = (
         line-height: ${parseFloat(calculateValue(1))};
         padding: 0 0.25rem;
         margin-right: ${calculateValue(0.125)};
-        webkit-initial-letter: 2;
-        initial-letter: 2;
-        transform: scale(1.1);
       }
       ${getDropCapCssClasses(firstParagraph.dropcapFont, themeId, isPreviewer)}
-      .${themeId} .withDropcap .dropcap:before,
-      .${themeId} .withDropcap .dropcap:after {
-        content: "";
-        display: block;
-      }
-      .${themeId} .withDropcap .dropcap:before {
-        margin-bottom: 0.275rem;
-      }
-      .${themeId} .withDropcap .dropcap:after {
-        margin-top: -0.175rem;
-      }`
+      `
         : ""
     }
     ${
