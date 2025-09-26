@@ -22,20 +22,6 @@ export const getFirstParagraphCss = (
         line-height: 1;
         padding: 0 0.25rem;
         margin-right: 0.125rem;
-        webkit-initial-letter: 2;
-        initial-letter: 2;
-        transform: scale(1.1);
-      }
-      .${themeId} .withDropcap .dropcap:before,
-      .${themeId} .withDropcap .dropcap:after {
-        content: "";
-        display: block;
-      }
-      .${themeId} .withDropcap .dropcap:before {
-        margin-bottom: 0.275rem;
-      }
-      .${themeId} .withDropcap .dropcap:after {
-        margin-top: -0.175rem;
       }`
         : ""
     }
