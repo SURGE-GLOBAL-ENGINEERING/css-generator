@@ -83,7 +83,7 @@ export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
     }
 
     .${themeProps._id} .publisher-details{
-      position: ${isPreviewer ? "relative" : "absolute"};;
+      position: ${isPreviewer ? "relative" : "absolute"};
       bottom: 16px;
       display: flex;
       flex-direction: column;
