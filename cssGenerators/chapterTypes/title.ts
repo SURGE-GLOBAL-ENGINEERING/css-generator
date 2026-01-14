@@ -4,6 +4,7 @@ import {
   getFontFamilyName,
   getFontFamilyFromFontMap,
   headerStyleToFontVariant,
+  getUpdatedTextColorStyles
 } from "../../helpers";
 import { Theme } from "../../types";
 
@@ -107,4 +108,27 @@ export const getBookTitleCss = (themeProps: Theme, isPreviewer: boolean) => {
       height: auto;
     }
   `;
+};
+
+export const getTitlePageDarkModeCssOverrides = (
+  themeProps: Theme
+) => {
+  const { properties: styleProps } = themeProps;
+  return `
+  .${themeProps._id} .title-card h1{
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.bookTitlePage?.title?.extras))}
+    }
+    
+    .${themeProps._id} .title-card h2{
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.bookTitlePage?.author?.extras))}
+    }
+    
+    .${themeProps._id} .title-card h3{
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps?.bookTitlePage?.subtitle?.extras))}
+    }
+
+    .${themeProps._id} .publisher-details{
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.bookTitlePage?.publisher?.extras))}
+    }
+  `
 };

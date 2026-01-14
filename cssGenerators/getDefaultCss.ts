@@ -67,3 +67,74 @@ export const getDefaultCss = (themeId: string, paragraphSpacing: number): string
 
     `;
 };
+
+export const getDefaultDarkModeCssOverrides = (
+  themeId: string,
+  containerClassName?: string
+): string => {
+  return `
+  .${themeId} .${containerClassName} {
+    color: #171D21 !important;
+  }
+  .${themeId} .${containerClassName} :is(h1, h2, h3, h4, h5, h6) {
+    color: #171D21 !important;
+  }
+  .${themeId} .${containerClassName} .p-device .inside {
+    background-color: #ffffff !important;
+  }
+  .${themeId} .${containerClassName} .p-device.paperwhite .inside {
+    background-color: #d9e0db !important;
+  }
+  .${themeId} .${containerClassName} .p-device.paperwhite .inside > div {
+    -webkit-filter: grayscale(100%) !important;
+    -moz-filter: grayscale(100%) !important;
+    -ms-filter: grayscale(100%) !important;
+    -o-filter: grayscale(100%) !important;
+  }
+  .${themeId} .${containerClassName} .p-device.forma .inside {
+    background-color: #f3f7f5 !important;
+  }
+  .${themeId} .${containerClassName} .p-device.libra .inside {
+    background-color: #f3f7f5 !important;
+  }
+  .${themeId} .${containerClassName} .p-device.clara .inside {
+    background-color: #d9e0db !important;
+  }
+  .${themeId} .${containerClassName} .p-device.clara .inside > div {
+    -webkit-filter: grayscale(100%) !important;
+    -moz-filter: grayscale(100%) !important;
+    -ms-filter: grayscale(100%) !important;
+    -o-filter: grayscale(100%) !important;
+  }
+  .${themeId} .${containerClassName} .p-device.nia .inside {
+    background-color: #f3f7f5 !important;
+  }
+  .${themeId} .${containerClassName} .p-device.oasis .inside {
+    background-color: #d9e0db !important;
+  }
+  .${themeId} .${containerClassName} .p-device.oasis .inside > div {
+    -webkit-filter: grayscale(100%) !important;
+    -moz-filter: grayscale(100%) !important;
+    -ms-filter: grayscale(100%) !important;
+    -o-filter: grayscale(100%) !important;
+  }
+  .${themeId} .${containerClassName} .p-device.glowlight .inside {
+    background-color: #d9e0db !important;
+  }
+  .${themeId} .${containerClassName} .p-device.glowlight .inside > div {
+    -webkit-filter: grayscale(100%) !important;
+    -moz-filter: grayscale(100%) !important;
+    -ms-filter: grayscale(100%) !important;
+    -o-filter: grayscale(100%) !important;
+  }
+  .${themeId} .${containerClassName} .p-device.glowlight_plus .inside {
+    background-color: #d9e0db !important;
+  }
+  .${themeId} .${containerClassName} .p-device.glowlight_plus .inside > div {
+    -webkit-filter: grayscale(100%) !important;
+    -moz-filter: grayscale(100%) !important;
+    -ms-filter: grayscale(100%) !important;
+    -o-filter: grayscale(100%) !important;
+  }
+  `
+}
