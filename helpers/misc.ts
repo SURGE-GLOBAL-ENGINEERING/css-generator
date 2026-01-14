@@ -23,3 +23,24 @@ export const thumbnailCssOverwrites = {
   titleCard: () => "\npadding-top: 2px;\n padding-bottom: 2px;\n min-height: 80px;\n",
   imageContainer: () => "\npadding-top: 3px;\n padding-bottom: 2px;\n line-height: 0px;\n",
 }
+
+/** 
+ * Adds css !important tag to all color related styles 
+ * if text color is not explicitly set, add #171D21 as the default text color
+ * 
+ * returns only the updated color related styles
+ * */
+export const getUpdatedTextColorStyles = (styles: Record<string, string | number> | undefined) => {
+  const updatedStyles: Record<string, string> = {};
+  for (const key in styles) {
+    if (key.toLowerCase().includes("color")) {
+      updatedStyles[key] = `${styles[key]} !important`;
+    }
+  }
+
+  if (!updatedStyles["color"]) {
+    updatedStyles["color"] = "#171D21 !important";
+  }
+  
+  return updatedStyles;
+}

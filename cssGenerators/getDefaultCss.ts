@@ -67,3 +67,17 @@ export const getDefaultCss = (themeId: string, paragraphSpacing: number): string
 
     `;
 };
+
+export const getDefaultDarkModeCssOverrides = (
+  themeId: string,
+  containerClassName?: string
+): string => {
+  return `
+  .${themeId} .${containerClassName} {
+    color: #171D21 !important;
+  }
+  .${themeId} .${containerClassName} .p-device .inside {
+    background-color: #ffffff !important;
+  }
+  `
+}
