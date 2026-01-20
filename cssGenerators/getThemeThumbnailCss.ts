@@ -32,6 +32,7 @@ export const getThemeThumbnailDarkModeCssOverrides = (
   const defaultOverrides = `
     .theme-cards .ant-list-items .theme-card.active .theme-element {
       border-color: #3568BA !important;
+      border-width: 4px !important;
     }
     .theme-element:not(button) {
       background-color: #ffffff !important;
