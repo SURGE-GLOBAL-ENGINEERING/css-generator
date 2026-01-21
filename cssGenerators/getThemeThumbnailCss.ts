@@ -1,5 +1,5 @@
 import { Theme } from "../types";
-import { getChapterHeaderCss } from "./getChapterHeaderCss";
+import { getChapterHeaderCss, getChapterHeaderDarkModeCssOverrides } from "./getChapterHeaderCss";
 
 /**
  * Styles for the theme thumbnails
@@ -24,3 +24,24 @@ export const getThemeThumbnailCss = (
   `;
   return `${thumbnailChapterHeaderCss} ${thumbnailChapterBodyCss}`;
 };
+
+export const getThemeThumbnailDarkModeCssOverrides = (
+  theme: Theme,
+  prefix?: string
+): string => {
+  const defaultOverrides = `
+    .theme-cards .ant-list-items .theme-card.active .theme-element {
+      border-color: #3568BA !important;
+      border-width: 4px !important;
+    }
+    .theme-element:not(button) {
+      background-color: #ffffff !important;
+    }
+    .theme-thumbnail, .thumbnail-body {
+      color: #171D21 !important;
+    }
+
+  `;
+  const chapterHeaderOverrides = getChapterHeaderDarkModeCssOverrides(theme, prefix);
+  return `${defaultOverrides} ${chapterHeaderOverrides}`;
+}

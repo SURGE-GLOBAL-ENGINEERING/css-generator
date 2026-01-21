@@ -8,3 +8,4 @@ export * from "./endnote";
 export * from "./list";
 export * from "./hangingIndent";
 export * from "./calloutbox";
+export * from "./textMessages";
