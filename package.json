@@ -1,6 +1,6 @@
 {
   "name": "@surge-global-engineering/css-generator",
-  "version": "1.9.2",
+  "version": "1.10.0",
   "description": "Generate css styles based on theme properties for Atticus themes",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
