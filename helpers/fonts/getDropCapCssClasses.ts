@@ -5,6 +5,7 @@ type CharacterFontStyle = {
     padding?: string;
     transform?: string;
     "line-height"?: number;
+    height?: string;
 }
 
 type FontStyles = Record<string, Record<string, CharacterFontStyle>>;
@@ -186,173 +187,156 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
         },
         ImperialScript: {
             A: {
-                "font-size": "4.2rem",
-                "margin-right": "1.4rem",
+                "font-size": "4.6rem",
+                "margin-right": "1rem",
                 padding: "0.05rem 0.325rem 0rem",
-                transform: "scale(1.2)",
             },
             B: {
-                "font-size": "4.6rem",
-                "margin-right": "0.8rem",
-                padding: "0.05rem 0rem",
-                transform: "scale(1.2)",
+                "font-size": "5.5rem",
+                "margin-right": "0.5rem",
+                height: "60px",
             },
             C: {
-                "font-size": "4.4rem",
+                "font-size": "5rem",
                 "margin-right": "1.3rem",
                 padding: "0.1rem 0.1rem 0rem",
-                transform: "scale(1.2)",
+                height: "60px",
             },
             D: {
-                "font-size": "4.65rem",
+                "font-size": "5.3rem",
                 "margin-right": "0.4rem",
-                padding: "0.05rem 0.5rem 0rem",
-                transform: "scale(1.2)",
+                padding: "0rem 0.5rem 0rem",
+                height: "60px",
             },
             E: {
-                "font-size": "4.6rem",
+                "font-size": "5.1rem",
                 "margin-right": "1rem",
-                padding: "0.03rem 0rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.9
+                padding: "0rem",
+                height: "80px",
             },
             F: {
-                "font-size": "4.7rem",
+                "font-size": "5rem",
                 "margin-right": "1.7rem",
                 padding: "0.03rem 0.4rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.9
+                height: "60px",
             },
             G: {
-                "font-size": "3.1rem",
+                "font-size": "3.5rem",
                 "margin-right": "0.9rem",
                 padding: "0.1rem 0rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 1.2
+                height: "60px",
             },
             H: {
-                "font-size": "4.3rem",
+                "font-size": "5rem",
                 "margin-right": "1.8rem",
                 padding: "0.2rem 0.4rem 0rem",
-                transform: "scale(1.2)",
+                height: "60px",
             },
             I: {
-                "font-size": "4.5rem",
+                "font-size": "5.2rem",
                 "margin-right": "1.8rem",
                 padding: "0.05rem 0.2rem 0rem",
-                transform: "scale(1.2)",
+                height: "60px",
             },
             J: {
-                "font-size": "3.6rem",
+                "font-size": "4.3rem",
                 "margin-right": "1.1rem",
                 padding: "0rem 0.32rem 0rem",
-                transform: "scale(1.2)",
             },
             K: {
-                "font-size": "4.1rem",
+                "font-size": "4.8rem",
                 "margin-right": "1.9rem",
                 padding: "0rem 0.4rem 0rem",
-                transform: "scale(1.2)",
+                height: "60px",
             },
             L: {
-                "font-size": "4.6rem",
+                "font-size": "5.2rem",
                 "margin-right": "1.5rem",
                 padding: "0rem 0.55rem 0rem",
-                transform: "scale(1.2)",
+                height: "60px",
             },
             M: {
-                "font-size": "4.2rem",
-                "margin-right": "2.5rem",
+                "font-size": "4.9rem",
+                "margin-right": "2.1rem",
                 padding: "0.25rem 0.35rem 0rem",
-                transform: "scale(1.2)",
+                height: "60px",
             },
             N: {
-                "font-size": "4.0rem",
-                "margin-right": "2.8rem",
+                "font-size": "4.5rem",
+                "margin-right": "2.4rem",
                 padding: "0.25rem 0.15rem 0rem",
-                transform: "scale(1.2)",
+                height: "60px",
             },
             O: {
-                "font-size": "4.4rem",
+                "font-size": "4.9rem",
                 "margin-right": "1rem",
                 padding: "0.325rem 0rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.9
+                height: "60px",
             },
             P: {
-                "font-size": "4.3rem",
-                "margin-right": "1.5rem",
+                "font-size": "4.8rem",
+                "margin-right": "1.1rem",
                 padding: "0.325rem 0.25rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.9
+                height: "60px",
             },
             Q: {
-                "font-size": "4.6rem",
-                "margin-right": "1rem",
-                padding: "0.325rem 0.rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.85
+                "font-size": "5.2rem",
+                "margin-right": "0.8rem",
+                padding: "0.325rem 0rem 0rem",
+                height: "60px",
             },
             R: {
-                "font-size": "4.6rem",
+                "font-size": "5.4rem",
                 "margin-right": "1.1rem",
-                padding: "0.325rem 0rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.85
+                padding: "0rem",
+                height: "60px",
             },
             S: {
-                "font-size": "4.2rem",
+                "font-size": "4.6rem",
                 "margin-right": "0.2rem",
-                padding: "0.325rem 0.5rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.9
+                padding: "0rem 0.5rem 0rem",
+                height: "60px",
             },
             T: {
-                "font-size": "4.54rem",
-                "margin-right": "1.7rem",
-                padding: "0.4rem 0.5rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.8
+                "font-size": "5.2rem",
+                "margin-right": "1.5rem",
+                padding: "0rem 0.5rem 0rem",
+                height: "80px",
             },
             U: {
-                "font-size": "4rem",
+                "font-size": "4.5rem",
                 "margin-right": "1.3rem",
-                padding: "0.4rem 0.45rem 0rem",
-                transform: "scale(1.2)",
+                padding: "0rem 0.45rem 0rem 0rem",
+                height: "60px",
             },
             V: {
-                "font-size": "4.21rem",
+                "font-size": "5.1rem",
                 "margin-right": "2.7rem",
-                padding: "0.45rem 0.1rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.9
+                padding: "0rem 0.2rem 0rem 0rem",
+                height: "80px",
             },
             W: {
-                "font-size": "4.21rem",
+                "font-size": "5rem",
                 "margin-right": "2.4rem",
-                padding: "0.45rem 0.4rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.9
+                padding: "0rem 0.4rem 0rem 0rem",
+                height: "80px",
             },
             X: {
-                "font-size": "4.0rem",
+                "font-size": "4.7rem",
                 "margin-right": "0.6rem",
-                padding: "0.45rem 0.7rem 0rem",
-                transform: "scale(1.2)",
-                "line-height": 0.75
+                padding: "0rem 0.5rem 0rem 0.3rem",
+                height: "60px",
             },
             Y: {
-                "font-size": "3.04rem",
+                "font-size": "3.45rem",
                 "margin-right": "1.2rem",
-                padding: isPreviewer ? "0.47rem 0.2rem 1rem" : "0.47rem 0.2rem 0rem",
-                transform: "scale(1.2)",
+                padding: isPreviewer ? "0.47rem 0.2rem 1rem" : "0.35rem 0.2rem 0rem 0rem",
                 "line-height": 0.9
             },
             Z: {
-                "font-size": "3.04rem",
+                "font-size": "3.45rem",
                 "margin-right": "0.6rem",
-                padding: isPreviewer ? "0.47rem 0.2rem 1rem" : "0.47rem 0.2rem 0rem",
-                transform: "scale(1.2)",
+                padding: isPreviewer ? "0.47rem 0.2rem 1rem" : "0.35rem 0.2rem 0rem 0rem",
                 "line-height": 0.9
             },
         },
