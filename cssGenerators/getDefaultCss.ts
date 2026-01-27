@@ -76,7 +76,7 @@ export const getDefaultDarkModeCssOverrides = (
   .${themeId} .${containerClassName} {
     color: #171D21 !important;
   }
-  .${themeId} .${containerClassName} :is(h1, h2, h3, h4, h5, h6) {
+  .${themeId} .${containerClassName} .chapter-body :is(h1, h2, h3, h4, h5, h6) {
     color: #171D21 !important;
   }
   .${themeId} .${containerClassName} .p-device .inside {

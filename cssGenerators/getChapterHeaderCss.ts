@@ -213,5 +213,16 @@ export const getChapterHeaderDarkModeCssOverrides = (
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
       ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.chapterSubtitle.extras))}
     }
+    
+    .${themeProps._id} .inverted .${addPrefix("chapter-number", prefix)} span{
+      color: white !important;
+    }
+    
+    .${themeProps._id} .inverted .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .inverted .${addPrefix("epub-toc-title-card", prefix)} h2{
+      color: white !important;
+    }
+    .${themeProps._id} .inverted .${addPrefix("chapter-subtitle", prefix)} h3{
+      color: white !important;
+    }
   `
 };
