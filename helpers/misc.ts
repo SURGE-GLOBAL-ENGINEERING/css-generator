@@ -30,7 +30,7 @@ export const thumbnailCssOverwrites = {
  * 
  * returns only the updated color related styles
  * */
-export const getUpdatedTextColorStyles = (styles: Record<string, string | number> | undefined) => {
+export const getUpdatedTextColorStyles = (shouldInvertTextColor: boolean, styles: Record<string, string | number> | undefined) => {
   const updatedStyles: Record<string, string> = {};
   for (const key in styles) {
     if (key.toLowerCase().includes("color")) {
@@ -40,6 +40,10 @@ export const getUpdatedTextColorStyles = (styles: Record<string, string | number
 
   if (!updatedStyles["color"]) {
     updatedStyles["color"] = "#171D21 !important";
+  }
+
+  if (shouldInvertTextColor) {
+    updatedStyles["color"] = "#FFFFFF !important";
   }
   
   return updatedStyles;

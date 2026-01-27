@@ -202,16 +202,17 @@ export const getChapterHeaderDarkModeCssOverrides = (
   prefix?: string,
 ) => {
   const { properties: styleProps } = themeProps;
+  const shouldInvertColors = styleProps.image.headerTextColor === "light";
   return `
     .${themeProps._id} .${addPrefix("chapter-number", prefix)} span{
-      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.chapterNo.extras))}
+      ${styleObjectToCss(getUpdatedTextColorStyles(shouldInvertColors, styleProps.chapterNo.extras))}
     }
     
     .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2{
-      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.chapterTitle.extras))}
+      ${styleObjectToCss(getUpdatedTextColorStyles(shouldInvertColors, styleProps.chapterTitle.extras))}
     }
     .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
-      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.chapterSubtitle.extras))}
+      ${styleObjectToCss(getUpdatedTextColorStyles(shouldInvertColors, styleProps.chapterSubtitle.extras))}
     }
   `
 };
