@@ -114,23 +114,21 @@ export const getTitlePageDarkModeCssOverrides = (
   themeProps: Theme
 ) => {
   const { properties: styleProps } = themeProps;
-  /** title page text colors should not be inverted by theme properties */
-  const shouldInvertColors = false;
   return `
   .${themeProps._id} .title-card h1{
-      ${styleObjectToCss(getUpdatedTextColorStyles(shouldInvertColors, styleProps.bookTitlePage?.title?.extras))}
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.bookTitlePage?.title?.extras))}
     }
     
     .${themeProps._id} .title-card h2{
-      ${styleObjectToCss(getUpdatedTextColorStyles(shouldInvertColors, styleProps.bookTitlePage?.author?.extras))}
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.bookTitlePage?.author?.extras))}
     }
     
     .${themeProps._id} .title-card h3{
-      ${styleObjectToCss(getUpdatedTextColorStyles(shouldInvertColors, styleProps?.bookTitlePage?.subtitle?.extras))}
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps?.bookTitlePage?.subtitle?.extras))}
     }
 
     .${themeProps._id} .publisher-details{
-      ${styleObjectToCss(getUpdatedTextColorStyles(shouldInvertColors, styleProps.bookTitlePage?.publisher?.extras))}
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.bookTitlePage?.publisher?.extras))}
     }
   `
 };
