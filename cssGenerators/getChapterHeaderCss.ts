@@ -202,7 +202,6 @@ export const getChapterHeaderDarkModeCssOverrides = (
   prefix?: string,
 ) => {
   const { properties: styleProps } = themeProps;
-  const shouldInvertColors = styleProps.image.headerTextColor === "light";
   return `
     .${themeProps._id} .${addPrefix("chapter-number", prefix)} span{
       ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.chapterNo.extras))}
