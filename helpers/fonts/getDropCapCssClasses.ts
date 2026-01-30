@@ -57,6 +57,18 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
             }
         },
         ArchitectsDaughter: {
+            H: {
+                "font-size": isPreviewer ? "3rem" : "2.5rem",
+                "margin-right": "0.35rem",
+                padding: "0.5rem 0.25rem",
+                height: "30px",
+            },
+            W: {
+                "font-size": isPreviewer ? "3rem" : "2.5rem",
+                "margin-right": "0.35rem",
+                padding: "0.5rem 0.25rem",
+                ...(!isPreviewer && { height: "60px" }),
+            },
             default: {
                 "font-size": isPreviewer ? "3rem" : "2.9rem",
                 "margin-right": "0.35rem",
