@@ -66,7 +66,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
             W: {
                 "font-size": isPreviewer ? "3rem" : "2.5rem",
                 "margin-right": "0.35rem",
-                padding: "0.5rem 0.25rem",
+                padding: isPreviewer ? "0.2rem 0.25rem" : "0.5rem 0.25rem",
                 ...(!isPreviewer && { height: "60px" }),
             },
             default: {
