@@ -20,52 +20,40 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
     const fontStyles: FontStyles = {
         AbrilFatface: {
             C: {
-                "font-size": isPreviewer ? "3.3rem" : "3.0rem",
-                "margin-left": "-0.3rem",
+                "font-size": isPreviewer ? "3.3rem" : "2.9rem",
                 "margin-right": "0.1rem",
-                padding: isPreviewer ? "0.23rem 0.25rem 0rem" : "0.3rem 0.25rem 0rem",
-                transform: "scale(0.9)",
-                "line-height": 0.7
+                padding: isPreviewer ? "0.4rem 0.25rem 0rem" : "0.15rem 0.25rem 0rem",
+                ...(isPreviewer && { transform: "scale(0.9)", "line-height": 0.7, "margin-left": "-0.3rem" }),
             },
             G: {
-                "font-size": isPreviewer ? "3.3rem" : "3.0rem",
-                "margin-left": "-0.3rem",
+                "font-size": isPreviewer ? "3.3rem" : "2.9rem",
                 "margin-right": "0.1rem",
-                padding: isPreviewer ? "0.23rem 0.25rem 0rem" : "0.3rem 0.25rem 0rem",
-                transform: "scale(0.9)",
-                "line-height": 0.7
+                padding: isPreviewer ? "0.46rem 0.25rem 0rem" : "0.1rem 0.25rem 0rem",
+                ...(isPreviewer && { transform: "scale(0.9)", "line-height": 0.7, "margin-left": "-0.3rem" }),
             },
             O: {
-                "font-size": isPreviewer ? "3.3rem" : "3.0rem",
-                "margin-left": "-0.3rem",
+                "font-size": isPreviewer ? "3.3rem" : "2.9rem",
                 "margin-right": "0.1rem",
-                padding: isPreviewer ? "0.23rem 0.25rem 0rem" : "0.3rem 0.25rem 0rem",
-                transform: "scale(0.9)",
-                "line-height": 0.7
+                padding: isPreviewer ? "0.48rem 0.25rem 0rem" : "0.2rem 0.25rem 0rem",
+                ...(isPreviewer && { transform: "scale(0.9)", "line-height": 0.7, "margin-left": "-0.3rem" }),
             },
             Q: {
-                "font-size": isPreviewer ? "2.7rem" : "2.3rem",
-                "margin-left": "-0.3rem",
+                "font-size": isPreviewer ? "2.7rem" : "2.1rem",
                 "margin-right": "0.1rem",
-                padding: isPreviewer ? "0.1rem 0.25rem 0rem" : "0.35rem 0.25rem 0rem",
-                transform: "scale(0.9)",
-                "line-height": 0.7
+                padding: isPreviewer ? "0.35rem 0.25rem 0rem" : "0.25rem 0.25rem 0rem",
+                ...(isPreviewer && { transform: "scale(0.9)", "line-height": 0.7, "margin-left": "-0.3rem" }),
             },
             S: {
-                "font-size": isPreviewer ? "3.3rem" : "3.0rem",
-                "margin-left": "-0.3rem",
+                "font-size": isPreviewer ? "3.3rem" : "2.9rem",
                 "margin-right": "0.1rem",
-                padding: isPreviewer ? "0.23rem 0.25rem 0rem" : "0.3rem 0.25rem 0rem",
-                transform: "scale(0.9)",
-                "line-height": 0.7
+                padding: isPreviewer ? "0.46rem 0.25rem 0rem" : "0.15rem 0.25rem 0rem",
+                ...(isPreviewer && { transform: "scale(0.9)", "line-height": 0.7, "margin-left": "-0.3rem" }),
             },
             default: {
-                "font-size": isPreviewer ? "3.3rem" : "3.1rem",
-                "margin-left": "-0.3rem",
+                "font-size": isPreviewer ? "3.3rem" : "2.9rem",
                 "margin-right": "0.1rem",
-                padding: isPreviewer ? "0.23rem 0.25rem 0rem" : "0.3rem 0.25rem 0rem",
-                transform: "scale(0.9)",
-                "line-height": 0.7
+                padding: isPreviewer ? "0.3rem 0.25rem 0rem" : "0rem 0.25rem 0rem",
+                ...(isPreviewer && { "margin-left": "-0.3rem", transform: "scale(0.9)", "line-height": 0.7 }),
             }
         },
         ArchitectsDaughter: {
