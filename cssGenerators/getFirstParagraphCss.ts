@@ -1,5 +1,6 @@
 import { FirstParagraph } from "../types";
-import { headerStyleToFontVariant, getDropCapCssClasses } from "../helpers";
+import { getDropCapCssClasses } from "../helpers";
+import { getDropcapFontFamily, shouldGenerateDropcapLetterClasses } from "../helpers";
 
 /**
  * Can contain previewer only styles
@@ -16,6 +17,16 @@ export const getFirstParagraphCss = (
     ? `${(value / baseFontSize) * dropcapBaseFontSize}rem` 
     : `${value}rem`;
 
+  /**
+    * If the drop cap font is "Default", omit the font family and 
+    * do not generate drop cap letter CSS classes
+    * This allows the drop cap to use the body font
+    */
+  const dropcapFamily = getDropcapFontFamily(firstParagraph.dropcapFont);
+  const dropcapLetterClasses = shouldGenerateDropcapLetterClasses(firstParagraph.dropcapFont)
+    ? getDropCapCssClasses(firstParagraph.dropcapFont, themeId, isPreviewer)
+    : "";
+
   return `
     .${themeId} .withDropcap .dropcap, .${themeId} .ornamental-break + p{
       text-indent: 0!important;
@@ -28,13 +39,13 @@ export const getFirstParagraphCss = (
       }
       .${themeId} .withDropcap .dropcap{
         font-size: ${calculateValue(3)};
-        font-family: '${firstParagraph.dropcapFont}${headerStyleToFontVariant([])}';
+        ${dropcapFamily}
         line-height: ${parseFloat(calculateValue(1))};
         padding: 0 0.25rem;
         margin-right: ${calculateValue(0.125)};
       }
-      ${getDropCapCssClasses(firstParagraph.dropcapFont, themeId, isPreviewer)}`
-        : ""
+      ${dropcapLetterClasses}`
+      : ""
     }
     ${
       firstParagraph.uppercaseFourWords
