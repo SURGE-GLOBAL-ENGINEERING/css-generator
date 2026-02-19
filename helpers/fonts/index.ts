@@ -4,3 +4,4 @@ export * from "./getFontFaceCss";
 export * from "./getFontVariant";
 export * from "./misc";
 export * from "./getDropCapCssClasses";
+export * from "./dropCapCss";
