@@ -1,14 +1,4 @@
-type CharacterFontStyle = {
-    "font-size"?: string;
-    "margin-left"?: string;
-    "margin-right"?: string;
-    padding?: string;
-    transform?: string;
-    "line-height"?: number;
-    height?: string;
-}
-
-type FontStyles = Record<string, Record<string, CharacterFontStyle>>;
+import { CharacterFontStyle, DropcapVariant, DropcapVariantOverrides, FontStyles, VariantLetterMap } from "types";
 
 const baseFontSize = 15; //html font size
 const dropcapBaseFontSize = 12; // dropcap default font size
@@ -16,7 +6,21 @@ const adjustFontSize = (originalSizeRem: string | number) => {
     return `${parseFloat(originalSizeRem.toString()) / baseFontSize * dropcapBaseFontSize}rem`;
 };
 
-const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: boolean) => {
+const kalamVariantCommon = (isPreviewer: boolean): VariantLetterMap  => ({
+    default: {
+        "font-size": isPreviewer ? "4.5rem" : "4.1rem",
+    },
+});
+
+const variantOverrides: DropcapVariantOverrides = {
+    Kalam: {
+        bold: kalamVariantCommon,
+        italic: kalamVariantCommon,
+        boldItalic: kalamVariantCommon,
+    },
+};
+
+const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: boolean, variant?: DropcapVariant) => {
     const fontStyles: FontStyles = {
         AbrilFatface: {
             C: {
@@ -901,7 +905,16 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
     };
 
     const fontFamilyStyles = fontStyles[fontFamily] || {};
-    const styles = fontFamilyStyles[letter] || fontFamilyStyles.default || {};
+    const base = fontFamilyStyles[letter] || fontFamilyStyles.default || {};
+    let styles: CharacterFontStyle = { ...base };
+
+    // If a variant exists and a drop cap font has variant specific tuning, override the base drop cap calculations
+    if (variant) {
+        const variantExist = variantOverrides[fontFamily]?.[variant];
+        const letterVariantOverrides = variantExist ? variantExist(isPreviewer) : undefined;
+        const overrideStyles = (letterVariantOverrides?.[letter] || letterVariantOverrides?.default) as CharacterFontStyle | undefined;
+        if (overrideStyles) styles = { ...styles, ...overrideStyles };
+    }
 
     // Adjust font size if it exists in styles and isPreviewer is true
     if (isPreviewer) {
@@ -930,6 +943,38 @@ export const getDropCapCssClasses = (fontFamily: string, prefixRule: string, isP
         const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer);
         if (fontRule) {
             cssString += `.${prefixRule} .withDropcap .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
+        }
+    }
+
+    /**
+     * If the drop cap font has variant specific calculations,
+     * replace the previously generated drop cap css classes
+     */
+    const overridesForDropCapFont = variantOverrides[fontFamily];
+    if (!overridesForDropCapFont) return cssString;
+
+    // for bold
+    for (const letter of alphabet) {
+        const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer, "bold");
+        if (fontRule) {
+            cssString += `.${prefixRule} .withDropcap b .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
+        }
+    }
+
+    // for italic
+    for (const letter of alphabet) {
+        const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer, "italic");
+        if (fontRule) {
+            cssString += `.${prefixRule} .withDropcap em .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
+        }
+    }
+
+    // for bold and italic
+    for (const letter of alphabet) {
+        const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer, "boldItalic");
+        if (fontRule) {
+            cssString += `.${prefixRule} .withDropcap b em .dropcap.letter_${letter},\n` +
+                `.${prefixRule} .withDropcap em b .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
         }
     }
 
