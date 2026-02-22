@@ -61,6 +61,13 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
             }
         },
         ArchitectsDaughter: {
+            G: {
+                "font-size": isPreviewer ? "3rem" : "2.4rem",
+                "margin-right": "0.35rem",
+                "margin-top": isPreviewer ? "0.35rem" : "0.5rem",
+                padding: "0 0.25rem",
+                ...(!isPreviewer && { height: "30px" }),
+            },
             H: {
                 "font-size": isPreviewer ? "3rem" : "2.5rem",
                 "margin-right": "0.35rem",
@@ -74,9 +81,11 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 ...(!isPreviewer && { height: "60px" }),
             },
             default: {
-                "font-size": isPreviewer ? "3rem" : "2.9rem",
+                "font-size": isPreviewer ? "3rem" : "2.5rem",
                 "margin-right": "0.35rem",
+                "margin-top": isPreviewer ? "0.35rem" : "0.5rem",
                 padding: "0 0.25rem",
+                ...(!isPreviewer && { height: "30px" }),
             }
         },
         Comfortaa : {
@@ -502,9 +511,10 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-right": "0.325rem"
             },
             D: {
-                "font-size": "2.8rem",
-                padding: "0.1rem 0.4rem 0rem",
-                "margin-right": "0.125rem"
+                "font-size": isPreviewer ? "2.8rem" : "2.6rem",
+                padding: isPreviewer ? "0.1rem 0.4rem 0rem" : "0.1rem 0rem",
+                "margin-right": isPreviewer ? "0.125rem" : "0.625rem",
+                "margin-top": "0.35rem"
             },
             E: {
                 "font-size": "2.4rem",
@@ -524,9 +534,16 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-right": "0.9rem"
             },
             H: {
-                "font-size": "2.1rem",
+                "font-size": isPreviewer ? "2.1rem" : "2rem",
                 padding: "0.325rem 0rem 0rem",
-                "margin-right": "0.4rem"
+                "margin-right": isPreviewer ? "0.4rem" : "0.6rem",
+                "margin-top": "0.35rem"
+            },
+            I: {
+                "font-size": isPreviewer ? "2.8rem" : "2.6rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.5rem",
+                "margin-top": "0.35rem"
             },
             J: {
                 "font-size": "2.2rem",
@@ -584,9 +601,10 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-right": "0.4rem"
             },
             T: {
-                "font-size": "2.8rem",
-                padding: "0.1rem 0.4rem 0rem",
-                "margin-right": "0.125rem"
+                "font-size": isPreviewer ? "2.8rem" : "2.6rem",
+                padding: isPreviewer ? "0.1rem 0.4rem 0rem" : "0.1rem 0rem",
+                "margin-right": isPreviewer ? "0.125rem" : "0.75rem",
+                "margin-top": "0.35rem"
             },
             U: {
                 "font-size": "2.16rem",
