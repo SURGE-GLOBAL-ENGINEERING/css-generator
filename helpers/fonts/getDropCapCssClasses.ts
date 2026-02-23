@@ -12,12 +12,29 @@ const kalamVariantCommon = (isPreviewer: boolean): VariantLetterMap  => ({
     },
 });
 
+const abrilFatfaceVariantCommon = (isPreviewer: boolean): VariantLetterMap  => ({
+    Q: {
+        "font-size": isPreviewer ? "3.3rem" : "2.0rem",
+        "margin-right": "0.5rem",
+    },
+    default: {
+        "font-size": isPreviewer ? "3.3rem" : "2.5rem",
+        "margin-right": "0.5rem",
+        "margin-top": "0.2rem"
+    },
+});
+
 const variantOverrides: DropcapVariantOverrides = {
     Kalam: {
         bold: kalamVariantCommon,
         italic: kalamVariantCommon,
         boldItalic: kalamVariantCommon,
     },
+    AbrilFatface: {
+        bold: abrilFatfaceVariantCommon,
+        italic: abrilFatfaceVariantCommon,
+        boldItalic: abrilFatfaceVariantCommon,
+    }
 };
 
 const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: boolean, variant?: DropcapVariant) => {
@@ -89,6 +106,36 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
             }
         },
         Comfortaa : {
+            C: {
+                "font-size": isPreviewer ? "2.49rem" : "2.3rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+                ...(isPreviewer && { "margin-top": "0.3rem" }),
+            },
+            G: {
+                "font-size": isPreviewer ? "2.49rem" : "2.3rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+                ...(isPreviewer && { "margin-top": "0.3rem" }),
+            },
+            O: {
+                "font-size": isPreviewer ? "2.49rem" : "2.3rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+                ...(isPreviewer && { "margin-top": "0.3rem" }),
+            },
+            Q: {
+                "font-size": isPreviewer ? "2.49rem" : "2.3rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+                ...(isPreviewer && { "margin-top": "0.3rem" }),
+            },
+            S: {
+                "font-size": isPreviewer ? "2.49rem" : "2.3rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+                ...(isPreviewer && { "margin-top": "0.3rem" }),
+            },
             default: {
                 "font-size": "2.49rem",
                 "margin-right": "0.35rem",
@@ -819,33 +866,41 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
         },
         ThreeDumb: {
             R: {
-              "font-size": isPreviewer ? "2.45rem" : "2.4rem",
+              "font-size": isPreviewer ? "2.45rem" : "2.2rem",
+              "margin-top": "0.3rem"
             },
             S: {
-              "font-size": isPreviewer ? "2.3rem" : "2.3rem",
+              "font-size": isPreviewer ? "2.3rem" : "2.2rem",
               padding: "0.15rem 0.25rem 0rem",
+              "margin-top": "0.2rem"
             },
             T: {
-              "font-size": isPreviewer ? "2.45rem" : "2.3rem",
+              "font-size": isPreviewer ? "2.45rem" : "2.2rem",
+              "margin-top": "0.2rem"
             },
             U: {
-              "font-size": isPreviewer ? "2.5rem" : "2.4rem",
+              "font-size": isPreviewer ? "2.5rem" : "2.3rem",
+              "margin-top": "0.2rem"
             },
             W: {
-              "font-size": isPreviewer ? "2.4rem" : "2.1rem",
+              "font-size": isPreviewer ? "2.4rem" : "2.0rem",
+              "margin-top": "0.2rem"
             },
             X: {
-              "font-size": isPreviewer ? "2.5rem" : "2.35rem",
+              "font-size": isPreviewer ? "2.5rem" : "2.25rem",
+              "margin-top": "0.2rem"
             },
             Y: {
-              "font-size": isPreviewer ? "2.4rem" : "2.25rem",
+              "font-size": isPreviewer ? "2.4rem" : "2.15rem",
+              "margin-top": "0.2rem"
             },
             Z: {
               "font-size": isPreviewer ? "2.4rem" : "2.25rem",
             },
             default: {
-              "font-size": isPreviewer ? "2.4rem" : "2.2rem",
+              "font-size": isPreviewer ? "2.4rem" : "2.1rem",
               padding: "0.1rem 0.25rem 0rem",
+              "margin-top": "0.2rem"
             },
         },
         Chomsky:{
