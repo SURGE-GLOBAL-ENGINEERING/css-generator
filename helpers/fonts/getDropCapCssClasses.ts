@@ -1,14 +1,4 @@
-type CharacterFontStyle = {
-    "font-size"?: string;
-    "margin-left"?: string;
-    "margin-right"?: string;
-    padding?: string;
-    transform?: string;
-    "line-height"?: number;
-    height?: string;
-}
-
-type FontStyles = Record<string, Record<string, CharacterFontStyle>>;
+import { CharacterFontStyle, DropcapVariant, DropcapVariantOverrides, FontStyles, VariantLetterMap } from "types";
 
 const baseFontSize = 15; //html font size
 const dropcapBaseFontSize = 12; // dropcap default font size
@@ -16,7 +6,38 @@ const adjustFontSize = (originalSizeRem: string | number) => {
     return `${parseFloat(originalSizeRem.toString()) / baseFontSize * dropcapBaseFontSize}rem`;
 };
 
-const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: boolean) => {
+const kalamVariantCommon = (isPreviewer: boolean): VariantLetterMap  => ({
+    default: {
+        "font-size": isPreviewer ? "4.5rem" : "4.1rem",
+    },
+});
+
+const abrilFatfaceVariantCommon = (isPreviewer: boolean): VariantLetterMap  => ({
+    Q: {
+        "font-size": isPreviewer ? "3.3rem" : "2.0rem",
+        "margin-right": "0.5rem",
+    },
+    default: {
+        "font-size": isPreviewer ? "3.3rem" : "2.5rem",
+        "margin-right": "0.5rem",
+        "margin-top": "0.2rem"
+    },
+});
+
+const variantOverrides: DropcapVariantOverrides = {
+    Kalam: {
+        bold: kalamVariantCommon,
+        italic: kalamVariantCommon,
+        boldItalic: kalamVariantCommon,
+    },
+    AbrilFatface: {
+        bold: abrilFatfaceVariantCommon,
+        italic: abrilFatfaceVariantCommon,
+        boldItalic: abrilFatfaceVariantCommon,
+    }
+};
+
+const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: boolean, variant?: DropcapVariant) => {
     const fontStyles: FontStyles = {
         AbrilFatface: {
             C: {
@@ -57,6 +78,13 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
             }
         },
         ArchitectsDaughter: {
+            G: {
+                "font-size": isPreviewer ? "3rem" : "2.4rem",
+                "margin-right": "0.35rem",
+                "margin-top": isPreviewer ? "0.35rem" : "0.5rem",
+                padding: "0 0.25rem",
+                ...(!isPreviewer && { height: "30px" }),
+            },
             H: {
                 "font-size": isPreviewer ? "3rem" : "2.5rem",
                 "margin-right": "0.35rem",
@@ -70,12 +98,44 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 ...(!isPreviewer && { height: "60px" }),
             },
             default: {
-                "font-size": isPreviewer ? "3rem" : "2.9rem",
+                "font-size": isPreviewer ? "3rem" : "2.5rem",
                 "margin-right": "0.35rem",
+                "margin-top": isPreviewer ? "0.35rem" : "0.5rem",
                 padding: "0 0.25rem",
+                ...(!isPreviewer && { height: "30px" }),
             }
         },
         Comfortaa : {
+            C: {
+                "font-size": isPreviewer ? "2.49rem" : "2.3rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+                ...(isPreviewer && { "margin-top": "0.3rem" }),
+            },
+            G: {
+                "font-size": isPreviewer ? "2.49rem" : "2.3rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+                ...(isPreviewer && { "margin-top": "0.3rem" }),
+            },
+            O: {
+                "font-size": isPreviewer ? "2.49rem" : "2.3rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+                ...(isPreviewer && { "margin-top": "0.3rem" }),
+            },
+            Q: {
+                "font-size": isPreviewer ? "2.49rem" : "2.3rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+                ...(isPreviewer && { "margin-top": "0.3rem" }),
+            },
+            S: {
+                "font-size": isPreviewer ? "2.49rem" : "2.3rem",
+                "margin-right": "0.35rem",
+                padding: "0.3rem 0.125rem 0.25rem",
+                ...(isPreviewer && { "margin-top": "0.3rem" }),
+            },
             default: {
                 "font-size": "2.49rem",
                 "margin-right": "0.35rem",
@@ -498,9 +558,10 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-right": "0.325rem"
             },
             D: {
-                "font-size": "2.8rem",
-                padding: "0.1rem 0.4rem 0rem",
-                "margin-right": "0.125rem"
+                "font-size": isPreviewer ? "2.8rem" : "2.6rem",
+                padding: isPreviewer ? "0.1rem 0.4rem 0rem" : "0.1rem 0rem",
+                "margin-right": isPreviewer ? "0.125rem" : "0.625rem",
+                "margin-top": "0.35rem"
             },
             E: {
                 "font-size": "2.4rem",
@@ -520,9 +581,16 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-right": "0.9rem"
             },
             H: {
-                "font-size": "2.1rem",
+                "font-size": isPreviewer ? "2.1rem" : "2rem",
                 padding: "0.325rem 0rem 0rem",
-                "margin-right": "0.4rem"
+                "margin-right": isPreviewer ? "0.4rem" : "0.6rem",
+                "margin-top": "0.35rem"
+            },
+            I: {
+                "font-size": isPreviewer ? "2.8rem" : "2.6rem",
+                padding: "0.1rem 0.1rem 0rem",
+                "margin-right": "0.5rem",
+                "margin-top": "0.35rem"
             },
             J: {
                 "font-size": "2.2rem",
@@ -580,9 +648,10 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "margin-right": "0.4rem"
             },
             T: {
-                "font-size": "2.8rem",
-                padding: "0.1rem 0.4rem 0rem",
-                "margin-right": "0.125rem"
+                "font-size": isPreviewer ? "2.8rem" : "2.6rem",
+                padding: isPreviewer ? "0.1rem 0.4rem 0rem" : "0.1rem 0rem",
+                "margin-right": isPreviewer ? "0.125rem" : "0.75rem",
+                "margin-top": "0.35rem"
             },
             U: {
                 "font-size": "2.16rem",
@@ -623,139 +692,139 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
         },
         Kalam: {
             C: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.53rem",
                 "margin-left": "-0.23rem",
                 "line-height": 0.8,
             },
             D: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.6rem",
                 "margin-left": "-0.3rem",
                 "line-height": 0.8,
             },
             E: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.625rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             F: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.775rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             G: {
-                "font-size": "4.1rem",
+                "font-size": isPreviewer ? "4.1rem" : "3.7rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.25rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             H: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.525rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             I: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.6rem",
                 "margin-left": "-0.3rem",
                 "line-height": 0.8,
             },
             J: {
-                "font-size": "4.8rem",
+                "font-size": isPreviewer ? "4.8rem" : "4.3rem",
                 padding: "0.65rem 0rem 0rem",
                 "margin-right": "0.625rem",
                 "line-height": 0.8,
             },
             M: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.525rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             O: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.6rem",
                 "margin-left": "-0.23rem",
                 "line-height": 0.8,
             },
             P: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.525rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             Q: {
-                "font-size": "4rem",
+                "font-size": isPreviewer ? "4rem" : "3.6rem",
                 padding: "0.65rem 0rem 0rem",
                 "margin-right": "0.25rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             T: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.75rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             U: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.6rem",
                 "margin-left": "-0.3rem",
                 "line-height": 0.8,
             },
             V: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.825rem",
                 "margin-left": "-0.3rem",
                 "line-height": 0.8,
             },
             W: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.455rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             X: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.525rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             Y: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.725rem",
                 "margin-left": "-0.3rem",
                 "line-height": 0.8,
             },
             Z: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.5rem",
                 "margin-left": "-0.1rem",
                 "line-height": 0.8,
             },
             default: {
-                "font-size": "4.7rem",
+                "font-size": isPreviewer ? "4.7rem" : "4.3rem",
                 padding: "0.8rem 0rem 0rem",
                 "margin-right": "0.325rem",
                 "line-height": 0.8,
@@ -797,33 +866,41 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
         },
         ThreeDumb: {
             R: {
-              "font-size": isPreviewer ? "2.45rem" : "2.4rem",
+              "font-size": isPreviewer ? "2.45rem" : "2.2rem",
+              "margin-top": "0.3rem"
             },
             S: {
-              "font-size": isPreviewer ? "2.3rem" : "2.3rem",
+              "font-size": isPreviewer ? "2.3rem" : "2.2rem",
               padding: "0.15rem 0.25rem 0rem",
+              "margin-top": "0.2rem"
             },
             T: {
-              "font-size": isPreviewer ? "2.45rem" : "2.4rem",
+              "font-size": isPreviewer ? "2.45rem" : "2.2rem",
+              "margin-top": "0.2rem"
             },
             U: {
-              "font-size": isPreviewer ? "2.5rem" : "2.4rem",
+              "font-size": isPreviewer ? "2.5rem" : "2.3rem",
+              "margin-top": "0.2rem"
             },
             W: {
-              "font-size": isPreviewer ? "2.4rem" : "2.2rem",
+              "font-size": isPreviewer ? "2.4rem" : "2.0rem",
+              "margin-top": "0.2rem"
             },
             X: {
-              "font-size": isPreviewer ? "2.5rem" : "2.45rem",
+              "font-size": isPreviewer ? "2.5rem" : "2.25rem",
+              "margin-top": "0.2rem"
             },
             Y: {
-              "font-size": isPreviewer ? "2.4rem" : "2.35rem",
+              "font-size": isPreviewer ? "2.4rem" : "2.15rem",
+              "margin-top": "0.2rem"
             },
             Z: {
-              "font-size": isPreviewer ? "2.4rem" : "2.35rem",
+              "font-size": isPreviewer ? "2.4rem" : "2.25rem",
             },
             default: {
-              "font-size": isPreviewer ? "2.4rem" : "2.3rem",
+              "font-size": isPreviewer ? "2.4rem" : "2.1rem",
               padding: "0.1rem 0.25rem 0rem",
+              "margin-top": "0.2rem"
             },
         },
         Chomsky:{
@@ -901,7 +978,16 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
     };
 
     const fontFamilyStyles = fontStyles[fontFamily] || {};
-    const styles = fontFamilyStyles[letter] || fontFamilyStyles.default || {};
+    const base = fontFamilyStyles[letter] || fontFamilyStyles.default || {};
+    let styles: CharacterFontStyle = { ...base };
+
+    // If a variant exists and a drop cap font has variant specific tuning, override the base drop cap calculations
+    if (variant) {
+        const variantExist = variantOverrides[fontFamily]?.[variant];
+        const letterVariantOverrides = variantExist ? variantExist(isPreviewer) : undefined;
+        const overrideStyles = (letterVariantOverrides?.[letter] || letterVariantOverrides?.default) as CharacterFontStyle | undefined;
+        if (overrideStyles) styles = { ...styles, ...overrideStyles };
+    }
 
     // Adjust font size if it exists in styles and isPreviewer is true
     if (isPreviewer) {
@@ -930,6 +1016,38 @@ export const getDropCapCssClasses = (fontFamily: string, prefixRule: string, isP
         const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer);
         if (fontRule) {
             cssString += `.${prefixRule} .withDropcap .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
+        }
+    }
+
+    /**
+     * If the drop cap font has variant specific calculations,
+     * replace the previously generated drop cap css classes
+     */
+    const overridesForDropCapFont = variantOverrides[fontFamily];
+    if (!overridesForDropCapFont) return cssString;
+
+    // for bold
+    for (const letter of alphabet) {
+        const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer, "bold");
+        if (fontRule) {
+            cssString += `.${prefixRule} .withDropcap b .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
+        }
+    }
+
+    // for italic
+    for (const letter of alphabet) {
+        const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer, "italic");
+        if (fontRule) {
+            cssString += `.${prefixRule} .withDropcap em .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
+        }
+    }
+
+    // for bold and italic
+    for (const letter of alphabet) {
+        const fontRule = getDropCapFontCss(fontFamily, letter, isPreviewer, "boldItalic");
+        if (fontRule) {
+            cssString += `.${prefixRule} .withDropcap b em .dropcap.letter_${letter},\n` +
+                `.${prefixRule} .withDropcap em b .dropcap.letter_${letter} {\n  ${fontRule}\n}\n`;
         }
     }
 
