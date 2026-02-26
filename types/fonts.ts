@@ -6,6 +6,7 @@ export type Font = {
   additionalInfo?: string,
   availableForPrint?: boolean,
   availableForPreviewer?: boolean,
+  availableForDropCap?: boolean,
 }
 
 export enum FontVariant {
@@ -37,3 +38,24 @@ export type UsedFont = {
   remoteSrc: string,
   localSrc: string
 }
+
+export type CharacterFontStyle = {
+    "font-size"?: string;
+    "margin-left"?: string;
+    "margin-right"?: string;
+    "margin-top"?: string;
+    padding?: string;
+    transform?: string;
+    "line-height"?: number;
+    height?: string;
+}
+
+export type FontStyles = Record<string, Record<string, CharacterFontStyle>>;
+
+export type DropcapVariant = "bold" | "italic" | "boldItalic";
+
+export type VariantLetterMap = Record<string, CharacterFontStyle>;
+
+export type VariantOverrideGetter = (isPreviewer: boolean) => VariantLetterMap;
+
+export type DropcapVariantOverrides = Record<string, Partial<Record<DropcapVariant, VariantOverrideGetter>>>;
