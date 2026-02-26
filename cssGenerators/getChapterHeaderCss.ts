@@ -7,7 +7,8 @@ import {
   getFontFamilyName,
   headerStyleToFontVariant,
   addPrefix,
-  thumbnailCssOverwrites
+  thumbnailCssOverwrites,
+  getUpdatedTextColorStyles
 } from "../helpers";
 
 import { Theme } from "../types";
@@ -194,4 +195,34 @@ export const getChapterHeaderCss = (
     }
 
     `;
+};
+
+export const getChapterHeaderDarkModeCssOverrides = (
+  themeProps: Theme,
+  prefix?: string,
+) => {
+  const { properties: styleProps } = themeProps;
+  return `
+    .${themeProps._id} .${addPrefix("chapter-number", prefix)} span{
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.chapterNo.extras))}
+    }
+    
+    .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2{
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.chapterTitle.extras))}
+    }
+    .${themeProps._id} .${addPrefix("chapter-title-card", prefix)} .${addPrefix("chapter-subtitle", prefix)} h3{
+      ${styleObjectToCss(getUpdatedTextColorStyles(styleProps.chapterSubtitle.extras))}
+    }
+    
+    .${themeProps._id} .inverted .${addPrefix("chapter-number", prefix)} span{
+      color: white !important;
+    }
+    
+    .${themeProps._id} .inverted .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .inverted .${addPrefix("epub-toc-title-card", prefix)} h2{
+      color: white !important;
+    }
+    .${themeProps._id} .inverted .${addPrefix("chapter-subtitle", prefix)} h3{
+      color: white !important;
+    }
+  `
 };

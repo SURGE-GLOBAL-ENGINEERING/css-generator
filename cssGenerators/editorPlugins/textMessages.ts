@@ -68,3 +68,47 @@ export const getTextMessagesCss = (themeId: string) => {
     }
     `
   };
+
+  export const getTextMessagesDarkModeCssOverrides = (themeId: string) => {
+    return `
+    .${themeId} .message-bubble {
+      color: #fff !important;
+    }
+  
+    .${themeId} .contact-bubble {
+      color: #aeaeae !important;
+    }
+  
+    .${themeId} .ios-sent-bubble {
+      background-color: #056be6 !important;
+      border-color: #056be6 !important;
+    }
+  
+    .${themeId} .ios-received-bubble {
+      background-color: #d8d8d8 !important;
+      color: #000000 !important;
+      border-color: #d8d8d8 !important;
+    }
+  
+    .${themeId} .ios-android-sent-bubble {
+      background-color: #148527 !important;
+      border-color: #148527 !important;
+    }
+  
+    .${themeId} .ios-android-received-bubble {
+      background-color: #d8d8d8 !important;
+      color: #000000 !important;
+      border-color: #d8d8d8 !important;
+    }
+
+    .${themeId} .android-sent-bubble {
+      background-color: #075E54 !important;
+      border-color: #075E54 !important;
+    }
+  
+    .${themeId} .android-received-bubble {
+      background-color: #444444 !important;
+      border-color: #444444 !important;
+    }
+    `
+  };

@@ -15,6 +15,7 @@ import {
   getFullBleedImageCss,
   getFullPageImageCss,
   getEndNoteCss,
+  getTextMessagesCss,
   getFirstParagraphCss,
   getCopyrightCss,
   getDedicationCss,
@@ -24,11 +25,14 @@ import {
   getPartCss,
   getHeadingCss,
   getHangingIndentCss,
+  /** dark mode css overrides */
+  getChapterHeaderDarkModeCssOverrides,
+  getTitlePageDarkModeCssOverrides,
+  getTextMessagesDarkModeCssOverrides,
+  getDefaultDarkModeCssOverrides
 } from "./.";
 
 import { Theme, UsedFont } from "../types";
-import { epubFontBaseUrl } from "../helpers";
-import { getTextMessagesCss } from "./editorPlugins/textMessages";
 
 /**
  * Returns a css string to style the book according to provided theme properties
@@ -163,3 +167,25 @@ export const themePropsToCss = (
 
   return `${styleCss} ${fontFaceCss}`;
 };
+
+export const getDarkModeColorOverrides = (
+  themeProps: Theme,
+  containerClassName?: string
+) => {
+  const chapterHeaderOverrides = getChapterHeaderDarkModeCssOverrides(
+    themeProps,
+    containerClassName
+  );
+  const titlePageCssOverrides = getTitlePageDarkModeCssOverrides(themeProps);
+  const textMessagesCssOverrides = getTextMessagesDarkModeCssOverrides(
+    themeProps._id
+  );
+  const defaultCssOverrides = getDefaultDarkModeCssOverrides(themeProps._id, containerClassName);
+
+  return `
+    ${chapterHeaderOverrides}
+    ${titlePageCssOverrides}
+    ${textMessagesCssOverrides}
+    ${defaultCssOverrides}
+  `;
+}
