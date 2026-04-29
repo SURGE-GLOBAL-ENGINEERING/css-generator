@@ -59,7 +59,8 @@ export const themePropsToCss = (
 
     ${getDefaultCss(
       themeProps._id,
-      themeProps.properties.paragraph.paragraphSpacing
+      themeProps.properties.paragraph.paragraphSpacing,
+      themeProps.properties.paragraph.listSpacing
     )}
 
     ${getHeadingCss(themeProps._id, themeProps)}

@@ -1,4 +1,4 @@
-export const getDefaultCss = (themeId: string, paragraphSpacing: number): string => {
+export const getDefaultCss = (themeId: string, paragraphSpacing: number, listSpacing?: "standard" | "compact"): string => {
   return `
       .${themeId} html, .${themeId} body, .${themeId} div, .${themeId} span, .${themeId} applet, .${themeId} object, .${themeId} iframe,
       .${themeId} h1, .${themeId} p, .${themeId} blockquote, .${themeId} pre,
@@ -62,7 +62,7 @@ export const getDefaultCss = (themeId: string, paragraphSpacing: number): string
         margin-left: -1rem;
       }
       .${themeId} li{
-        padding: 0.2rem 0rem;
+        padding: ${listSpacing === "compact" ? "0" : "0.2rem 0rem"};
       }
 
     `;

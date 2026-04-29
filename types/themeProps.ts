@@ -145,6 +145,7 @@ export type Paragraph = {
   paragraphSpacing: number;
   hyphens: boolean;
   justify: boolean;
+  listSpacing?: "standard" | "compact";
 };
 
 export type ThemeHeaderPropsType = "chapterNo" | "chapterTitle" | "chapterSubtitle" | "image" | "header" | "footer";
