@@ -188,6 +188,11 @@ export const getChapterHeaderCss = (
 
     .${themeProps._id} .${addPrefix("chapter-number", prefix)} span, .${themeProps._id} .${addPrefix("chapter-title", prefix)} h2, .${themeProps._id} .${addPrefix("epub-toc-title-card", prefix)} h2, .${themeProps._id} .${addPrefix("chapter-subtitle", prefix)} h3 {
         font-weight: 400;
+        ${isPreviewer ? `
+        box-sizing: border-box;
+        max-width: 100%;
+        padding: 0.18em 0.3em;
+        ` : ""}
     }
 
     .inverted * {
@@ -196,7 +201,6 @@ export const getChapterHeaderCss = (
 
     `;
 };
-
 export const getChapterHeaderDarkModeCssOverrides = (
   themeProps: Theme,
   prefix?: string,
