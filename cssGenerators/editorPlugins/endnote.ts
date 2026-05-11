@@ -1,4 +1,4 @@
-export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
+export const getEndNoteCss = (themeId: string, footnoteFontSize: number, isPreviewer: boolean = false) => {
   return `
     .${themeId} .endnote-link{
       color: inherit;
@@ -10,10 +10,28 @@ export const getEndNoteCss = (themeId: string, footnoteFontSize: number) => {
       padding-top: 1rem !important;
       margin-top: 1rem !important;
       margin-bottom: 2rem !important;
-      page-break-inside: avoid;
-      break-inside: avoid;
+      page-break-inside: ${isPreviewer ? "auto !important" : "avoid"};
+      break-inside: ${isPreviewer ? "auto !important" : "avoid"};
+      ${isPreviewer ? `
+      display: block !important;
+      -webkit-column-break-inside: auto !important;
+      column-break-inside: auto !important;
+      orphans: 3;
+      widows: 3;
+      ` : ""}
       text-align: left;
     }
+    ${isPreviewer ? `
+    .${themeId} .endnote-text {
+      display: block !important;
+      page-break-inside: auto !important;
+      break-inside: auto !important;
+      -webkit-column-break-inside: auto !important;
+      column-break-inside: auto !important;
+      orphans: 3;
+      widows: 3;
+    }
+    ` : ""}
     .${themeId} .endnotes-separator{
       height:0.175rem;
       background-color:#000000;
