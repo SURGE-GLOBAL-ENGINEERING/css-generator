@@ -59,9 +59,9 @@ export const getFirstParagraphCss = (
       }
 
       .${themeId} .dropcap-keep-together {
-        break-inside: avoid-column;
-        -webkit-column-break-inside: avoid;
-        page-break-inside: avoid;
+        break-inside: auto !important;
+        -webkit-column-break-inside: auto !important;
+        page-break-inside: auto !important;
       }
       ` : ""}
       ${dropcapLetterClasses}`
