@@ -44,8 +44,22 @@ export const getFirstParagraphCss = (
         padding: 0 0.25rem;
         margin-right: ${calculateValue(0.125)};
       }
+      ${isPreviewer ? `
+      .${themeId} .withDropcap .dropcap {
+        box-sizing: content-box;
+        padding-top: 0.18em !important;
+        padding-right: 0.18em !important;
+        padding-left: 0.18em !important;
+      }
+
+      .${themeId} .dropcap-keep-together {
+        break-inside: avoid-column;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      ` : ""}
       ${dropcapLetterClasses}`
-      : ""
+        : ""
     }
     ${
       firstParagraph.uppercaseFourWords

@@ -135,9 +135,9 @@ export const themePropsToCss = (
 
     ${getVerseCss(themeProps._id)}
 
-    ${getCalloutBoxCss(themeProps._id)}
+    ${getCalloutBoxCss(themeProps._id, isPreviewer)}
 
-    ${getEndNoteCss(themeProps._id, styleProps.footnoteFontSize)}
+    ${getEndNoteCss(themeProps._id, styleProps.footnoteFontSize, isPreviewer)}
 
     ${getMarkCss(themeProps._id)}
 
