@@ -1,8 +1,8 @@
 import { FontVariant } from "./fonts";
 
 export type ChapterType = 'uncategorized' | 'chapter' | 'custom' | 'half-title' | 'title' | 'toc' | 'endnotes'
-  | 'image' | 'about-author' | 'copyrights' | 'epigraph' | 'foreword' | 'introduction' | 'preface' | 'prologue'
-  | 'epilogue' | 'afterword' | 'acknowledgments' | 'also-by' | 'dedication' | 'blurbs' | 'volume' | 'part';
+| 'image'|  'about-author' | 'copyrights' | 'epigraph' | 'foreword' | 'introduction' | 'preface' | 'prologue'
+ | 'epilogue' | 'afterword' | 'acknowledgments' | 'also-by' | 'dedication' | 'blurbs' | 'volume' | 'part';
 
 export enum HeaderFontStyle {
   regular = "regular",
@@ -138,7 +138,6 @@ export type FirstParagraph = {
   uppercaseFourWords: boolean;
   dropcap: boolean;
   dropcapFont: string;
-  firstLineHeightGap: boolean;
 };
 
 export type Paragraph = {
@@ -235,19 +234,19 @@ export type ThemeStyleProps = {
 
   notesMode: NotesMode;
   ePubNotesMode: EpubNotesMode;
-  footnoteFontSize: number;
+  footnoteFontSize:number;
   bookTitlePage?: BookTitlePage;
   chapterOverrides?: Record<ChapterType, Record<ThemeHeaderPropsType, any>>
-
+  
 
   pdfEndnotesChapterSettings: {
     showTitle: boolean,
-    categorizeByTitle: boolean
+    categorizeByTitle: boolean 
   },
 
   ePubEndnotesChapterSettings: {
     showTitle: boolean,
-    categorizeByTitle: boolean
+    categorizeByTitle: boolean 
   },
 };
 
