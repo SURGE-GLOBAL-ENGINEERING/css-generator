@@ -38,6 +38,8 @@ const variantOverrides: DropcapVariantOverrides = {
 };
 
 const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: boolean, variant?: DropcapVariant) => {
+    const imperialScriptThreeLinePreview = isPreviewer ? { "line-height": 0.75 } : {};
+
     const fontStyles: FontStyles = {
         AbrilFatface: {
             C: {
@@ -255,6 +257,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
             B: {
                 "font-size": isPreviewer ? "5.5rem" : "5rem",
                 "margin-right": isPreviewer ? "0.8rem" : "0.5rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "60px" }),
             },
@@ -262,6 +265,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": isPreviewer ? "5rem" : "4.5rem",
                 "margin-right": isPreviewer ? "1.6rem" : "1.3rem",
                 padding: "0.1rem 0.1rem 0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "60px" }),
             },
@@ -269,6 +273,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": "5.3rem",
                 "margin-right": isPreviewer ? "0.7rem" : "0.4rem",
                 padding: "0rem 0.5rem 0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "60px" }),
             },
@@ -276,6 +281,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": isPreviewer ? "5.1rem" : "4.6rem",
                 "margin-right": isPreviewer ? "1.3rem" : "1rem",
                 padding: "0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "80px" }),
             },
@@ -283,6 +289,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": "5rem",
                 "margin-right": isPreviewer ? "2.0rem" : "1.7rem",
                 padding: "0.03rem 0.4rem 0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "60px" }),
             },
@@ -297,6 +304,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": isPreviewer ? "5rem" : "4.3rem",
                 "margin-right": isPreviewer ? "2.2rem" : "1.8rem",
                 padding: "0.2rem 0.4rem 0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "60px" }),
             },
@@ -304,6 +312,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": isPreviewer ? "5.2rem" : "4.7rem",
                 "margin-right": "1.8rem",
                 padding: "0.05rem 0.2rem 0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "60px" }),
             },
@@ -317,6 +326,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": isPreviewer ? "4.8rem" : "4.3rem",
                 "margin-right": isPreviewer ? "2.0rem" : "1.9rem",
                 padding: "0rem 0.4rem 0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "60px" }),
             },
@@ -324,6 +334,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": "5.2rem",
                 "margin-right": isPreviewer ? "1.8rem" : "1.5rem",
                 padding: "0rem 0.55rem 0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "60px" }),
             },
@@ -366,6 +377,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": isPreviewer ? "5.4rem" : "4.9rem",
                 "margin-right": isPreviewer ? "1.4rem" : "1.1rem",
                 padding: "0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "60px" }),
             },
@@ -380,6 +392,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": isPreviewer ? "5.2rem" : "4.7rem",
                 "margin-right": isPreviewer ? "1.9rem" : "1.5rem",
                 padding: "0rem 0.5rem 0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "80px" }),
             },
@@ -394,6 +407,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": isPreviewer ? "5.1rem" : "4.6rem",
                 "margin-right": "2.7rem",
                 padding: "0rem 0.2rem 0rem 0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "80px" }),
             },
@@ -401,6 +415,7 @@ const getDropCapFontCss = (fontFamily: string, letter: string, isPreviewer: bool
                 "font-size": isPreviewer ? "5rem" : "4.5rem",
                 "margin-right": "2.4rem",
                 padding: "0rem 0.4rem 0rem 0rem",
+                ...imperialScriptThreeLinePreview,
                 ...(isPreviewer && { transform: "scale(1.2)" }),
                 ...(!isPreviewer && { height: "80px" }),
             },

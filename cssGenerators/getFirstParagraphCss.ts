@@ -52,6 +52,12 @@ export const getFirstParagraphCss = (
         padding-left: 0.18em !important;
       }
 
+      .${themeId} .dropcap-containing-block::after {
+        clear: both;
+        content: "";
+        display: block;
+      }
+
       .${themeId} .dropcap-keep-together {
         break-inside: avoid-column;
         -webkit-column-break-inside: avoid;
