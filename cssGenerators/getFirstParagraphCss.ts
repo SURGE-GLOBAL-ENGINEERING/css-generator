@@ -47,9 +47,6 @@ export const getFirstParagraphCss = (
       ${isPreviewer ? `
       .${themeId} .withDropcap .dropcap {
         box-sizing: content-box;
-        padding-top: 0.18em !important;
-        padding-right: 0.18em !important;
-        padding-left: 0.18em !important;
       }
 
       .${themeId} .dropcap-containing-block::after {
