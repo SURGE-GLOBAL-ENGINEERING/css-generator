@@ -138,7 +138,6 @@ export type FirstParagraph = {
   uppercaseFourWords: boolean;
   dropcap: boolean;
   dropcapFont: string;
-  firstLineHeightGap: boolean;
 };
 
 export type Paragraph = {
