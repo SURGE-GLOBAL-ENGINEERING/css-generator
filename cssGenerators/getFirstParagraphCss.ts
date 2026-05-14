@@ -47,15 +47,18 @@ export const getFirstParagraphCss = (
       ${isPreviewer ? `
       .${themeId} .withDropcap .dropcap {
         box-sizing: content-box;
-        padding-top: 0.18em !important;
-        padding-right: 0.18em !important;
-        padding-left: 0.18em !important;
+      }
+
+      .${themeId} .dropcap-containing-block::after {
+        clear: both;
+        content: "";
+        display: block;
       }
 
       .${themeId} .dropcap-keep-together {
-        break-inside: avoid-column;
-        -webkit-column-break-inside: avoid;
-        page-break-inside: avoid;
+        break-inside: auto !important;
+        -webkit-column-break-inside: auto !important;
+        page-break-inside: auto !important;
       }
       ` : ""}
       ${dropcapLetterClasses}`
