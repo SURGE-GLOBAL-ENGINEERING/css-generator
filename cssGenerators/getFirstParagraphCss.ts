@@ -45,16 +45,6 @@ export const getFirstParagraphCss = (
         margin-right: ${calculateValue(0.125)};
       }
       ${isPreviewer ? `
-      .${themeId} .withDropcap .dropcap {
-        box-sizing: content-box;
-      }
-
-      .${themeId} .dropcap-containing-block::after {
-        clear: both;
-        content: "";
-        display: block;
-      }
-
       .${themeId} .dropcap-keep-together {
         break-inside: auto !important;
         -webkit-column-break-inside: auto !important;
