@@ -15,8 +15,10 @@ export const getCalloutBoxCss = (themeId: string, isPreviewer: boolean = false) 
         ` : ""}
       }
       ${isPreviewer ? `
-      .${themeId} .imperial-script-dropcap .dropcap-containing-block + .calloutbox {
-        margin-top: 2em;
+      .${themeId} .dropcap-containing-block:has(+ .calloutbox)::after {
+        clear: both;
+        content: "";
+        display: block;
       }
       ` : ""}
     `;
