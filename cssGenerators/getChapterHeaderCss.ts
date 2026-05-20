@@ -196,7 +196,6 @@ export const getChapterHeaderCss = (
 
     `;
 };
-
 export const getChapterHeaderDarkModeCssOverrides = (
   themeProps: Theme,
   prefix?: string,
