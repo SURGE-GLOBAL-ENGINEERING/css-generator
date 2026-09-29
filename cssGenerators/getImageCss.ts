@@ -44,6 +44,8 @@ export const getImageCss = (themeId: string) => {
     .${themeId} .image .caption{
       width: 96%;
       font-style: italic;
+      align-self: center;
+      text-align: center;
     }
 
     .${themeId} .image.image-size-small a{
@@ -78,6 +80,35 @@ export const getImageCss = (themeId: string) => {
 
     .${themeId} .image img:not(.img-with-empty-link){
       width: 100%;
+    }
+
+    .${themeId} .image.image-flow-middle > a > img {
+      display: block;
+      margin-inline: auto;
+    }
+
+    .${themeId} .image.image-flow-right > a > img {
+      display: block;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .${themeId} .image.image-size-medium .caption {
+      display: block;
+      width: 45%;
+      text-align: center;
+    }
+
+    .${themeId} .image.image-flow-left .caption {
+      margin-right: auto;
+    }
+
+    .${themeId} .image.image-flow-middle .caption {
+      margin-inline: auto;
+    }
+
+    .${themeId} .image.image-flow-right .caption {
+      margin-left: auto;
     }
   `;
 };
